@@ -1,0 +1,47 @@
+
+
+/* 
+    Variables - Colors
+        -> to use -> var( variable_name )
+        -> Example -> background-color: var(--backgroud_light_color);
+*/
+:root{
+    --backgroud_light_color: #D7D8D9;
+    --main_dark_color: #734439;
+    --main_light_color: #BF988A;
+    --seccond_dark_color:#06063D;
+    --seccond_light_color: #5681A6;
+    --font_heading: 'Courier New', Courier, monospace;
+    --font_content: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    --font_higlight: Georgia, 'Times New Roman', Times, serif; 
+
+}
+
+body{
+    background-color: var(--backgroud_light_color);
+
+}
+
+/* TEST COLOR AND FONT VARIABLE - WILL BE DELETE - SEE IN index.html */
+
+#test_color_font #hfont {
+    font-family: var(--font_heading);
+}
+#test_color_font #highfont {
+    font-family: var(--font_higlight);
+}
+#test_color_font #confont {
+    font-family: var(--font_content);
+}
+#test_color_font #maindcolor {
+    color: var(--main_dark_color);
+}
+#test_color_font #mainlcolor {
+    color: var(--main_light_color);
+}
+#test_color_font #secdcolor {
+    color: var(--seccond_dark_color);
+}
+#test_color_font #seclcolor {
+    color: var(--seccond_light_color);
+}
