@@ -17,10 +17,73 @@
 	<meta name="keywords"		content="HTML, Form, tags"/>
 	<meta name="author"			content="FIVE"/>
 	<link rel="stylesheet" href="./css/style.css">
-	<title>Title</title>
+	<title>Apply Form</title>
+<!--CSS-->
+<style>
+	h1{
+		text-align: center;
+	}
+	h1,h2,h3,p{
+		font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+	}
+	p{
+		letter-spacing: 2px;
+	}
+</style>
 </head>
 <body>
-	
-	
-
+	<h1>Job Application</h1>
+	<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+		<fieldset>
+			<legend>Personal information</legend>
+			<p><label for="first name">First Name</label>
+					<input type="text" name="first name" id="first name" maxlength="20" size="20" placeholder="max is 20 alpha characters" required>
+				<label for="last name">Last Name</label>
+					<input type="text" name="last name" id="last name" maxlength="20" size="20"  placeholder="max is 20 alpha characters" required>
+			</p>
+			<p>
+				<label for="dob">Date of birth</label>
+					<input type="date" name="dob" id="dob" required>
+				<p> Gender:
+					<label for="male">Male</label>
+						<input type="radio" name="catergory[]" id="male" required>
+					<label for="female">Female</label>
+						<input type="radio" name="catergory[]" id="female" required>
+				</p>
+			</p>
+			<p>
+				<label for="email">Email</label>
+					<input type="text" id="email" pattern="username@gmail.com" placeholder="username@gmail.com" required>
+			</p>
+			<p> <label for="phone">Phone number</label>
+					<input type="tel" id="phone" minlength="8" maxlength="12" placeholder="only 8-12 digits" required>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>Housing information</legend>
+			<p>
+				<label for="address">Street Address</label>
+					<input type="text" id="address" maxlength="40" placeholder="max is 40 characters" required>
+				<label for="suburb/town">Suburb/Town</label>
+					<input type="text" id="suburb/town" maxlength="40" placeholder="max is 40 characters" required>
+			</p>
+			<p>
+				<label for="state">State</label>
+				<select name="state" id="state" required>
+					<option value="">Please select</option>
+					<option value="vic">VIC</option>
+					<option value="nsw">NSW</option>
+					<option value="qld">QLD</option>
+					<option value="nt">NT</option>
+					<option value="wa">WA</option>
+					<option value="sa">SA</option>
+					<option value="tas">TAS</option>
+					<option value="act">ACT</option>
+				</select>
+			</p>
+			<p>
+				<label for="postcode">Postcode</label>
+					<input type="tel" id="postcode" maxlength="4" placeholder="Only 4 digits" required>
+			</p>
+		</fieldset>
 </body>
