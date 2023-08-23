@@ -20,6 +20,9 @@
 	<title>Apply Form</title>
 <!--CSS-->
 <style>
+	title{
+		font-family: 'Courier New', Courier, monospace;
+	}
 	h1{
 		text-align: center;
 	}
@@ -53,10 +56,10 @@
 			</p>
 			<p>
 				<label for="email">Email:</label>
-					<input type="text" id="email" pattern="username@gmail.com" placeholder="username@gmail.com" required>
+					<input type="email" id="email" placeholder="username@gmail.com" required>
 			</p>
 			<p> <label for="phone">Phone number:</label>
-					<input type="tel" id="phone" minlength="8" maxlength="12" placeholder="only 8-12 digits" required>
+					<input type="tel" id="phone" pattern="[0-9]" minlength="8" maxlength="12"  placeholder="only 8-12 digits" required>
 			</p>
 		</fieldset>
 		<fieldset>
@@ -83,7 +86,7 @@
 			</p>
 			<p>
 				<label for="postcode">Postcode:</label>
-					<input type="tel" id="postcode" maxlength="4" placeholder="Only put 4 digits" required>
+					<input type="text" id="postcode" maxlength="4" placeholder="Only put 4 digits" required pattern="[0-9\s]+">
 			</p>
 		</fieldset>
 		<fieldset>
@@ -103,15 +106,15 @@
 			<p> Which programming languague you have most experience with:</p>
 			<p>
 				<label for="python">Python</label>
-					<input type="checkbox" id="python" name="catergory[]" required>
+					<input type="checkbox" id="python" name="catergory[]">
 				<label for="java">Java</label>
-					<input type="checkbox" id="java" name="catergory[]" required>
+					<input type="checkbox" id="java" name="catergory[]">
 			</p>
 			<p>
 				<label for="html">Html</label>
-					<input type="checkbox" id="html" name="catergory[]" required>
+					<input type="checkbox" id="html" name="catergory[]">
 				<label for="c">C/C++</label>
-					<input type="checkbox" id="c" name="catergory[]" required>
+					<input type="checkbox" id="c" name="catergory[]">
 			</p>
 			<p>
 				<label for="other">Other programming languague:</label>
@@ -120,23 +123,23 @@
 			<p>Skill List:</p>
 			<p>
 				<label for="maths">Math and numerical reasoning skills</label>
-					<input type="checkbox" id="maths" name="catergory[]" required>
+					<input type="checkbox" id="maths" name="catergory[]">
 			</p>
 			<p>	
 				<label for="tech">Technology knowledge and skills</label>
-					<input type="checkbox" id="tech" name="catergory[]" required>
+					<input type="checkbox" id="tech" name="catergory[]">
 			</p>
 			<p>
 				<label for="prob">Analyse and trace problems</label>
-					<input type="checkbox" id="prob" name="catergory[]" required>
+					<input type="checkbox" id="prob" name="catergory[]">
 			</p>
 			<p>
 				<label for="detail">Meticulous attention to details</label>
-					<input type="checkbox" id="detail" name="catergory" required>
+					<input type="checkbox" id="detail" name="catergory">
 			</p>
 			<p>
 				<label for="organise">Organise and classify large amounts of information</label>
-					<input type="checkbox" id="organise" name="catergory" required>
+					<input type="checkbox" id="organise" name="catergory">
 			</p>
 			<p>
 				<label for="others"> Other Skills:</label><br>
@@ -145,17 +148,16 @@
 		</fieldset>
 		<fieldset>
 			<legend>Sumbit your resume</legend>
-			<form action="/action_page.php">
 				<input type="file" id="Myfile" name="filename">
-				<input type="submit">
-			</form>
 		</fieldset>
 		<hr>
 		<div class="tacbox">
 			<input id="checkbox" type="checkbox" required/>
-			<label for="checkbox">By submitting this form <a href="#">Terms and conditions</a> </label>
+			<label for="checkbox">By submitting this form you agree to our <a href="#">Terms and conditions</a> </label>
 		</div>
+		
 		<input type="submit" value="Apply">
-		<input type="reset" value="Reset Form">
+		<input type="reset" value="Reset Form">	
+	</form>
 </body>
 </html>
