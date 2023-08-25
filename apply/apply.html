@@ -17,6 +17,7 @@
 	<meta name="keywords"		content="HTML, Form, tags"/>
 	<meta name="author"			content="FIVE"/>
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="customUploadStyle.css">
 	<title>Apply Form</title>
 <!--CSS-->
 <style>
@@ -36,6 +37,30 @@
 	p{
 		letter-spacing: 2px;
 	}
+	.upload-box{
+		font-size:16px;
+		background:white;
+		border-radius:40px;
+		box-shadow:5px 5px 10px black;
+		width:350px;
+		outline:none;
+	}
+	::-webkit-file-upload-button{
+		background:#206a5d
+		padding:20px;
+		border:none;
+		border-radius:50px;
+		box-shadow: 1px 0 1px 1px #6b4559;
+		outline:none;
+	}
+	::-webkit-file-upload-button{
+		background:#438a5e;
+	}
+	#firstname{
+		border: 1px solid;
+		box-shadow: 5px 5px 10px black;
+		
+	}
 </style>
 </head>
 <body>
@@ -44,7 +69,7 @@
 		<fieldset>
 			<legend>Personal information</legend>
 			<p><label for="first name">First Name:</label>
-					<input type="text" name="first name" id="first name" maxlength="20" size="20" placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
+					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
 				<label for="last name">Last Name:</label>
 					<input type="text" name="last name" id="last name" maxlength="20" size="20"  placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
 			</p>
@@ -151,8 +176,10 @@
 			</p>
 		</fieldset>
 		<fieldset>
-			<legend>Sumbit your resume</legend>
-				<input type="file" id="Myfile" name="filename">
+			<legend>Submit your resume</legend>
+				<div class="container">
+					<input type="file" class="upload-box">
+				</div>
 		</fieldset>
 		<hr>
 		<div class="tacbox">
