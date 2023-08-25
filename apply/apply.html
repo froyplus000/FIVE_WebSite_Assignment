@@ -8,7 +8,6 @@
 
 
 -->
-
 <!DOCTYPE html>
 <html lang="en">  
 <head>
@@ -19,7 +18,7 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="customUploadStyle.css">
 	<title>Apply Form</title>
-<!--CSS-->
+<!--CSS: contain text-font,background-color, style for upload box, add shadow to the text-->
 <style>
 	title{
 		font-family: 'Courier New', Courier, monospace;
@@ -59,7 +58,50 @@
 	#firstname{
 		border: 1px solid;
 		box-shadow: 5px 5px 10px black;
-		
+	}
+	#lastname{
+		border: 1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#dob{
+		border: 1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#email{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#phone{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#address{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#suburb{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#state{
+		border: 1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#postcode{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#jobnumber{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#other{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
+	}
+	#others{
+		border:1px solid;
+		box-shadow: 5px 5px 10px black;
 	}
 </style>
 </head>
@@ -71,7 +113,7 @@
 			<p><label for="first name">First Name:</label>
 					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
 				<label for="last name">Last Name:</label>
-					<input type="text" name="last name" id="last name" maxlength="20" size="20"  placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
+					<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
 			</p>
 			<p>
 				<label for="dob">Date of birth:</label>
@@ -88,7 +130,7 @@
 					<input type="email" id="email" placeholder="username@gmail.com" required>
 			</p>
 			<p> <label for="phone">Phone number:</label>
-					<input type="tel" id="phone" pattern="[0-9]" minlength="8" maxlength="12"  placeholder="only 8-12 digits" required>
+					<input type="text" id="phone" maxlength="12"  placeholder="only 8-12 digits" required>
 			</p>
 		</fieldset>
 		<fieldset>
@@ -96,8 +138,8 @@
 			<p>
 				<label for="address">Street Address:</label>
 					<input type="text" id="address" maxlength="40" placeholder="max is 40 characters" required>
-				<label for="suburb/town">Suburb/Town</label>
-					<input type="text" id="suburb/town" maxlength="40" placeholder="max is 40 characters" required>
+				<label for="suburb">Suburb/Town</label>
+					<input type="text" id="suburb" maxlength="40" placeholder="max is 40 characters" required>
 			</p>
 			<p>
 				<label for="state">State:</label>
@@ -129,8 +171,8 @@
 				</p><hr>
 			</p>
 			<p>
-				<label for="job number">Job reference number:</label>
-					<input type="text" id="job number" maxlength="5" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
+				<label for="jobnumber">Job reference number:</label>
+					<input type="text" id="jobnumber" maxlength="5" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 			</p><hr>
 			<p> Which programming languague you have most experience with:</p>
 			<p>
@@ -178,7 +220,7 @@
 		<fieldset>
 			<legend>Submit your resume</legend>
 				<div class="container">
-					<input type="file" class="upload-box">
+					<input type="file" class="upload-box" required>
 				</div>
 		</fieldset>
 		<hr>
