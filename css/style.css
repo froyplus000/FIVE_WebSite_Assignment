@@ -257,6 +257,7 @@ footer p:last-child {
     width: 100%;
     
     background-color: var(--main_dark_color);
+    opacity: 70%;
 
 }
 
