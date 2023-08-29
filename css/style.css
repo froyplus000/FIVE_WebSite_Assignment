@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500;600&family=Qwitcher+Grypen:wght@700&display=swap');
 
 
 /* 
@@ -6,20 +7,38 @@
         -> Example -> background-color: var(--backgroud_light_color);
 */
 :root{
-    --backgroud_light_color: #D7D8D9;
-    --main_dark_color: #734439;
-    --main_light_color: #BF988A;
-    --seccond_dark_color:#06063D;
-    --seccond_light_color: #5681A6;
-    --font_heading: 'Courier New', Courier, monospace;
-    --font_content: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    --font_higlight: Georgia, 'Times New Roman', Times, serif; 
+    --backgroud_light_color: #eedfc7;
+    --main_dark_color: #474143;
+    --main_shadow_color: #7c5802;
+    --seccond_light_color: #FFC636;
+    /* --main_light_color: #644304; */
+    /* --seccond_dark_color:#06063D; */
+    --font_heading: 'IBM Plex Mono', monospace;
+    --font_content: 'IBM Plex Mono', monospace;
+    --font_higlight: 'Qwitcher Grypen', cursive;
+
 
 }
 
+
+
 body{
     background-color: var(--backgroud_light_color);
-
+    margin: 0;
+    padding: 0;
+}
+h1, h2 {
+    font-family: var(--font_heading);
+}
+p {
+    font-family: var(--font_content);
+    line-height: 1.8rem;
+    letter-spacing: .13rem;
+}
+img{
+    max-width: 45%;
+    height: 500px;
+    object-fit: cover;
 }
 
 /* TEST COLOR AND FONT VARIABLE - WILL BE DELETE - SEE IN index.html */
@@ -44,4 +63,231 @@ body{
 }
 #test_color_font #seclcolor {
     color: var(--seccond_light_color);
+}
+
+
+
+/* Universal Class */
+
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  .btn{
+    text-decoration: none;
+    color: var(--main_shadow_color);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: 2px solid var(--main_shadow_color);
+    border-radius: 15%;
+  }
+  .btn:hover{
+    color: var(--backgroud_light_color);
+    background-color: var(--main_shadow_color);
+  }
+  span{
+    color: var(--seccond_light_color);
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+  }
+  
+
+
+
+/* Navbar */
+
+#main-nav {
+    background-color: var(--backgroud_light_color);
+    padding: 0;
+}
+
+#main-nav div{
+    padding-top: 0.6rem;
+}
+#main-nav #logo{
+    display:inline-block;
+    color: var(--seccond_light_color);
+    font-size: 4.3rem;
+    font-family: var(--font_higlight);
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    padding: 0;
+    margin-top: .5rem;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    display:inline-block;
+    float: right;
+}
+
+#main-nav li {
+    display: inline-block;
+    padding-top: 1rem;
+}
+
+#main-nav li a {
+    color: var(--main_dark_color);
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: var(--font_content);
+}
+#main-nav li a:hover {
+    /* text-shadow: 0.25rem 0.25rem 0.5rem var(--main_dark_color), -0.1rem -0.1rem 0.5rem var(--main_dark_color); */
+    color: var(--seccond_light_color);
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    font-weight: bold;
+}
+
+#main-nav li a.active {
+
+    border-radius: 10%;
+    border-style:dashed;
+    font-size: 1.6rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+
+
+/* Footer */
+
+footer{
+    height: 4rem;
+    background-color: var(--main_dark_color);
+}
+
+footer p{
+    display: inline-block;
+    width: 50%;
+    color: var(--backgroud_light_color);
+}
+footer p:first-child {
+    float: left;
+}
+footer p:last-child {
+    float: right;
+    text-align: right;
+}
+
+
+/* Index.html */
+
+/* Welcome Section */
+
+#welcome {
+    width: 100%;
+    height: 100vh;
+    /* background-image: url(/img/welcome.jpg);
+    background-size: cover;
+    background-position: center; */
+    
+}
+#welcome .container #welcome_text{
+    text-align: left;
+    margin: 0;
+    color: var(--main_shadow_color);
+    font-size: 6rem;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    font-family: var(--font_content);
+}
+#welcome .container #welcome_p{
+    text-align: left;
+    margin: 0;
+    color: var(--main_shadow_color);
+    font-size: 2rem;
+    position: absolute;
+    left: 15.75%;
+    top: 80%;
+
+    border: .20rem solid var(--main_shadow_color);
+    border-style: dashed;
+    border-radius: 10%;
+    padding: 0 1rem 0 1rem;
+    line-height: 3rem;
+}
+#welcome .container #welcome_p a {
+    text-decoration: none;
+    color: var(--main_shadow_color);
+}
+
+#welcome .container #five_icon{
+    text-align: center;
+    margin: 0;
+    color: var(--seccond_light_color);
+    font-size: 40rem;
+    opacity: 70%;
+    position: absolute;
+    left: 62%;
+    top: 14%;
+    text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
+    font-family: var(--font_heading);
+}
+
+/* Jobs Section */
+#jobs-img {
+    height: 300px;
+    width: 100%;
+    background-image: url(../images/our_journey.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#jobs-img-overlay{
+    height: 300px;
+    width: 100%;
+    
+    background-color: var(--main_dark_color);
+
+}
+
+
+
+
+
+/* about.html */
+
+section {
+    padding: 3rem;
+}
+section div {
+    margin: 2rem;
+}
+
+#about_us {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#journey {
+    display: flex;
+    justify-content: space-between;
+}
+
+#whyus {
+    display: flex;
+    justify-content: space-between;
+}
+#connect {
+    display: flex;
+    justify-content: space-between;
 }
