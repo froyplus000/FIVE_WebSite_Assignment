@@ -27,14 +27,15 @@ body{
     margin: 0;
     padding: 0;
 }
-h1, h2 {
+h1, h2, h3, h4, h5 {
     font-family: var(--font_heading);
 }
-p {
+p, a, li {
     font-family: var(--font_content);
     line-height: 1.8rem;
     letter-spacing: .13rem;
 }
+
 img{
     max-width: 45%;
     height: 500px;
