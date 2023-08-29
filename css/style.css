@@ -35,6 +35,11 @@ p {
     line-height: 1.8rem;
     letter-spacing: .13rem;
 }
+img{
+    max-width: 40%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* TEST COLOR AND FONT VARIABLE - WILL BE DELETE - SEE IN index.html */
 
@@ -162,6 +167,26 @@ p {
 }
 
 
+/* Footer */
+
+footer{
+    height: 4rem;
+    background-color: var(--main_dark_color);
+}
+
+footer p{
+    display: inline-block;
+    width: 50%;
+    color: var(--backgroud_light_color);
+}
+footer p:first-child {
+    float: left;
+}
+footer p:last-child {
+    float: right;
+    text-align: right;
+}
+
 
 
 
@@ -200,6 +225,10 @@ p {
     padding: 0 1rem 0 1rem;
     line-height: 3rem;
 }
+#welcome .container #welcome_p a {
+    text-decoration: none;
+    color: var(--main_shadow_color);
+}
 
 #welcome .container #five_icon{
     text-align: center;
@@ -212,4 +241,37 @@ p {
     top: 14%;
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
+}
+
+
+
+
+
+/* About Us PAGE */
+
+section {
+    padding: 3rem;
+}
+section div {
+    margin: 2rem;
+}
+
+#about_us {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#journey {
+    display: flex;
+    justify-content: space-between;
+}
+
+#whyus {
+    display: flex;
+    justify-content: space-between;
+}
+#connect {
+    display: flex;
+    justify-content: space-between;
 }
