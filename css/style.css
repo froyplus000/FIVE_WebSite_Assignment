@@ -36,8 +36,8 @@ p {
     letter-spacing: .13rem;
 }
 img{
-    max-width: 40%;
-    height: auto;
+    max-width: 45%;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -188,7 +188,7 @@ footer p:last-child {
 }
 
 
-
+/* Index.html */
 
 /* Welcome Section */
 
@@ -243,11 +243,27 @@ footer p:last-child {
     font-family: var(--font_heading);
 }
 
+/* Jobs Section */
+#jobs-img {
+    height: 300px;
+    width: 100%;
+    background-image: url(../images/our_journey.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#jobs-img-overlay{
+    height: 300px;
+    width: 100%;
+    
+    background-color: var(--main_dark_color);
+
+}
 
 
 
 
-/* About Us PAGE */
+
+/* about.html */
 
 section {
     padding: 3rem;
