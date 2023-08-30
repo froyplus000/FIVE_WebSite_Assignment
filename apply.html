@@ -120,7 +120,7 @@
 	}
 	.accordion li label{
 		display:flex;
-		align-items:center;
+		align-items:right;
 		padding:10px;
 		font-size:18px;
 		font-weight:500;
@@ -132,9 +132,11 @@
 		font-size:24px;
 		font-weight:600;
 	} 
-	input[type="radio"]{
+	
+	.accordion input[type="radio"]{
 		display:none;
 	}
+	
 	.accordion .content{
 		color:#555;
 		padding: 0 10px;
@@ -203,9 +205,9 @@
 		<fieldset>
 			<legend>Personal information</legend>
 			<p><label for="first name">First Name:</label>
-					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
+					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 characters" pattern="[A-Z]+" required>
 				<label for="last name">Last Name:</label>
-					<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 characters" required pattern="[a-zA-Z0-9\s]+" required="required">
+					<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 characters"  pattern="[A-Z]]+" required>
 			</p>
 			<p>
 				<label for="dob">Date of birth:</label>
@@ -213,8 +215,8 @@
 				<p> Gender:
 					<label for="male">Male</label>
 						<input type="radio" name="catergory[]" id="male" required>
-					<label for="female">Female</label>
-						<input type="radio" name="catergory[]" id="female" required>
+						<label for="female">Female</label>
+							<input type="radio" name="catergory[]" id="female" required>
 				</p>
 			</p>
 			<p>
@@ -222,7 +224,7 @@
 					<input type="email" id="email" placeholder="username@gmail.com" required>
 			</p>
 			<p> <label for="phone">Phone number:</label>
-					<input type="text" id="phone" maxlength="12"  placeholder="only 8-12 digits" required>
+					<input type="text" id="phone" maxlength="12"  placeholder="only 8-12 digits" pattern=[0-9]+ required>
 			</p>
 		</fieldset>
 		<fieldset>
@@ -249,7 +251,7 @@
 			</p>
 			<p>
 				<label for="postcode">Postcode:</label>
-					<input type="text" id="postcode" maxlength="4" placeholder="Only put 4 digits" required pattern="[0-9\s]+">
+					<input type="tel" id="postcode" maxlength="4" placeholder="Only put 4 digits" required pattern="[0-9\s]+">
 			</p>
 		</fieldset>
 		<fieldset>
