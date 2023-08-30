@@ -293,3 +293,26 @@ section div {
     display: flex;
     justify-content: space-between;
 }
+
+/* Jobs.html */
+
+.apply_button {
+    background-color: #e2bc7f;
+    color: rgb(0, 0, 0);
+    border: none;
+    margin: 4px 2px;
+    padding: 12px 24px;
+    border-radius: 4px; /* rounded corners */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: var(--font_content);
+    font-size: 20px;
+    cursor: pointer;
+    
+  }
+
+  .apply_button:hover {
+    background-color: var(--main_dark_color); /* lighter when hovered */
+  }
+  
