@@ -246,19 +246,23 @@ footer p:last-child {
 
 /* Jobs Section */
 #jobs-img {
-    height: 300px;
+    margin-top: 3.5rem;
+    height: 15rem;
     width: 100%;
     background-image: url(../images/our_journey.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 .3rem .5rem var(--main_shadow_color);
 }
-#jobs-img-overlay{
-    height: 300px;
-    width: 100%;
-    
-    background-color: var(--main_dark_color);
-    opacity: 70%;
-
+#jobs-img::after{
+   content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+   z-index: -1;
+   opacity: .5;
 }
 
 
