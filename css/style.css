@@ -17,6 +17,8 @@
     --font_content: 'IBM Plex Mono', monospace;
     --font_higlight: 'Qwitcher Grypen', cursive;
 
+    /* animation variables */
+    --ease_in_out: all 1s ease-in-out;
 
 }
 
@@ -76,6 +78,11 @@ img{
     margin-right: auto;
     margin-left: auto;
 }
+/* Mobiles */
+body {
+    margin: 0 10px;
+  }
+
   @media (min-width: 768px) {
     .container {
       width: 750px;
@@ -296,23 +303,35 @@ section div {
 
 /* Jobs.html */
 
+/* this apply button links jobs to apply form. */
+
 .apply_button {
-    background-color: #e2bc7f;
-    color: rgb(0, 0, 0);
-    border: none;
+    background-color: var(--main_dark_color);
+    color: var(--backgroud_light_color);
+    border: 3px solid var(--backgroud_light_color);
     margin: 4px 2px;
     padding: 12px 24px;
-    border-radius: 4px; /* rounded corners */
+    border-radius: 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: var(--font_content);
     font-size: 20px;
     cursor: pointer;
+    /* basic fade animation over 1s adds to user engagement */
+    transition: var(--ease_in_out);
+    transition: transform 0.05s ease-in-out;
     
-  }
+}
 
-  .apply_button:hover {
-    background-color: var(--main_dark_color); /* lighter when hovered */
-  }
-  
+  /* button to change when hovered. border changes with the same width so as to only change color */
+.apply_button:hover{
+    
+    background-color: #7c7a7a;
+    border: 3px solid var(--seccond_light_color);
+    text-shadow: var(--main_shadow_color);
+    transform: scale(1.05);
+    
+}
+
+/* need to add some animation for for the titles. */
