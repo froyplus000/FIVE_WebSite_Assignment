@@ -80,7 +80,7 @@ img{
 }
 /* Mobiles */
 body {
-    margin: 0 10px;
+    /* margin: 0 10px; */
   }
 
   @media (min-width: 768px) {
@@ -272,9 +272,22 @@ footer p:last-child {
    opacity: .5;
 }
 
-
-
-
+.backgroundimg {
+    height: 15rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    isolation: isolate;
+}
+.backgroundimg::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+   z-index: -1;
+   opacity: .5;
+}
 
 /* about.html */
 
@@ -305,7 +318,7 @@ section div {
     justify-content: space-between;
 }
 
-/* Jobs.html */
+
 
 /* this apply button links jobs to apply form. */
 
