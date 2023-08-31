@@ -4,7 +4,7 @@
     
     Author			: Pattarapol Tantechasa		Student ID:	103883220
     Author			: Sam Anderson 				Student ID:	104465030
-    Author			: Ngoc Huy Duong 			Student ID:	
+    Author			: Ngoc Huy Duong 			Student ID:	104471956
 
 
 -->
@@ -19,185 +19,6 @@
 	<link rel="stylesheet" href="customUploadStyle.css">
 	<link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
 	<title>Apply Form</title>
-<!--CSS: contain text-font,background-color, style for upload box, add shadow to the text-->
-<style>
-	title{
-		font-family: 'Courier New', Courier, monospace;
-	}
-	h1{
-		text-align: center;
-		color: #6586E6;
-	}
-	legend{
-		color: red;
-	}
-	h1,h2,h3,p{
-		font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
-	}
-	p{
-		letter-spacing: 2px;
-	}
-	.upload-box{
-		font-size:16px;
-		background:white;
-		border-radius:40px;
-		box-shadow:5px 5px 10px black;
-		width:350px;
-		outline:none;
-	}
-	::-webkit-file-upload-button{
-		background:#206a5d
-		padding:20px;
-		border:none;
-		border-radius:50px;
-		box-shadow: 1px 0 1px 1px #6b4559;
-		outline:none;
-	}
-	::-webkit-file-upload-button{
-		background:#438a5e;
-	}
-	#firstname{
-		border: 1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#lastname{
-		border: 1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#dob{
-		border: 1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#email{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#phone{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#address{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#suburb{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#state{
-		border: 1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#postcode{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#jobnumber{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#other{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	#others{
-		border:1px solid;
-		box-shadow: 5px 5px 10px black;
-	}
-	.accordion{
-		margin:60px auto;
-		width:600px;
-	}
-	.accordion li{
-		list-style:none;
-		width:100%;
-		margin:20px;
-		padding:10px;
-		border-radius:8px;
-		background:#e3edf7;
-		box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-					-6px 6px 10px -1px rgba(255,255,255,0.7)
-	}
-	.accordion li label{
-		display:flex;
-		align-items:right;
-		padding:10px;
-		font-size:18px;
-		font-weight:500;
-		cursor:pointer;
-	}
-	#one::before{
-		content:'+';	
-		margin-right: 10px;
-		font-size:24px;
-		font-weight:600;
-	} 
-	
-	.accordion input[type="radio"]{
-		display:none;
-	}
-	
-	.accordion .content{
-		color:#555;
-		padding: 0 10px;
-		line-height: 26px;
-		max-height:0;
-		overflow: hidden;
-		transition: max-height 0.5s, padding 0.5s;
-	}
-	.accordion input[type="radio"]:checked + label + .content{
-		max-height: 400px;
-		padding: 10px 10px 20px;
-	}
-	.accordion input[type="radio"]:checked + #one::before{
-		content:'-'
-	}
-	.accordion input[type="radio"]:checked + #two::before{
-		content:'-'
-	}
-	.accordion input[type="radio"]:checked + #three::before{
-		content:'-'
-	}
-	.accordion input[type="radio"]:checked + #four::before{
-		content:'-'
-	}
-	.accordion input[type="radio"]:checked + #five::before{
-		content:'-'
-	}
-	.accordion input[type="radio"]:checked + #six::before{
-		content:'-'
-	}
-	#two::before{
-		content:'+';	
-		margin-right: 10px;
-		font-size:24px;
-		font-weight:600;
-	}
-	#three::before{
-		content:'+';	
-		margin-right: 10px;
-		font-size:24px;
-		font-weight:600;
-	}
-	#four::before{
-		content:'+';	
-		margin-right: 10px;
-		font-size:24px;
-		font-weight:600;
-	}
-	#five::before{
-		content:'+';	
-		margin-right: 10px;
-		font-size:24px;
-		font-weight:600;
-	}
-	#six::before{
-		content:'+';	
-		margin-right: 10px;
-		font-size:24px;
-		font-weight:600;
-	}
-</style>
 </head>
 <body>
 	<h1>Job Application</h1>
@@ -205,9 +26,9 @@
 		<fieldset>
 			<legend>Personal information</legend>
 			<p><label for="first name">First Name:</label>
-					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 characters" pattern="[A-Z]+" required>
+					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z]+" required>
 				<label for="last name">Last Name:</label>
-					<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 characters"  pattern="[A-Z]]+" required>
+					<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
 			</p>
 			<p>
 				<label for="dob">Date of birth:</label>
@@ -268,7 +89,7 @@
 				<label for="jobnumber">Job reference number:</label>
 					<input type="text" id="jobnumber" maxlength="5" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 			</p><hr>
-			<p> Which programming languague you have most experience with:</p>
+			<p> Which programming languague you have most experience with (required): </p>
 			<p>
 				<label for="python">Python</label>
 					<input type="checkbox" id="python" name="catergory[]">
@@ -285,7 +106,7 @@
 				<label for="other">Other programming languague:</label>
 					<input type="text" id="other" size="20"> 
 			</p><hr>
-			<p>Skill List:</p>
+			<p>Skill List (required):</p>
 			<p>
 				<label for="maths">Math and numerical reasoning skills</label>
 					<input type="checkbox" id="maths" name="catergory[]">
@@ -367,8 +188,8 @@
 				</div>
 			</li>
 		</ul>
-		<input type="submit" value="Apply">
-		<input type="reset" value="Reset Form">	
+		<a href="enhancement.html"><button class="submit">Apply</button></a>
+		<button type="reset" class="redo">Reset form</button>
 	</form>
 </body>
 </html>
