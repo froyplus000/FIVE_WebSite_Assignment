@@ -40,7 +40,7 @@ p, a, li {
 
 img{
     max-width: 45%;
-    height: 500px;
+    max-height: 500px;
     object-fit: cover;
 }
 
@@ -73,11 +73,14 @@ img{
 /* Universal Class */
 
 .container {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
+    max-width: 90rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
+/* Mobiles
+
+
 /* Mobiles */
 
   @media (min-width: 768px) {
@@ -94,19 +97,20 @@ img{
     .container {
       width: 1170px;
     }
-  }
+  } 
 
   .btn{
     text-decoration: none;
     color: var(--main_shadow_color);
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: 2px solid var(--main_shadow_color);
     border-radius: 15%;
   }
   .btn:hover{
     color: var(--backgroud_light_color);
     background-color: var(--main_shadow_color);
+    box-shadow: .015rem .015rem 1rem var(--main_shadow_color)
   }
   span{
     color: var(--seccond_light_color);
@@ -119,43 +123,39 @@ img{
 /* Navbar */
 
 #main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--backgroud_light_color);
-    padding: 0;
+    padding: 10px;
 }
 
 #main-nav div{
     padding-top: 0.6rem;
 }
+
+.nav-centre-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #main-nav #logo{
     display:inline-block;
     color: var(--seccond_light_color);
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-family: var(--font_higlight);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     padding: 0;
     margin-top: .5rem;
 }
 
-@media (min-width: 768px) {
-    #main-nav #logo {
-        margin-block-end: 0;
-        margin-block-start: 0;
-        font-size: 5rem;
-        margin-top: 2rem;
-    }
-}
-@media (min-width: 992px) {
-    #main-nav #logo {
-        font-size: 3rem;
-        margin-top: 1.2rem;
-    }
-}
 
 #main-nav ul {
     list-style-type: none;
     display:inline-block;
-    float: right;
-    padding-inline-start: 0;
+    /* float: right;  - Redundant */
+    padding-inline-start: 50px;
 }
 @media (min-width: 768px), (max-width: 991px) {
     #main-nav ul {
@@ -168,13 +168,7 @@ img{
 
 #main-nav li {
     display: inline-block;
-    margin-top: 1rem;
-}
-@media (min-width: 768px) {
-    #main-nav li {
-        /* display: block; */
-        margin-top: 1.5rem;
-    }
+    margin-top: 1rem
 }
 
 #main-nav li a {
@@ -186,16 +180,7 @@ img{
     font-family: var(--font_content);
 }
 
-@media (min-width: 768px) {
-    #main-nav li a {
-        font-size: 1.4rem;
-    }
-}
-@media (min-width: 992px) {
-    #main-nav li a {
-        font-size: .8rem;
-    }
-}
+
 #main-nav li a:hover {
     /* text-shadow: 0.25rem 0.25rem 0.5rem var(--main_dark_color), -0.1rem -0.1rem 0.5rem var(--main_dark_color); */
     color: var(--seccond_light_color);
@@ -215,81 +200,91 @@ img{
 /* Footer */
 
 footer{
-    height: 4rem;
+    height: 8vh;
     background-color: var(--main_dark_color);
 }
 
-footer p{
-    display: inline-block;
-    width: 50%;
+footer div{
+    /* width: 50%; */
+    display: flex;
+    justify-content: space-between;
     color: var(--backgroud_light_color);
 }
-footer p:first-child {
-    float: left;
-}
-footer p:last-child {
-    float: right;
-    text-align: right;
+footer p {
+    font-size: 1rem;
 }
 
 
-/* Index.html */
 
-/* Welcome Section */
 
+        /* -->> Index.html <<-- */
+
+
+/* Welcome section */
 #welcome {
-    width: 100%;
-    height: 100vh;
-    /* background-image: url(/img/welcome.jpg);
-    background-size: cover;
-    background-position: center; */
-    
+    min-height: 100vh;
 }
-#welcome .container #welcome_text{
-    text-align: left;
-    margin: 0;
+#welcome div{
+    margin-left: 3.5vw;
+}
+#welcome .container div #welcome_text{    
+    margin: 0 auto;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
     color: var(--main_shadow_color);
     font-size: 6rem;
-    position: absolute;
-    top: 30%;
-    left: 15%;
-    font-family: var(--font_content);
+    /* font-size: clamp(5vw, 6vw, 8vw); */
 }
-#welcome .container #welcome_p{
-    text-align: left;
-    margin: 0;
-    color: var(--main_shadow_color);
-    font-size: 2rem;
-    position: absolute;
-    left: 15.75%;
-    top: 80%;
-
-    border: .20rem solid var(--main_shadow_color);
-    border-style: dashed;
-    border-radius: 10%;
-    padding: 0 1rem 0 1rem;
-    line-height: 3rem;
-}
-#welcome .container #welcome_p a {
+#welcome div #welcome_p a{
     text-decoration: none;
     color: var(--main_shadow_color);
+    font-size: 2rem;
+    margin: 3rem 1rem;
 }
-
 #welcome .container #five_icon{
     text-align: center;
     margin: 0;
     color: var(--seccond_light_color);
+
     font-size: 40rem;
-    opacity: 70%;
+    /* font-size: clamp(20rem, 40vw, 50rem); */
+
     position: absolute;
     left: 62%;
     top: 14%;
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
+} 
+
+    /* About Us Section */
+
+#about_home {
+    display: flex;
+    gap: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#about_home #about_home_img {
+    border-radius: 10%;
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+}
+#about_home div h2{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+}
+#about_home div p{
+    padding-bottom: 2rem;
+}
+#about_home div a{
+    font-size: 1rem;
 }
 
-/* Jobs Section */
-#jobs-img {
+    /* Jobs Section */
+
+#jobs_img {
     margin-top: 3.5rem;
     height: 15rem;
     width: 100%;
@@ -298,67 +293,213 @@ footer p:last-child {
     background-position: center;
     position: relative;
     isolation: isolate;
-    box-shadow: 0 .3rem .5rem var(--main_shadow_color);
+    box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
+    /* box-shadow: inset 0 .75rem 1rem var(--main_shadow_color), inset 0 -0.75rem 1rem var(--main_shadow_color); */
 }
-#jobs-img::after{
+#jobs_img::after{
    content: '';
     position: absolute;
     inset: 0;
-    background: white;
+    background: var(--backgroud_light_color);
    z-index: -1;
-   opacity: .5;
+    opacity: .4;
+}
+#jobs_home {
+    margin-bottom: 3rem;
+}
+#jobs_home div h2{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+
+    margin-top: 2rem;
+}
+#jobs_home div p{
+    padding-bottom: 2rem;
 }
 
-.backgroundimg {
-    height: 15rem;
+    /*  Contact Section*/
+
+#contacts_home h1 {
+    margin-block-end: 0;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--main_shadow_color);
+    color: var(--backgroud_light_color);
+    padding: 2rem;
+}
+#contacts_home div {
+    display: flex;
+}
+#contacts_home div .contacts {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    text-align: left;
+    padding: 2rem;
+    margin: 0 5vw;
+}
+#contacts_home div .contacts p{
+    text-align: left;
+}
+
+
+
+
+
+
+        /* -->> about.html <<-- */
+
+
+/* About us heading */
+#about_us div h1{
+    color: var(--main_shadow_color);
+    font-size: 3rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 6rem 0 2rem 0;
+}
+#about_us #group_picture {
+    border-radius: 10%;
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+    margin: 2rem 0;
+}
+#about_us #group_basic_detail {
+    font-family: var(--font_content);
+    line-height: 3rem;
+}
+#about_us #group_basic_detail a {
+    text-decoration: none;
+    color: var(--main_dark_color);
+}
+#about_us #group_basic_detail a:hover {
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    color: var(--seccond_light_color);
+}
+
+/* Timetable */
+
+#timetable table {
+    border: .15rem solid var(--main_dark_color);
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
     width: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    isolation: isolate;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: var(--font_content);
 }
-.backgroundimg::after{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: white;
-   z-index: -1;
-   opacity: .5;
+#timetable table tr {
+    border: .15rem solid var(--main_dark_color);
+}
+#timetable table th {
+    padding: 1rem;
+    border: .15rem solid var(--main_dark_color);
+    font-size: 1.25rem;
+    text-shadow: 0.1rem 0.1rem 1rem var(--main_shadow_color);
+}
+#timetable table td {
+    padding: 1rem;
+    border: .15rem solid var(--main_dark_color);
 }
 
-/* about.html */
-
-section {
+/* universal class for section in this page */
+.about_page_section {
     padding: 3rem;
 }
-section div {
-    margin: 2rem;
+.about_page_section div {
+    margin: 2rem 4rem;
 }
-
-#about_us {
-    display: flex;
-    justify-content: space-between;
+.about_page_section div h1{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
 }
-
-
 #journey {
     display: flex;
     justify-content: space-between;
+}
+#journey img {
+    border-radius: 10%;
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+}
+#journey div {
+    padding-left: 1rem;
 }
 
 #whyus {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
 }
+#whyus img {
+    border-radius: 10%;
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+}
+#whyus div {
+    margin: 2rem;
+}
+    
+/* Member Section */
+#member {
+    font-family: var(--font_content);
+    line-height: 2rem
+}
+#member div h2{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+}
+#member hr {
+    border-bottom: .2rem solid var(--main_shadow_color);
+    border-radius: 30%;
+}
+#member h3 {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    text-shadow: 0.1rem 0.1rem .4rem var(--main_shadow_color), -0.1rem -0.1rem .4rem var(--main_shadow_color) ;
+    color: var(--backgroud_light_color);
+}
+#member strong{
+    font-size: 1.25rem;
+}
+#member a {
+    color: var(--main_dark_color);
+}
+#member a:hover {
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    color: var(--seccond_light_color);
+}
+
+/* Connect Section */
 #connect {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: .2rem solid var(--main_shadow_color);
+    border-radius: 3%;
+    padding: 2rem;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+#connect p {
+    border-left: .15rem solid var(--main_shadow_color);
+    padding-left: 2rem;
 }
 
 
 
-/* this apply button links jobs to apply form. */
 
+
+
+
+/* Jobs.html */
+
+/* this apply button links jobs to apply form. */
 .apply_button {
     background-color: var(--main_dark_color);
     color: var(--backgroud_light_color);
@@ -372,12 +513,15 @@ section div {
     font-family: var(--font_content);
     font-size: 20px;
     cursor: pointer;
-    /* basic fade animation over 1s adds to user engagement */
+    /* basic fade animation over 1s */
     transition: var(--ease_in_out);
     transition: transform 0.05s ease-in-out;
-    
-}
+    position: absolute;
+    z-index: 2;
+    top: 50%; 
+    left: 5%; 
 
+}
   /* button to change when hovered. border changes with the same width so as to only change color */
 .apply_button:hover{
     
@@ -387,6 +531,58 @@ section div {
     transform: scale(1.05);
     
 }
+
+/* need to add some animation for the titles. 
+Apply button should sit infront of image, to the left but padded in slightly in the centre.
+
+*/
+
+#job-banner {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    background-image: url(../images/about_us.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#job-banner-cover-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 1; 
+}
+
+#job-banner1 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-image: url(../images/Group_1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#job-banner2 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-image: url(../images/Tech_Support.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+#job-banner-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 1; 
+}
+
 
 
 
@@ -426,8 +622,8 @@ p{
 }
 ::-webkit-file-upload-button{
     background:#7cfc00;
-/*Change the border so it will look fit and add box-shadow*/
 }
+/*Change the border so it will look fit and add box-shadow*/
 #firstname{
     border: 1px solid;
     box-shadow: 5px 5px 10px #000000;
@@ -611,4 +807,7 @@ transform: scale(1.05);
 
 
 
-/* need to add some animation for for the titles. */
+
+
+
+/* */
