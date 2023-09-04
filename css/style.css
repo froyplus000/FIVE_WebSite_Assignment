@@ -444,9 +444,9 @@ section div {
 }
 
 
+/* Jobs.html css section */
 
 /* this apply button links jobs to apply form. */
-
 .apply_button {
     background-color: var(--main_dark_color);
     color: var(--backgroud_light_color);
@@ -460,12 +460,15 @@ section div {
     font-family: var(--font_content);
     font-size: 20px;
     cursor: pointer;
-    /* basic fade animation over 1s adds to user engagement */
+    /* basic fade animation over 1s */
     transition: var(--ease_in_out);
     transition: transform 0.05s ease-in-out;
-    
-}
+    position: absolute;
+    z-index: 2;
+    top: 50%; 
+    left: 5%; 
 
+}
   /* button to change when hovered. border changes with the same width so as to only change color */
 .apply_button:hover{
     
@@ -475,6 +478,54 @@ section div {
     transform: scale(1.05);
     
 }
+
+/* need to add some animation for the titles. 
+Apply button should sit infront of image, to the left but padded in slightly in the centre.
+
+*/
+
+#job-banner {
+    height: 300px;
+    width: 100%;
+    background-image: url(../images/about_us.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#job-banner-cover{
+    height: 300px;
+    width: 100%;
+    background-color: whitesmoke;
+    opacity: 30%;
+}
+
+#job-banner1 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-image: url(../images/Group_1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#job-banner2 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-image: url(../images/Tech_Support.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+#job-banner-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 1; 
+}
+
 
 
 
@@ -701,4 +752,7 @@ transform: scale(1.05);
 }
 
 
-/* need to add some animation for for the titles. */
+
+
+
+/* */
