@@ -37,38 +37,11 @@ p, a, li {
     line-height: 1.8rem;
     letter-spacing: .13rem;
 }
-
 img{
     max-width: 45%;
     max-height: 500px;
     object-fit: cover;
 }
-
-/* TEST COLOR AND FONT VARIABLE - WILL BE DELETE - SEE IN index.html */
-
-#test_color_font #hfont {
-    font-family: var(--font_heading);
-}
-#test_color_font #highfont {
-    font-family: var(--font_higlight);
-}
-#test_color_font #confont {
-    font-family: var(--font_content);
-}
-#test_color_font #maindcolor {
-    color: var(--main_dark_color);
-}
-#test_color_font #mainlcolor {
-    color: var(--main_light_color);
-}
-#test_color_font #secdcolor {
-    color: var(--seccond_dark_color);
-}
-#test_color_font #seclcolor {
-    color: var(--seccond_light_color);
-}
-
-
 
 /* Universal Class */
 
@@ -106,6 +79,7 @@ img{
     font-size: 1rem;
     border: 2px solid var(--main_shadow_color);
     border-radius: 15%;
+    transition-duration: 300ms;
   }
   .btn:hover{
     color: var(--backgroud_light_color);
@@ -178,6 +152,7 @@ img{
     padding-left: 1rem;
     padding-right: 1rem;
     font-family: var(--font_content);
+    transition-duration: 300ms;
 }
 
 
@@ -189,7 +164,6 @@ img{
 }
 
 #main-nav li a.active {
-
     border-radius: 10%;
     border-style:dashed;
     padding-top: .25rem;
@@ -221,6 +195,7 @@ footer p {
 
 
 /* Welcome section */
+
 #welcome {
     min-height: 100vh;
 }
@@ -241,13 +216,13 @@ footer p {
     font-size: 2rem;
     margin: 3rem 1rem;
 }
+
 #welcome .container #five_icon{
     text-align: center;
     margin: 0;
     color: var(--seccond_light_color);
 
     font-size: 40rem;
-    /* font-size: clamp(20rem, 40vw, 50rem); */
 
     position: absolute;
     left: 62%;
@@ -255,7 +230,6 @@ footer p {
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
 } 
-
     /* About Us Section */
 
 #about_home {
@@ -345,6 +319,101 @@ footer p {
     text-align: left;
 }
 
+/* Resonsive Design for Index.html */
+
+@media (max-width: 1199px){
+    #welcome .container div #welcome_text{
+        font-size: 5rem;
+    }
+    #welcome .container #five_icon{
+        text-align: center;
+        margin: 0;
+        color: var(--seccond_light_color);
+    
+        font-size: 30rem;
+    
+        position: absolute;
+        left: 70%;
+        top: 25%;
+        text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
+        font-family: var(--font_heading);
+    }
+}
+@media (max-width: 991px) {
+   
+    #welcome .container div{
+        margin-bottom: 0;
+    }
+    #welcome div #welcome_p a{
+        margin: 0;
+    }
+    #welcome .container #five_icon{
+        display: block;
+        position: static;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        margin-left: 4rem;
+        font-size: 30rem;
+    }
+
+    #about_home{
+        flex-direction: column;
+    }
+    #about_home #about_home_img {
+        display: none;
+    }
+    #about_home div h2{
+        margin-top: 4rem;
+        font-size: 4rem;
+    }
+    #about_home div p {
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+    #about_home div a{
+        font-size: 2rem;
+    }
+
+    #jobs_home div h2 {
+        font-size: 4rem;
+    }
+    #jobs_home div p{
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+    #jobs_home div a{
+        font-size: 2rem;
+    }
+
+
+    #contacts_home div {
+        flex-direction: column;
+    }
+    #contacts_home div .contacts{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    #contacts_home div .contacts h2{
+        font-size: 4rem;
+    }
+    #contacts_home div .contacts p{
+        text-align: center;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+@media (max-width: 767px){
+    #welcome {
+        min-height: 80vh;
+    }
+    #welcome .container div #welcome_text{    
+    font-size: 10rem;
+    line-height: 15rem;
+    }
+}
 
 
 
@@ -373,6 +442,7 @@ footer p {
 #about_us #group_basic_detail a {
     text-decoration: none;
     color: var(--main_dark_color);
+    transition-duration: 300ms;
 }
 #about_us #group_basic_detail a:hover {
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
@@ -469,10 +539,12 @@ footer p {
 }
 #member a {
     color: var(--main_dark_color);
+    transition-duration: 300ms;
 }
 #member a:hover {
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     color: var(--seccond_light_color);
+
 }
 
 /* Connect Section */
@@ -491,7 +563,94 @@ footer p {
     padding-left: 2rem;
 }
 
+/* Responsive design for about.html */
 
+@media (max-width: 1199px){
+    #journey img{
+        margin-top: 3rem;
+    }
+}
+
+
+@media (max-width: 991px){
+   
+    #about_us #group_picture{
+        min-width: 80vw;
+        margin: auto;
+    }
+
+    #about_us #group_basic_detail{
+        font-size: 1.75rem;
+        line-height: 4rem;
+    }
+
+    #timetable table th {
+        font-size: 2rem;
+    }
+    #timetable table td {
+        font-size: 1.7rem;
+    }
+
+    #journey {
+        display: block;
+    }
+    #journey img{
+        max-width: 75vw;
+        margin: auto;
+    }
+    #journey div {
+        padding-left: 0;
+    }
+    #journey div p{
+        font-size: 1.75rem;
+        line-height: 3rem;
+    }
+    #whyus {
+        display: block;
+    }
+    #whyus img{
+        max-width: 75vw;
+        margin: auto;
+    }
+    #whyus div {
+        padding-left: 0;
+    }
+    #whyus div p{
+        font-size: 1.75rem;
+        line-height: 3rem;
+    }
+
+    #member h3{
+        font-size: 3rem;
+    }
+    #member strong{
+        font-size: 2rem;
+    }
+    #member p{
+        font-size: 1.75rem;
+        line-height: 3rem;
+    }
+    #member li{
+        font-size: 1.75rem;
+        line-height: 3rem;
+    }
+
+    #connect {
+        font-size: 2rem;
+    }
+    #connect p {
+        line-height: 3rem;
+    }
+}
+/* Still not working */
+@media (max-width: 768px){
+    #member {
+        line-height: 4rem;
+    }
+    #connect {
+        font-size: 1.5rem;
+    }
+}
 
 
 
