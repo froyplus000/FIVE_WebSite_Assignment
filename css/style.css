@@ -410,8 +410,14 @@ footer p {
         min-height: 80vh;
     }
     #welcome .container div #welcome_text{    
-    font-size: 10rem;
-    line-height: 15rem;
+    font-size: 3remrem;
+    line-height: 8rem;
+    }
+    #about_home_content{
+        text-align: center;
+    }
+    #jobs_home_content{
+        text-align: center;
     }
 }
 
