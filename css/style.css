@@ -118,7 +118,13 @@ img{
   }
   
 
-
+/* updated nav bar:
+    created nav bar to be flexbox 
+    added justificationa and padding 
+    modified logo properties
+    created Nav centering div to hold the nav and logo together in the center.
+    set width to auto.
+ */
 
 /* Navbar */
 
@@ -138,15 +144,17 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: auto;
 }
 
 #main-nav #logo{
     display:inline-block;
+    margin:0;
     color: var(--seccond_light_color);
     font-size: 3.5rem;
     font-family: var(--font_higlight);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
-    padding: 0;
+    padding-top: 1rem;
     margin-top: .5rem;
 }
 
@@ -154,7 +162,7 @@ img{
 #main-nav ul {
     list-style-type: none;
     display:inline-block;
-    /* float: right;  - Redundant */
+    /* float: right; */
     padding-inline-start: 50px;
 }
 @media (min-width: 768px), (max-width: 991px) {
