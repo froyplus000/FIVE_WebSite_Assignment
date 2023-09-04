@@ -97,7 +97,7 @@ img{
     .container {
       width: 1170px;
     }
-  } */
+  } 
 
   .btn{
     text-decoration: none;
@@ -284,9 +284,6 @@ footer p {
 #about_home div a{
     font-size: 1rem;
 }
-
-
-
 /* Jobs Section */
 #jobs_img {
     margin-top: 3.5rem;
@@ -359,18 +356,24 @@ footer p {
 
 /* about.html */
 
-section {
+.about_page_section {
     padding: 3rem;
 }
-section div {
-    margin: 2rem;
+.about_page_section div {
+    margin: 2rem 4rem;
 }
 
+.about_page_section div h1{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+}
 #about_us {
     display: flex;
     justify-content: space-between;
 }
-
 
 #journey {
     display: flex;
@@ -380,20 +383,32 @@ section div {
     border-radius: 10%;
     box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
 }
+#journey div {
+    padding-left: 1rem;
+}
 
 #whyus {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    /* padding: 3rem; */
 }
 #whyus img {
     border-radius: 10%;
     box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
 }
+#whyus div {
+    margin: 2rem;
+}
 #connect {
     display: flex;
     justify-content: space-between;
 }
+
+
+
+
+
 
 
 /* Jobs.html */
