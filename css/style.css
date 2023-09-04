@@ -80,6 +80,9 @@ img{
 }
 /* Mobiles
 
+
+/* Mobiles */
+
   @media (min-width: 768px) {
     .container {
       width: 750px;
@@ -120,17 +123,23 @@ img{
 /* Navbar */
 
 #main-nav {
-    background-color: var(--backgroud_light_color);
-    padding: 0;
     display: flex;
-    justify-content: space-between;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--backgroud_light_color);
+    padding: 10px;
 }
 
 #main-nav div{
     padding-top: 0.6rem;
 }
+
+.nav-centre-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #main-nav #logo{
     display:inline-block;
     color: var(--seccond_light_color);
@@ -144,9 +153,16 @@ img{
 
 #main-nav ul {
     list-style-type: none;
-    
-    /* float: right;
-    padding-inline-start: 0; */
+    display:inline-block;
+    /* float: right;  - Redundant */
+    padding-inline-start: 50px;
+}
+@media (min-width: 768px), (max-width: 991px) {
+    #main-nav ul {
+        display: block;
+        float: none;
+        margin-top: 2.5rem;
+    }
 }
 
 
@@ -444,7 +460,7 @@ section div {
 }
 
 
-/* Jobs.html css section */
+/* Jobs.html */
 
 /* this apply button links jobs to apply form. */
 .apply_button {
@@ -485,17 +501,21 @@ Apply button should sit infront of image, to the left but padded in slightly in 
 */
 
 #job-banner {
+    position: relative;
     height: 300px;
     width: 100%;
     background-image: url(../images/about_us.jpg);
     background-size: cover;
     background-position: center;
 }
-#job-banner-cover{
+#job-banner-cover-top{
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 300px;
     width: 100%;
-    background-color: whitesmoke;
-    opacity: 30%;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 1; 
 }
 
 #job-banner1 {
