@@ -40,7 +40,7 @@ p, a, li {
 
 img{
     max-width: 45%;
-    height: 500px;
+    max-height: 500px;
     object-fit: cover;
 }
 
@@ -73,12 +73,12 @@ img{
 /* Universal Class */
 
 .container {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
+    max-width: 90rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
-/* Mobiles */
+/* Mobiles
 
   @media (min-width: 768px) {
     .container {
@@ -94,19 +94,20 @@ img{
     .container {
       width: 1170px;
     }
-  }
+  } */
 
   .btn{
     text-decoration: none;
     color: var(--main_shadow_color);
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: 2px solid var(--main_shadow_color);
     border-radius: 15%;
   }
   .btn:hover{
     color: var(--backgroud_light_color);
     background-color: var(--main_shadow_color);
+    box-shadow: .015rem .015rem 1rem var(--main_shadow_color)
   }
   span{
     color: var(--seccond_light_color);
@@ -121,6 +122,10 @@ img{
 #main-nav {
     background-color: var(--backgroud_light_color);
     padding: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 #main-nav div{
@@ -129,52 +134,25 @@ img{
 #main-nav #logo{
     display:inline-block;
     color: var(--seccond_light_color);
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-family: var(--font_higlight);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     padding: 0;
     margin-top: .5rem;
 }
 
-@media (min-width: 768px) {
-    #main-nav #logo {
-        margin-block-end: 0;
-        margin-block-start: 0;
-        font-size: 5rem;
-        margin-top: 2rem;
-    }
-}
-@media (min-width: 992px) {
-    #main-nav #logo {
-        font-size: 3rem;
-        margin-top: 1.2rem;
-    }
-}
 
 #main-nav ul {
     list-style-type: none;
-    display:inline-block;
-    float: right;
-    padding-inline-start: 0;
-}
-@media (min-width: 768px), (max-width: 991px) {
-    #main-nav ul {
-        display: block;
-        float: none;
-        margin-top: 2.5rem;
-    }
+    
+    /* float: right;
+    padding-inline-start: 0; */
 }
 
 
 #main-nav li {
     display: inline-block;
-    margin-top: 1rem;
-}
-@media (min-width: 768px) {
-    #main-nav li {
-        /* display: block; */
-        margin-top: 1.5rem;
-    }
+    margin-top: 1rem
 }
 
 #main-nav li a {
@@ -186,16 +164,7 @@ img{
     font-family: var(--font_content);
 }
 
-@media (min-width: 768px) {
-    #main-nav li a {
-        font-size: 1.4rem;
-    }
-}
-@media (min-width: 992px) {
-    #main-nav li a {
-        font-size: .8rem;
-    }
-}
+
 #main-nav li a:hover {
     /* text-shadow: 0.25rem 0.25rem 0.5rem var(--main_dark_color), -0.1rem -0.1rem 0.5rem var(--main_dark_color); */
     color: var(--seccond_light_color);
@@ -215,34 +184,33 @@ img{
 /* Footer */
 
 footer{
-    height: 4rem;
+    height: 8vh;
     background-color: var(--main_dark_color);
 }
 
-footer p{
-    display: inline-block;
-    width: 50%;
+footer div{
+    /* width: 50%; */
+    display: flex;
+    justify-content: space-between;
     color: var(--backgroud_light_color);
 }
-footer p:first-child {
-    float: left;
+footer p {
+    font-size: 1rem;
 }
-footer p:last-child {
-    float: right;
-    text-align: right;
-}
+
+
 
 
 /* Index.html */
 
 /* Welcome Section */
 
-#welcome {
-    width: 100%;
+/* #welcome {
+    max-width: 90rem;
     height: 100vh;
-    /* background-image: url(/img/welcome.jpg);
+    background-image: url(/img/welcome.jpg);
     background-size: cover;
-    background-position: center; */
+    background-position: center;
     
 }
 #welcome .container #welcome_text{
@@ -286,10 +254,80 @@ footer p:last-child {
     top: 14%;
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
+} */
+
+
+/* Welcome section NEW */
+
+#welcome {
+    min-height: 100vh;
+}
+#welcome div{
+    margin-left: 3.5vw;
+}
+#welcome .container div #welcome_text{    
+    margin: 0 auto;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    color: var(--main_shadow_color);
+    font-size: 6rem;
+    /* font-size: clamp(5vw, 6vw, 8vw); */
+}
+#welcome div #welcome_p a{
+    text-decoration: none;
+    color: var(--main_shadow_color);
+    font-size: 2rem;
+    margin: 3rem 1rem;
 }
 
+#welcome .container #five_icon{
+    text-align: center;
+    margin: 0;
+    color: var(--seccond_light_color);
+
+    font-size: 40rem;
+    /* font-size: clamp(20rem, 40vw, 50rem); */
+
+    position: absolute;
+    left: 62%;
+    top: 14%;
+    text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
+    font-family: var(--font_heading);
+} 
+
+/* About Us Section */
+
+#about_home {
+    display: flex;
+    gap: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#about_home #about_home_img {
+    border-radius: 10%;
+    /* box-shadow: .015rem .015rem 1rem var(--main_shadow_color); */
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+}
+
+#about_home div h2{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+}
+#about_home div p{
+    padding-bottom: 2rem;
+}
+#about_home div a{
+    font-size: 1rem;
+}
+
+
+
 /* Jobs Section */
-#jobs-img {
+#jobs_img {
     margin-top: 3.5rem;
     height: 15rem;
     width: 100%;
@@ -298,18 +336,38 @@ footer p:last-child {
     background-position: center;
     position: relative;
     isolation: isolate;
-    box-shadow: 0 .3rem .5rem var(--main_shadow_color);
+    box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
+    /* box-shadow: inset 0 .75rem 1rem var(--main_shadow_color), inset 0 -0.75rem 1rem var(--main_shadow_color); */
 }
-#jobs-img::after{
+#jobs_img::after{
    content: '';
     position: absolute;
     inset: 0;
-    background: white;
+    background: var(--backgroud_light_color);
    z-index: -1;
-   opacity: .5;
+    opacity: .4;
 }
 
-.backgroundimg {
+#jobs_home {
+    margin-bottom: 3rem;
+}
+
+#jobs_home div h2{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+
+    margin-top: 2rem;
+}
+
+#jobs_home div p{
+    padding-bottom: 2rem;
+}
+
+
+/* .backgroundimg {
     height: 15rem;
     width: 100%;
     background-size: cover;
@@ -324,7 +382,37 @@ footer p:last-child {
     background: white;
    z-index: -1;
    opacity: .5;
+} */
+
+/*  Contact Section*/
+#contacts_home h1 {
+    margin-block-end: 0;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--main_shadow_color);
+    color: var(--backgroud_light_color);
+    padding: 2rem;
 }
+#contacts_home div {
+    display: flex;
+}
+#contacts_home div .contacts {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    text-align: left;
+    padding: 2rem;
+    margin: 0 5vw;
+    
+}
+#contacts_home div .contacts p{
+    text-align: left;
+}
+
+
+
+
+
 
 /* about.html */
 
@@ -430,8 +518,8 @@ p{
 }
 ::-webkit-file-upload-button{
     background:#7cfc00;
-/*Change the border so it will look fit and add box-shadow*/
 }
+/*Change the border so it will look fit and add box-shadow*/
 #firstname{
     border: 1px solid;
     box-shadow: 5px 5px 10px #000000;
