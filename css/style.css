@@ -399,10 +399,6 @@ section div {
 /* title{
     font-family: 'Courier New', Courier, monospace;
 } */
-/* h1{
-    text-align: center;
-    color: #6586E6;
-} */
 legend{
     color: red;
 }
@@ -611,6 +607,8 @@ background-color: #7c7a7a;
 text-shadow: #7c5802;
 transform: scale(1.05);
 }
+
+
 
 
 /* need to add some animation for for the titles. */
