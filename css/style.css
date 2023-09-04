@@ -118,13 +118,7 @@ img{
   }
   
 
-/* updated nav bar:
-    created nav bar to be flexbox 
-    added justificationa and padding 
-    modified logo properties
-    created Nav centering div to hold the nav and logo together in the center.
-    set width to auto.
- */
+
 
 /* Navbar */
 
@@ -144,17 +138,15 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: auto;
 }
 
 #main-nav #logo{
     display:inline-block;
-    margin:0;
     color: var(--seccond_light_color);
     font-size: 3.5rem;
     font-family: var(--font_higlight);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
-    padding-top: 1rem;
+    padding: 0;
     margin-top: .5rem;
 }
 
@@ -162,7 +154,7 @@ img{
 #main-nav ul {
     list-style-type: none;
     display:inline-block;
-    /* float: right; */
+    /* float: right;  - Redundant */
     padding-inline-start: 50px;
 }
 @media (min-width: 768px), (max-width: 991px) {
@@ -225,10 +217,10 @@ footer p {
 
 
 
-/* Index.html */
+        /* -->> Index.html <<-- */
+
 
 /* Welcome section */
-
 #welcome {
     min-height: 100vh;
 }
@@ -249,7 +241,6 @@ footer p {
     font-size: 2rem;
     margin: 3rem 1rem;
 }
-
 #welcome .container #five_icon{
     text-align: center;
     margin: 0;
@@ -265,7 +256,7 @@ footer p {
     font-family: var(--font_heading);
 } 
 
-/* About Us Section */
+    /* About Us Section */
 
 #about_home {
     display: flex;
@@ -273,12 +264,10 @@ footer p {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-
 #about_home #about_home_img {
     border-radius: 10%;
     box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
 }
-
 #about_home div h2{
     font-size: 2.5rem;
     color: var(--main_shadow_color);
@@ -292,7 +281,9 @@ footer p {
 #about_home div a{
     font-size: 1rem;
 }
-/* Jobs Section */
+
+    /* Jobs Section */
+
 #jobs_img {
     margin-top: 3.5rem;
     height: 15rem;
@@ -313,11 +304,9 @@ footer p {
    z-index: -1;
     opacity: .4;
 }
-
 #jobs_home {
     margin-bottom: 3rem;
 }
-
 #jobs_home div h2{
     font-size: 2.5rem;
     color: var(--main_shadow_color);
@@ -327,12 +316,12 @@ footer p {
 
     margin-top: 2rem;
 }
-
 #jobs_home div p{
     padding-bottom: 2rem;
 }
 
-/*  Contact Section*/
+    /*  Contact Section*/
+
 #contacts_home h1 {
     margin-block-end: 0;
     text-align: center;
@@ -351,7 +340,6 @@ footer p {
     text-align: left;
     padding: 2rem;
     margin: 0 5vw;
-    
 }
 #contacts_home div .contacts p{
     text-align: left;
@@ -362,15 +350,66 @@ footer p {
 
 
 
-/* about.html */
+        /* -->> about.html <<-- */
 
+
+/* About us heading */
+#about_us div h1{
+    color: var(--main_shadow_color);
+    font-size: 3rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 6rem 0 2rem 0;
+}
+#about_us #group_picture {
+    border-radius: 10%;
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+    margin: 2rem 0;
+}
+#about_us #group_basic_detail {
+    font-family: var(--font_content);
+    line-height: 3rem;
+}
+#about_us #group_basic_detail a {
+    text-decoration: none;
+    color: var(--main_dark_color);
+}
+#about_us #group_basic_detail a:hover {
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    color: var(--seccond_light_color);
+}
+
+/* Timetable */
+
+#timetable table {
+    border: .15rem solid var(--main_dark_color);
+    box-shadow: .3rem .3rem .3rem var(--main_shadow_color);
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: var(--font_content);
+}
+#timetable table tr {
+    border: .15rem solid var(--main_dark_color);
+}
+#timetable table th {
+    padding: 1rem;
+    border: .15rem solid var(--main_dark_color);
+    font-size: 1.25rem;
+    text-shadow: 0.1rem 0.1rem 1rem var(--main_shadow_color);
+}
+#timetable table td {
+    padding: 1rem;
+    border: .15rem solid var(--main_dark_color);
+}
+
+/* universal class for section in this page */
 .about_page_section {
     padding: 3rem;
 }
 .about_page_section div {
     margin: 2rem 4rem;
 }
-
 .about_page_section div h1{
     font-size: 2.5rem;
     color: var(--main_shadow_color);
@@ -378,11 +417,6 @@ footer p {
     margin-block-end: 0;
     padding-bottom: 1.5rem;
 }
-#about_us {
-    display: flex;
-    justify-content: space-between;
-}
-
 #journey {
     display: flex;
     justify-content: space-between;
@@ -399,7 +433,6 @@ footer p {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    /* padding: 3rem; */
 }
 #whyus img {
     border-radius: 10%;
@@ -408,9 +441,54 @@ footer p {
 #whyus div {
     margin: 2rem;
 }
+    
+/* Member Section */
+#member {
+    font-family: var(--font_content);
+    line-height: 2rem
+}
+#member div h2{
+    font-size: 2.5rem;
+    color: var(--main_shadow_color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 1.5rem;
+}
+#member hr {
+    border-bottom: .2rem solid var(--main_shadow_color);
+    border-radius: 30%;
+}
+#member h3 {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    text-shadow: 0.1rem 0.1rem .4rem var(--main_shadow_color), -0.1rem -0.1rem .4rem var(--main_shadow_color) ;
+    color: var(--backgroud_light_color);
+}
+#member strong{
+    font-size: 1.25rem;
+}
+#member a {
+    color: var(--main_dark_color);
+}
+#member a:hover {
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    color: var(--seccond_light_color);
+}
+
+/* Connect Section */
 #connect {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: .2rem solid var(--main_shadow_color);
+    border-radius: 3%;
+    padding: 2rem;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+#connect p {
+    border-left: .15rem solid var(--main_shadow_color);
+    padding-left: 2rem;
 }
 
 
