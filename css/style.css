@@ -758,21 +758,25 @@ Apply button should sit infront of image, to the left but padded in slightly in 
 /*This one change the font of the form*/
 
 
-/* title{
-    font-family: 'Courier New', Courier, monospace;
-} */
-legend{
-    font-family: var(--font_heading);
+#check{
     color:var(--main_shadow_color);
+    font-family: var(--font_heading);
 }
-/* h1,h2,h3,p{
-font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
-} */
+=======
+legend{
+font-family: var(--font_content);
+color: var(--main_shadow_color);
+margin-block-start: 0;
+margin-block-end: 0;
+padding-bottom: 1.5rem;
+
+}
+
+label{
+font-family: var(--font_heading);
+}
 p{
 letter-spacing: 2px;
-}
-h1{
-color:var(--main_shadow_color);
 }
 /*Upload file*/
 .upload-box{
@@ -782,6 +786,7 @@ border-radius:30px;
 box-shadow:5px 5px 10px #000000;
 width:350px;
 outline:none;
+left: auto;
 }
 ::-webkit-file-upload-button{
 background:#206a5d;
@@ -843,6 +848,9 @@ box-shadow: 5px 5px 10px #000000;
 border:1px solid;
 box-shadow: 5px 5px 10px #000000;
 }
+select{
+cursor:pointer;
+}
 #check{
 cursor: pointer;
 }
@@ -861,17 +869,17 @@ cursor: pointer;
 #python{
 cursor: pointer;
 }
-#java{
+#html{
 cursor: pointer;
 }
-#html{
+#java{
 cursor: pointer;
 }
 #c{
 cursor: pointer;
 }
 #maths{
-cursor:pointer;
+cursor: pointer;
 }
 #tech{
 cursor: pointer;
