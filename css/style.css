@@ -762,7 +762,6 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     color:var(--main_shadow_color);
     font-family: var(--font_heading);
 }
-=======
 legend{
 font-family: var(--font_content);
 color: var(--main_shadow_color);
