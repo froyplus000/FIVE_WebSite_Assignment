@@ -97,15 +97,21 @@ img{
 
 /* Navbar */
 
-#main-nav {
+/* #main-nav {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--background_light_color);
     padding: 10px;
+} */
+#main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-#main-nav div{
+/* #main-nav div{
     padding-top: 0.6rem;
 }
 
@@ -113,32 +119,39 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 #main-nav #logo{
-    display:inline-block;
+    /* display:inline-block;
     color: var(--seccond_light_color);
     font-size: 3.5rem;
     font-family: var(--font_higlight);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     padding: 0;
-    margin-top: .5rem;
+    margin-top: .5rem; */
+
+    color: var(--seccond_light_color);
+    font-size: 3.5rem;
+    font-family: var(--font_higlight);
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
 }
 
 
 #main-nav ul {
-    list-style-type: none;
+    /* list-style-type: none;
     display:inline-block;
-    /* float: right;  - Redundant */
-    padding-inline-start: 50px;
+    float: right;  - Redundant
+    padding-inline-start: 50px; */
+
+    list-style: none;
 }
-@media (min-width: 768px), (max-width: 991px) {
+/* @media (min-width: 768px), (max-width: 991px) {
     #main-nav ul {
         display: block;
         float: none;
         margin-top: 2.5rem;
     }
-}
+} */
 
 
 #main-nav li {
@@ -169,6 +182,39 @@ img{
     border-style:dashed;
     padding-top: .25rem;
     padding-bottom: .25rem;
+}
+
+/* responsive for navbar */
+@media (max-width: 1199px) {
+    #main-nav li a { 
+        padding: 0 .65rem;
+    }
+}
+
+@media (max-width: 991px) {
+    #main-nav {
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+    #main-nav #logo{
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+    #main-nav ul {
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    #main-nav li {
+        display: block;
+        margin-top: 1rem 0;
+    }
+    #main-nav li a {
+        font-size: 1.6rem;
+        line-height: 3.25rem;
+    }
+
 }
 
 
@@ -411,7 +457,7 @@ footer p {
         min-height: 80vh;
     }
     #welcome .container div #welcome_text{    
-    font-size: 3remrem;
+    font-size: 3rem;
     line-height: 8rem;
     }
     #about_home_content{
@@ -719,6 +765,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     width: 100%;
     background-color: rgba(255,255,255,0.3);
     z-index: 1; 
+    box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
 }
 
 #job-banner1 {
@@ -728,6 +775,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     background-image: url(../images/Group_1.jpg);
     background-size: cover;
     background-position: center;
+
 }
 
 #job-banner2 {
@@ -762,7 +810,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     color:var(--main_shadow_color);
     font-family: var(--font_heading);
 }
-=======
+
 legend{
 font-family: var(--font_content);
 color: var(--main_shadow_color);
@@ -896,7 +944,7 @@ cursor: pointer;
 /*Use the type="radio" to make a list of terms and conditions that can close and open*/
 .accordion{
 margin:60px auto;
-width:600px;
+width:80vw;
 }
 .accordion li{
 list-style:none;
