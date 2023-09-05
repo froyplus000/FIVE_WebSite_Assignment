@@ -21,275 +21,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apply Form</title>
 </head>
-<style>
-	#check{
-    color:var(--main_shadow_color);
-    font-family: var(--font_heading);
-}
-legend{
-font-family: var(--font_content);
-color: var(--main_shadow_color);
-margin-block-start: 0;
-margin-block-end: 0;
-padding-bottom: 1.5rem;
-
-}
-
-label{
-font-family: var(--font_heading);
-}
-p{
-letter-spacing: 2px;
-}
-/*Upload file*/
-.upload-box{
-font-size:16px;
-background:#FFFFFF;
-border-radius:30px;
-box-shadow:5px 5px 10px #000000;
-width:350px;
-outline:none;
-float:left;
-}
-::-webkit-file-upload-button{
-background:#206a5d;
-border:none;
-border-radius:50px;
-box-shadow: 1px 0 1px 1px #6b4559;
-outline:none;
-cursor: pointer;
-}
-::-webkit-file-upload-button{
-background:#7cfc00;
-}
-/*Change the border so it will look fit and add box-shadow*/
-#firstname{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#lastname{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#dob{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#email{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#phone{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#address{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#suburb{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#state{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#postcode{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#jobnumber{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#other{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#others{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-select{
-cursor:pointer;
-}
-#check{
-cursor: pointer;
-}
-#male{
-cursor: pointer;
-}
-#female{
-cursor: pointer;
-}
-#yes{
-cursor: pointer;
-}
-#no{
-cursor: pointer;
-}
-#python{
-cursor: pointer;
-}
-#html{
-cursor: pointer;
-}
-#java{
-cursor: pointer;
-}
-#c{
-cursor: pointer;
-}
-#maths{
-cursor: pointer;
-}
-#tech{
-cursor: pointer;
-}
-#prob{
-cursor: pointer;
-}
-#detail{
-cursor: pointer;
-}
-#organise{
-cursor: pointer;
-}
-/*Use the type="radio" to make a list of terms and conditions that can close and open*/
-.accordion{
-margin:60px auto;
-width:600px;
-}
-.accordion li{
-list-style:none;
-width:100%;
-margin:20px;
-padding:10px;
-border-radius:8px;
-background:#e3edf7;
-box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-            -6px 6px 10px -1px rgba(255,255,255,0.7)
-}
-.accordion li label{
-display:flex;
-align-items:right;
-padding:10px;
-font-size:18px;
-font-weight:500;
-cursor:pointer;
-}
-#one::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-} 
-
-.accordion input[type="radio"]{
-display:none;
-}
-
-.accordion .content{
-color:#555;
-padding: 0 10px;
-line-height: 26px;
-max-height:0;
-overflow: hidden;
-transition: max-height 0.5s, padding 0.5s;
-}
-.accordion input[type="radio"]:checked + label + .content{
-max-height: 400px;
-padding: 10px 10px 20px;
-}
-.accordion input[type="radio"]:checked + #one::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #two::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #three::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #four::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #five::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #six::before{
-content:'-'
-}
-#two::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#three::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#four::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#five::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#six::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-/*Apply and reset button*/
-.submit{
-background-color: #474143;
-color: #eedfc7;
-border: 3px solid #eedfc7;
-margin: 4px 2px;
-padding: 12px 24px;
-border-radius: 8px;
-text-align: center;
-display: inline-block;
-font-family: var(--font_content);
-font-size: 15px;
-cursor: pointer;
-}
-.submit:hover{
-background-color: #7c7a7a;
-text-shadow: #7c5802;
-transform: scale(1.05);
-}
-.redo{
-background-color: #474143;
-color: #eedfc7;
-border: 3px solid #eedfc7;
-margin: 4px 2px;
-padding: 12px 24px;
-border-radius: 8px;
-text-align: center;
-display: inline-block;
-font-family: var(--font_content);
-font-size: 15px;
-cursor: pointer;
-}
-.redo:hover{
-background-color: #7c7a7a;
-text-shadow: #7c5802;
-transform: scale(1.05);
-}
-
-
-</style>
 <body>
 
 	 <!-- Navbar -->
@@ -309,56 +40,46 @@ transform: scale(1.05);
 		<h1>Job Application</h1>
 		<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
 			<fieldset>
-
-				<legend><strong>Personal information</strong></legend>
-				<p><label for="first name">First Name:</label>
-						<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z]+" required>
-				</p>
-				<p>
-						<label for="last name">Last Name:</label>
-
 				<legend><strong> Personal information </strong></legend>
 				<p><label for="first name"><strong>First Name:</strong></label>
-						<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z]+" required>
+						<input type="text" name="Firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z\s]+" required>
 				</p>
 				<p>		
 					<label for="last name">Last Name:</label>
 
-						<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
+						<input type="text" name="Lastname" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
 				</p>		
 				<p>
 					<label for="dob">Date of birth:</label>
-						<input type="date" name="dob" id="dob" required>
+						<input type="date" name="Dob" id="dob" required>
 					<p> Gender:
 						<label for="male">Male</label>
-							<input type="radio" name="catergory[]" id="male" required>
-							<label for="female">Female</label>
-								<input type="radio" name="catergory[]" id="female" required>
+							<input type="radio" name="Gender" value="Male" required>
+						<label for="female">Female</label>
+								<input type="radio" name="Gender" Value="Female" required>
 					</p>
 				</p>
 				<p>
 					<label for="email">Email:</label>
-						<input type="email" id="email" placeholder="username@gmail.com" required>
+						<input type="email" id="email" name="Email" placeholder="username@gmail.com" required>
 				</p>
 				<p> <label for="phone">Phone number:</label>
-						<input type="text" id="phone" maxlength="12"  placeholder="only 8-12 digits" pattern=[0-9]+ required>
+						<input type="text" id="phone" maxlength="12" name="Phone" placeholder="only 8-12 digits" pattern=[0-9]+ required>
 				</p>
 			</fieldset>
 			<fieldset>
 
 				<legend><strong>Housing information</strong></legend>
 
-				<legend><strong> Housing information </strong></legend>
-
 				<p>
 					<label for="address">Street Address:</label>
-						<input type="text" id="address" maxlength="40" placeholder="max is 40 characters" required>
+						<input type="text" id="address" maxlength="40" name="Address" placeholder="max is 40 characters" required>
 					<label for="suburb">Suburb/Town</label>
-						<input type="text" id="suburb" maxlength="40" placeholder="max is 40 characters" required>
+						<input type="text" id="suburb" maxlength="40" name="Suburb/Town" placeholder="max is 40 characters" required>
 				</p>
 				<p>
 					<label for="state">State:</label>
-					<select name="state" id="state" required>
+					<select name="State" id="state" required>
 						<option value="">Please select</option>
 						<option value="vic">VIC</option>
 						<option value="nsw">NSW</option>
@@ -372,7 +93,7 @@ transform: scale(1.05);
 				</p>
 				<p>
 					<label for="postcode">Postcode:</label>
-						<input type="tel" id="postcode" maxlength="4" placeholder="Only put 4 digits" required pattern="[0-9\s]+">
+						<input type="tel" id="postcode" maxlength="4" name="Postcode" placeholder="Only put 4 digits" required pattern="[0-9\s]{4}">
 				</p>
 			</fieldset>
 			<fieldset>
@@ -380,27 +101,27 @@ transform: scale(1.05);
 				<p>
 					<p> Are you currently undertaking study/training (yes/no):
 						<label for="yes">Yes</label>
-							<input type="radio" id="yes" name="catergory[]" required>
+							<input type="radio" value="Yes" name="Study" required>
 						<label for="no">No</label>
-							<input type="radio" id="no" name="catergory[]" required>
+							<input type="radio" value="No" name="Study" required>
 					</p><hr>
 				</p>
 				<p>
 					<label for="jobnumber">Job reference number:</label>
-						<input type="text" id="jobnumber" maxlength="5" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
+						<input type="text" id="jobnumber" maxlength="5" name="Job number" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 				</p><hr>
 				<p> Which programming languague you have most experience with (required): </p>
 				<p>
 					<label for="python">Python</label>
-						<input type="checkbox" id="python" name="catergory[]">
+						<input type="checkbox" name="Programming Language[]" value="Python" id="python" >
 					<label for="java">Java</label>
-						<input type="checkbox" id="java" name="catergory[]">
+						<input type="checkbox" value="Java" name="Programming Language[]" id="java">
 				</p>
 				<p>
 					<label for="html">Html</label>
-						<input type="checkbox" id="html" name="catergory[]">
+						<input type="checkbox" id="html" name="Programming Language[]" value="Html">
 					<label for="c">C/C++</label>
-						<input type="checkbox" id="c" name="catergory[]">
+						<input type="checkbox" id="c" name="Programming Language[]" value="C/C+">
 				</p>
 				<p>
 					<label for="other">Other programming languague:</label>
@@ -409,27 +130,27 @@ transform: scale(1.05);
 				<p>Skill List (required):</p>
 				<p>
 					<label for="maths">Math and numerical reasoning skills</label>
-						<input type="checkbox" id="maths" name="catergory[]">
+						<input type="checkbox" id="maths" name="Skills[]" value="Math and numerical reasoning skills">
 				</p>
 				<p>	
 					<label for="tech">Technology knowledge and skills</label>
-						<input type="checkbox" id="tech" name="catergory[]">
+						<input type="checkbox" id="tech" name="Skills[]" value="Technology knowledge and skills">
 				</p>
 				<p>
 					<label for="prob">Analyse and trace problems</label>
-						<input type="checkbox" id="prob" name="catergory[]">
+						<input type="checkbox" id="prob" name="Skills[]" value="Analyse and trace problems">
 				</p>
 				<p>
 					<label for="detail">Meticulous attention to details</label>
-						<input type="checkbox" id="detail" name="catergory">
+						<input type="checkbox" id="detail" name="Skills[]" value="Meticulous attention to details">
 				</p>
 				<p>
 					<label for="organise">Organise and classify large amounts of information</label>
-						<input type="checkbox" id="organise" name="catergory">
+						<input type="checkbox" id="organise" name="Skills[]" value="Organise and classify large amounts of information">
 				</p>
 				<p>
 					<label for="others"> Other Skills:</label><br>
-					<textarea id="others" name="others" rows="4" cols="50" placeholder="Please write other skills that you good at in here..."></textarea>
+					<textarea id="others" name="Skills[]" rows="4" cols="50" placeholder="Please write other skills that you good at in here..."></textarea>
 				</p>
 			</fieldset>
 			<fieldset>
@@ -496,186 +217,6 @@ transform: scale(1.05);
 			<button type="reset" class="redo">Reset form</button>
 		</form>
 	</div>
-	<h1>Job Application</h1>
-	<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
-		<fieldset>
-			<legend><strong>Personal information</strong></legend>
-			<p><label for="first name">First Name:</label>
-					<input type="text" name="firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z]+" required>
-			</p>
-			<p>		
-				<label for="last name">Last Name:</label>
-
-					<input type="text" name="last name" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
-			</p>		
-			<p>
-				<label for="dob">Date of birth:</label>
-					<input type="date" name="dob" id="dob" required>
-				<p> Gender:
-					<label for="male">Male</label>
-						<input type="radio" name="catergory[]" id="male" required>
-						<label for="female">Female</label>
-							<input type="radio" name="catergory[]" id="female" required>
-				</p>
-			</p>
-			<p>
-				<label for="email">Email:</label>
-					<input type="email" id="email" placeholder="username@gmail.com" required>
-			</p>
-			<p> <label for="phone">Phone number:</label>
-					<input type="text" id="phone" maxlength="12"  placeholder="only 8-12 digits" pattern=[0-9]+ required>
-			</p>
-		</fieldset>
-		<fieldset>
-
-			<legend><strong>Housing information</strong></legend>
-
-			<p>
-				<label for="address">Street Address:</label>
-					<input type="text" id="address" maxlength="40" placeholder="max is 40 characters" required>
-				<label for="suburb">Suburb/Town</label>
-					<input type="text" id="suburb" maxlength="40" placeholder="max is 40 characters" required>
-			</p>
-			<p>
-				<label for="state">State:</label>
-				<select name="state" id="state" required>
-					<option value="">Please select</option>
-					<option value="vic">VIC</option>
-					<option value="nsw">NSW</option>
-					<option value="qld">QLD</option>
-					<option value="nt">NT</option>
-					<option value="wa">WA</option>
-					<option value="sa">SA</option>
-					<option value="tas">TAS</option>
-					<option value="act">ACT</option>
-				</select>
-			</p>
-			<p>
-				<label for="postcode">Postcode:</label>
-					<input type="tel" id="postcode" maxlength="4" placeholder="Only put 4 digits" required pattern="[0-9\s]+">
-			</p>
-		</fieldset>
-		<fieldset>
-			<legend><strong>Position information</strong></legend>
-			<p>
-				<p> Are you currently undertaking study/training (yes/no):
-					<label for="yes">Yes</label>
-						<input type="radio" id="yes" name="catergory[]" required>
-					<label for="no">No</label>
-						<input type="radio" id="no" name="catergory[]" required>
-				</p><hr>
-			</p>
-			<p>
-				<label for="jobnumber">Job reference number:</label>
-					<input type="text" id="jobnumber" maxlength="5" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
-			</p><hr>
-			<p> Which programming languague you have most experience with (required): </p>
-			<p>
-				<label for="python">Python</label>
-					<input type="checkbox" id="python" name="catergory[]">
-				<label for="java">Java</label>
-					<input type="checkbox" id="java" name="catergory[]">
-			</p>
-			<p>
-				<label for="html">Html</label>
-					<input type="checkbox" id="html" name="catergory[]">
-				<label for="c">C/C++</label>
-					<input type="checkbox" id="c" name="catergory[]">
-			</p>
-			<p>
-				<label for="other">Other programming languague:</label>
-					<input type="text" id="other" size="20"> 
-			</p><hr>
-			<p>Skill List (required):</p>
-			<p>
-				<label for="maths">Math and numerical reasoning skills</label>
-					<input type="checkbox" id="maths" name="catergory[]">
-			</p>
-			<p>	
-				<label for="tech">Technology knowledge and skills</label>
-					<input type="checkbox" id="tech" name="catergory[]">
-			</p>
-			<p>
-				<label for="prob">Analyse and trace problems</label>
-					<input type="checkbox" id="prob" name="catergory[]">
-			</p>
-			<p>
-				<label for="detail">Meticulous attention to details</label>
-					<input type="checkbox" id="detail" name="catergory">
-			</p>
-			<p>
-				<label for="organise">Organise and classify large amounts of information</label>
-					<input type="checkbox" id="organise" name="catergory">
-			</p>
-			<p>
-				<label for="others"> Other Skills:</label><br>
-				<textarea id="others" name="others" rows="4" cols="50" placeholder="Please write other skills that you good at in here..."></textarea>
-			</p>
-		</fieldset>
-		<fieldset>
-			<legend><strong>Submit your resume</strong></legend>
-				<div class="container">
-					<input type="file" class="upload-box" required>
-				</div>
-		</fieldset>
-		<hr>
-		
-		<div class="tacbox">
-			<input id="check" type="checkbox" required/>
-
-			<label for="check"><strong>Please tick the box after read the terms and conditions below</strong></label>
-
-		</div>
-		<ul class="accordion">
-			<li>
-				<input type="radio" name="accordion" id="first">
-				<label for="first" id="one">1.Before starting work</label>
-				<div class="content">
-				<p>After you accept an offer of employment, your employer should ask you to complete a Tax File Number Declaration and provide some personal/contact details for your employment records.</p>
-				</div>
-			</li>
-			<li>
-				<input type="radio" name="accordion" id="second">
-				<label for="second" id="two">2.Salary and benefits</label>
-				<div class="content">
-				<p>There will be a private online meeting (arranged by the company and will be announced later) to discuss salary. Every holiday or corporate event, every employee gets a small reward.</p>
-				</div>
-			</li>
-			<li>
-				<input type="radio" name="accordion" id="three">
-				<label for="three" id="three">3.Paid public holidays</label>
-				<div class="content">
-				<p>Employees get a paid day off on gazetted public holidays if the holiday falls on a day they would normally go to work. Employees don’t have to work on a public holiday. Employees can ask their manager to work on a public holiday, if the request is reasonable.</p>
-				</div>
-			</li>
-			<li>
-				<input type="radio" name="accordion" id="four">
-				<label for="four" id="four">4.Work schedule</label>
-				<div class="content">
-				<p>This will also be discussed online and will depend on whether the work is remote, internship or full-time. But usually in interviews, we will always prioritize working full time. If you want to take a day off, you must report it to your manager and, of course, have a good reason.</p>
-				</div>
-			</li>
-			<li>
-				<input type="radio" name="accordion" id="five">
-				<label for="five" id="five">5.Notice of termination and redundancy pay</label>
-				<div class="content">
-				<p>To terminate an employee's employment, a manager must notify them. There is a minimum amount of notice period depending on how long the employee has worked in their job. There are minimum amounts of notice periods depending on how long an employee has worked in their job.</p>
-				</div>
-			</li>
-			<li>
-				<input type="radio" name="accordion" id="six">
-				<label for="six" id="six">6.Code of conduct and behavior</label>
-				<div class="content">
-				<p>At this company, there will be a specific uniform policy on weekdays, it is not necessary to wear a uniform, but it is also not allowed to dress inappropriately, making the company's image bad. In addition, at company events, employees are required to wear uniforms such as vests. In addition, the attitude of employees is something that the company expects, for example, when working in groups, no one should be left behind, but should help each other or meet people with higher positions should show respect.</p>
-				</div>
-			</li>
-		</ul>
-		<button class="submit">Apply</button>
-		<button type="reset" class="redo">Reset form</button>
-	</form>
-
-
-
 
 	<!-- Footer -->
 	<footer>
