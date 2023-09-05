@@ -21,6 +21,275 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apply Form</title>
 </head>
+<style>
+	#check{
+    color:var(--main_shadow_color);
+    font-family: var(--font_heading);
+}
+legend{
+font-family: var(--font_content);
+color: var(--main_shadow_color);
+margin-block-start: 0;
+margin-block-end: 0;
+padding-bottom: 1.5rem;
+
+}
+
+label{
+font-family: var(--font_heading);
+}
+p{
+letter-spacing: 2px;
+}
+/*Upload file*/
+.upload-box{
+font-size:16px;
+background:#FFFFFF;
+border-radius:30px;
+box-shadow:5px 5px 10px #000000;
+width:350px;
+outline:none;
+float:left;
+}
+::-webkit-file-upload-button{
+background:#206a5d;
+border:none;
+border-radius:50px;
+box-shadow: 1px 0 1px 1px #6b4559;
+outline:none;
+cursor: pointer;
+}
+::-webkit-file-upload-button{
+background:#7cfc00;
+}
+/*Change the border so it will look fit and add box-shadow*/
+#firstname{
+border: 1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#lastname{
+border: 1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#dob{
+border: 1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#email{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#phone{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#address{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#suburb{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#state{
+border: 1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#postcode{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#jobnumber{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#other{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+#others{
+border:1px solid;
+box-shadow: 5px 5px 10px #000000;
+}
+select{
+cursor:pointer;
+}
+#check{
+cursor: pointer;
+}
+#male{
+cursor: pointer;
+}
+#female{
+cursor: pointer;
+}
+#yes{
+cursor: pointer;
+}
+#no{
+cursor: pointer;
+}
+#python{
+cursor: pointer;
+}
+#html{
+cursor: pointer;
+}
+#java{
+cursor: pointer;
+}
+#c{
+cursor: pointer;
+}
+#maths{
+cursor: pointer;
+}
+#tech{
+cursor: pointer;
+}
+#prob{
+cursor: pointer;
+}
+#detail{
+cursor: pointer;
+}
+#organise{
+cursor: pointer;
+}
+/*Use the type="radio" to make a list of terms and conditions that can close and open*/
+.accordion{
+margin:60px auto;
+width:600px;
+}
+.accordion li{
+list-style:none;
+width:100%;
+margin:20px;
+padding:10px;
+border-radius:8px;
+background:#e3edf7;
+box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+            -6px 6px 10px -1px rgba(255,255,255,0.7)
+}
+.accordion li label{
+display:flex;
+align-items:right;
+padding:10px;
+font-size:18px;
+font-weight:500;
+cursor:pointer;
+}
+#one::before{
+content:'+';	
+margin-right: 10px;
+font-size:24px;
+font-weight:600;
+} 
+
+.accordion input[type="radio"]{
+display:none;
+}
+
+.accordion .content{
+color:#555;
+padding: 0 10px;
+line-height: 26px;
+max-height:0;
+overflow: hidden;
+transition: max-height 0.5s, padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+max-height: 400px;
+padding: 10px 10px 20px;
+}
+.accordion input[type="radio"]:checked + #one::before{
+content:'-'
+}
+.accordion input[type="radio"]:checked + #two::before{
+content:'-'
+}
+.accordion input[type="radio"]:checked + #three::before{
+content:'-'
+}
+.accordion input[type="radio"]:checked + #four::before{
+content:'-'
+}
+.accordion input[type="radio"]:checked + #five::before{
+content:'-'
+}
+.accordion input[type="radio"]:checked + #six::before{
+content:'-'
+}
+#two::before{
+content:'+';	
+margin-right: 10px;
+font-size:24px;
+font-weight:600;
+}
+#three::before{
+content:'+';	
+margin-right: 10px;
+font-size:24px;
+font-weight:600;
+}
+#four::before{
+content:'+';	
+margin-right: 10px;
+font-size:24px;
+font-weight:600;
+}
+#five::before{
+content:'+';	
+margin-right: 10px;
+font-size:24px;
+font-weight:600;
+}
+#six::before{
+content:'+';	
+margin-right: 10px;
+font-size:24px;
+font-weight:600;
+}
+/*Apply and reset button*/
+.submit{
+background-color: #474143;
+color: #eedfc7;
+border: 3px solid #eedfc7;
+margin: 4px 2px;
+padding: 12px 24px;
+border-radius: 8px;
+text-align: center;
+display: inline-block;
+font-family: var(--font_content);
+font-size: 15px;
+cursor: pointer;
+}
+.submit:hover{
+background-color: #7c7a7a;
+text-shadow: #7c5802;
+transform: scale(1.05);
+}
+.redo{
+background-color: #474143;
+color: #eedfc7;
+border: 3px solid #eedfc7;
+margin: 4px 2px;
+padding: 12px 24px;
+border-radius: 8px;
+text-align: center;
+display: inline-block;
+font-family: var(--font_content);
+font-size: 15px;
+cursor: pointer;
+}
+.redo:hover{
+background-color: #7c7a7a;
+text-shadow: #7c5802;
+transform: scale(1.05);
+}
+
+
+</style>
 <body>
 
 	 <!-- Navbar -->
