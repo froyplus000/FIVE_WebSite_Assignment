@@ -232,8 +232,6 @@ footer p {
     footer{
         height: 9.5rem;
     }
-    footer div{
-    }
     footer p {
         font-size: .9rem;
         padding: 0 1rem;
@@ -732,28 +730,44 @@ footer p {
 
 @media (max-width: 991px){
    
+    #about_us div h1{
+        padding-left: 5rem;
+    }
+
     #about_us #group_picture{
         min-width: 80vw;
         margin: auto;
+        margin-left: 3rem;
     }
 
     #about_us #group_basic_detail{
         font-size: 1.75rem;
-        line-height: 4rem;
+        line-height: 4.25rem;
+        padding-left: 5rem;
+
     }
 
+    #timetable table {
+        margin-left: 1rem;
+        margin-bottom: 3rem;
+    }
     #timetable table th {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     #timetable table td {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
+
+    .about_page_section {
+        padding: 0;
+        text-align: center;
+    }
     #journey {
         display: block;
     }
     #journey img{
-        max-width: 75vw;
+        max-width: 80vw;
         margin: auto;
     }
     #journey div {
@@ -778,15 +792,26 @@ footer p {
         line-height: 3rem;
     }
 
-    #member h3{
+    #member {
+        margin-top: 6rem;
+    }
+    #member div h2{
         font-size: 3rem;
+        text-align: center;
+    }
+    #member h3 {
+        font-size: 2.5rem;
+        padding: 0 3rem;
     }
     #member strong{
         font-size: 2rem;
+        /* padding: 0 3rem; */
     }
     #member p{
+        padding: 0 3rem;
         font-size: 1.75rem;
         line-height: 3rem;
+
     }
     #member li{
         font-size: 1.75rem;
@@ -797,16 +822,99 @@ footer p {
         font-size: 2rem;
     }
     #connect p {
+        font-size: 1.75rem;
         line-height: 3rem;
     }
 }
 /* Still not working */
 @media (max-width: 768px){
-    #member {
-        line-height: 4rem;
+    #about_us {
     }
-    #connect {
+    #about_us div h1{
+       padding: 0;
+       padding-left: 3rem;
+    }
+    #about_us #group_basic_detail{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        padding: 0;
+        margin-top: 0;
+        padding-left: 2.5rem;
+        /* text-align: center; */
+    }
+    #about_us #group_basic_detail dd{
+        margin-left: 0;
+        font-size: .9rem;
+    }
+    #timetable table {
+        /* margin-left: 1rem; */
+        align-self: center;
+        margin-bottom: 2.5rem;
+        max-width: 90vw;
+    }
+    #timetable table th {
+        font-size: 1rem;
+    }
+    #timetable table td {
+        font-size: .9rem;
+    }
+
+    #journey div h1 { 
+        font-size: 2.2rem;
+        margin-top: 3rem;
+    }
+    #journey div p{ 
+        font-size: 1rem;
+        line-height: 2rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    #whyus div h1 { 
+        font-size: 2.2rem;
+        margin-top: 3rem;
+    }
+    #whyus div p{ 
+        font-size: 1rem;
+        line-height: 2rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    #member div h2 {
+        font-size: 2.2rem;
+    }
+    #member div h3 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    #member strong{
         font-size: 1.5rem;
+        padding: 0;
+        /* padding-left: 3rem; */
+    }
+    #member p{
+        font-size: 1rem;
+        line-height: 2rem;
+
+    }
+    #member li{
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+
+
+
+    #connect {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    #connect p {
+        font-size: 1rem;
+        line-height: 2rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-left: 1rem;
     }
 }
 
