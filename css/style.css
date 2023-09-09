@@ -1161,7 +1161,7 @@ cursor: pointer;
 /*Use the type="radio" to make a list of terms and conditions that can close and open*/
 .accordion{
 margin:60px auto;
-width:80vw;
+width:70vw;
 }
 .accordion li{
 list-style:none;
