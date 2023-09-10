@@ -75,17 +75,17 @@ img{
 
   .btn{
     text-decoration: none;
-    color: var(--main_shadow_color);
+    color: var(--main_dark_color);
     padding: 0.5rem;
     font-size: 1rem;
-    border: 2px solid var(--main_shadow_color);
+    border: 2px solid var(--main_dark_color);
     border-radius: 15%;
     transition-duration: 300ms;
   }
   .btn:hover{
     color: var(--backgroud_light_color);
-    background-color: var(--main_shadow_color);
-    box-shadow: .015rem .015rem 1rem var(--main_shadow_color)
+    background-color: var(--main_dark_color);
+    box-shadow: .015rem .015rem 1rem var(--seccond_light_color)
   }
   span{
     color: var(--seccond_light_color);
@@ -691,8 +691,8 @@ footer p {
 #member h3 {
     margin-top: 3rem;
     font-size: 1.5rem;
-    text-shadow: 0.1rem 0.1rem .4rem var(--main_shadow_color), -0.1rem -0.1rem .4rem var(--main_shadow_color) ;
-    color: var(--backgroud_light_color);
+    text-shadow: 0.01rem 0.01rem .1rem var(--main_shadow_color), -0.01rem -0.01rem .1rem var(--main_shadow_color) ;
+    color: var(--main_dark_color);
 }
 #member strong{
     font-size: 1.25rem;
