@@ -7,10 +7,10 @@
         -> Example -> background-color: var(--backgroud_light_color);
 */
 :root{
-    --backgroud_light_color: #eedfc7;
+    --backgroud_light_color: #e6dcce;
     --main_dark_color: #474143;
-    --main_shadow_color: #7c5802;
-    --seccond_light_color: #FFC636;
+    --main_shadow_color: #6B798C;
+    --seccond_light_color: #384D68;
     --font_heading: 'IBM Plex Mono', monospace;
     --font_content: 'IBM Plex Mono', monospace;
     --font_higlight: 'Qwitcher Grypen', cursive;
@@ -31,7 +31,7 @@ body{
 }
 h1, h2, h3, h4, h5 {
     font-family: var(--font_heading);
-    color: var(--main_shadow_color);
+    color: var(--seccond_light_color);
 }
 p, a, li {
     font-family: var(--font_content);
@@ -923,9 +923,6 @@ footer p {
 }
 
 
-
-
-
 /* Jobs.html */
 
 /* this apply button links jobs to apply form. */
@@ -992,6 +989,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     background-image: url(../images/Group_1.jpg);
     background-size: cover;
     background-position: center;
+    box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
 
 }
 
@@ -1002,6 +1000,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     background-image: url(../images/Tech_Support.jpg);
     background-size: cover;
     background-position: center;
+    box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
 
 }
 #job-banner-cover{
@@ -1014,7 +1013,78 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     z-index: 1; 
 }
 
+/* Responsive Design for jobs.html */
 
+@media (max-width: 1199px){
+    #job-banner {
+        height: 250px;
+    }
+    #job-banner-cover-top{
+        height: 250px;
+        width: 100%;
+    }
+    #job-banner1 {
+        height: 200px;
+    }
+    #job-banner2 {
+        height: 200px;
+    }
+    .apply_button {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 991px){
+    #job-banner {
+        height: 250px;
+    }
+    #job-banner-cover-top{
+        height: 250px;
+        width: 100%;
+    }
+    #job-banner2 {
+        height: 200px;
+    }
+    #job-banner-cover{
+        height: 200px;
+        width: 100%;
+    }
+    .apply_button {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 767px){
+    #job-banner {
+        height: 200px;
+    }
+    #job-banner-cover-top{
+        height: 200px;
+        width: 100%;
+    }
+    #job-banner1 {
+        height: 150px;
+    }
+    #job-banner2 {
+        height: 150px;
+    }
+    #job-banner-cover{
+        height: 150px;
+        width: 100%;
+    }
+    .apply_button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+
+/*  End jobs.HTML 
+________________________________________________________________________________
+
+*/
 
 
 
