@@ -139,6 +139,10 @@ img{
     color: var(--seccond_light_color);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     font-weight: bold;
+    border: .1rem solid var(--main_shadow_color);
+    border-radius: 10%;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
 }
 
 #main-nav li a.active {
@@ -1102,9 +1106,6 @@ margin-block-end: 0;
 padding-bottom: 1.5rem;
 
 }
-fieldset{
-    width:100vw;
-}
 
 label{
 font-family: var(--font_heading);
@@ -1252,7 +1253,7 @@ cursor:pointer;
 #one::before{
 content:'+';	
 margin-right: 10px;
-font-size:24px;
+font-size:24px; 
 font-weight:600;
 } 
 
