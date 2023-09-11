@@ -1370,4 +1370,35 @@ transform: scale(1.05);
 
 
 
-/* */
+/* Enhancement.html responsive */
+
+#enhancement {
+    padding: 5rem;
+}
+
+@media (max-width: 991px){
+    #enhancement {
+        padding: 3rem;
+        padding-right: 0;
+        font-size: 1.5rem;
+    }
+    #enhancement div p{
+        line-height: 3rem;
+    }
+    #enhancement div a{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 767px){
+    #enhancement {
+        padding: 2rem;
+        padding-right: 0;
+        font-size: 1rem;
+    }
+    #enhancement div p{
+        line-height: 3rem;
+    }
+    #enhancement div a{
+        font-size: 1rem;
+    }
+}
