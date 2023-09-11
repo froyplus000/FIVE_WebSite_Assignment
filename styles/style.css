@@ -1157,7 +1157,7 @@ width:350px;
 outline:none;
 left: auto;
 }
-::-webkit-file-upload-button{
+.file-upload-button{
 background:#206a5d;
 border:none;
 border-radius:50px;
@@ -1165,7 +1165,7 @@ box-shadow: 1px 0 1px 1px #6b4559;
 outline:none;
 cursor: pointer;
 }
-::-webkit-file-upload-button{
+.file-upload-button{
 background:#7cfc00;
 }
 /*Change the border so it will look fit and add box-shadow*/
