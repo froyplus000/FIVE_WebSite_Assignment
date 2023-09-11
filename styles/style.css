@@ -312,7 +312,7 @@ footer p {
     margin-top: 3.5rem;
     height: 15rem;
     width: 100%;
-    background-image: url(../images/our_journey.jpg);
+    background-image: url(./images/our_journey.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
