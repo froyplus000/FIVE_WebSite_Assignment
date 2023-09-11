@@ -267,6 +267,12 @@ footer p {
     color: var(--main_shadow_color);
     font-size: 2rem;
     margin: 3rem 1rem;
+    transition-duration: 300ms;
+}
+
+#welcome div #welcome_p a:hover {
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    color: var(--seccond_light_color);
 }
 
 #welcome .container #five_icon{
@@ -830,10 +836,9 @@ footer p {
         line-height: 3rem;
     }
 }
-/* Still not working */
+
 @media (max-width: 768px){
-    #about_us {
-    }
+
     #about_us div h1{
        padding: 0;
        padding-left: 3rem;
@@ -1403,4 +1408,35 @@ transform: scale(1.05);
 
 
 
-/* */
+/* Enhancement.html responsive */
+
+#enhancement {
+    padding: 5rem;
+}
+
+@media (max-width: 991px){
+    #enhancement {
+        padding: 3rem;
+        padding-right: 0;
+        font-size: 1.5rem;
+    }
+    #enhancement div p{
+        line-height: 3rem;
+    }
+    #enhancement div a{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 767px){
+    #enhancement {
+        padding: 2rem;
+        padding-right: 0;
+        font-size: 1rem;
+    }
+    #enhancement div p{
+        line-height: 3rem;
+    }
+    #enhancement div a{
+        font-size: 1rem;
+    }
+}
