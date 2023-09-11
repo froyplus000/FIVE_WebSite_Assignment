@@ -925,6 +925,44 @@ footer p {
 
 /* Jobs.html */
 
+/* splits the first paragraph (intro) into its own div and shares it with the aside. */
+
+
+.job_container {
+    display:flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 90rem;
+}
+
+.intro_container {
+    flex: 1;
+    align-items: center;
+    margin-right: 1rem; 
+}
+
+#job_aside {
+    flex-basis: 25%;
+    float: right; 
+    padding: 1rem;
+    border: .15rem solid var(--main_shadow_color);
+    box-shadow: 0 .15rem .15rem var(--main_shadow_color), 0 -.15rem .15rem var(--main_shadow_color);
+}
+
+#job_aside h2{
+    text-align: center;
+}
+
+  #job_aside a:hover {
+    text-decoration: underline; 
+}
+  #job_aside a {
+    text-decoration: none; 
+    font-family: var(--font_content);
+    color: var(--seccond_light_color); 
+}
+  
+
 /* this apply button links jobs to apply form. */
 .apply_button {
     background-color: var(--main_dark_color);
@@ -958,7 +996,7 @@ footer p {
     
 }
 
-/* need to add some animation for the titles. 
+/*
 Apply button should sit infront of image, to the left but padded in slightly in the centre.
 
 */
@@ -986,11 +1024,11 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     position: relative;
     height: 200px;
     width: 100%;
-    background-image: url(../images/Group_1.jpg);
+    background-image: url(../images/Group_1.jpg); 
     background-size: cover;
     background-position: center;
     box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
-
+    /* Banner1(Group_1): https://unsplash.com/photos/-uHVRvDr7pg */
 }
 
 #job-banner2 {
