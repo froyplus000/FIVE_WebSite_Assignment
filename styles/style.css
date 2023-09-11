@@ -1001,7 +1001,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     position: relative;
     height: 300px;
     width: 100%;
-    background-image: url(../images/about_us.jpg);
+    background-image: url(./images/about_us.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -1020,7 +1020,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     position: relative;
     height: 200px;
     width: 100%;
-    background-image: url(../images/Group_1.jpg); 
+    background-image: url(./images/Group_1.jpg); 
     background-size: cover;
     background-position: center;
     box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
@@ -1031,7 +1031,7 @@ Apply button should sit infront of image, to the left but padded in slightly in 
     position: relative;
     height: 200px;
     width: 100%;
-    background-image: url(../images/Tech_Support.jpg);
+    background-image: url(./images/Tech_Support.jpg);
     background-size: cover;
     background-position: center;
     box-shadow: 0 .3rem .3rem var(--main_shadow_color), 0 -.3rem .3rem var(--main_shadow_color);
