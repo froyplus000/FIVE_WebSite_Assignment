@@ -26,12 +26,12 @@
 h1.apply_title{
 	text-align: center;
 }
-body.apply{
-	line-height: 150%;
-    margin: 10% 15%;
-    padding: 3%;
-    box-sizing: border-box;
-    border-radius: 20px;
+
+fieldset{
+	box-sizing: border-box;
+    border-radius: 3px;
+    margin: 3%;
+    padding: 2%;
 }
 #check{
     color:var(--main_shadow_color);
@@ -39,11 +39,12 @@ body.apply{
 }
 
 legend{
-font-family: var(--font_content);
+font-family: var(--font_heading);
 color: var(--seccond_light_color);
 margin-block-start: 0;
 margin-block-end: 0;
 padding-bottom: 1.5rem;
+
 }
 
 
@@ -53,11 +54,29 @@ font-family: var(--font_heading);
 p{
 letter-spacing: 2px;
 }
+body.apply fieldset p input.texts{
+	width: 80%;
+  padding: 10px 20px;
+  margin: px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#state{
+	width: 80%;
+  padding: 10px 20px;
+  margin: px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 /*Upload file*/
 .upload-box{
 font-size:16px;
 background:#FFFFFF;
-border-radius:30px;
+border-radius:20px;
 box-shadow:5px 5px 10px #000000;
 width:350px;
 outline:none;
@@ -229,16 +248,16 @@ transform: scale(1.05);
 			<fieldset class="personal_info">
 				<legend><strong> Personal information </strong></legend>
 				<p><label for="first name">First Name:</label><br>
-						<input type="text" name="Firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z\s]+" required>
+						<input class="texts" type="text" name="Firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z\s]+" required>
 				</p>
 				<p>		
 					<label for="last name">Last Name:</label><br>
 
-						<input type="text" name="Lastname" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
+						<input class="texts" type="text" name="Lastname" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
 				</p>		
 				<p>
 					<label for="dob">Date of birth:</label><br>
-						<input type="date" name="Dob" id="dob" required>
+						<input class="texts" type="date" name="Dob" id="dob" required>
 					<p> Gender:
 						<label for="male">Male</label>
 							<input type="radio" name="Gender" value="Male" required>
@@ -248,10 +267,10 @@ transform: scale(1.05);
 				</p>
 				<p>
 					<label for="email">Email:</label><br>
-						<input type="email" id="email" name="Email" placeholder="username@gmail.com" required>
+						<input class="texts" type="email" id="email" name="Email" placeholder="username@gmail.com" required>
 				</p>
 				<p> <label for="phone">Phone number:</label><br>
-						<input type="text" id="phone" maxlength="12" name="Phone" placeholder="only 8-12 digits" pattern=[0-9]+ required>
+						<input class="texts" type="text" id="phone" maxlength="12" name="Phone" placeholder="only 8-12 digits" pattern=[0-9]+ required>
 				</p>
 			</fieldset>
 			<fieldset class="house_address">
@@ -260,11 +279,11 @@ transform: scale(1.05);
 
 				<p>
 					<label for="address">Street Address:</label><br>
-						<input type="text" id="address" maxlength="40" name="Address" placeholder="max is 40 characters" required>
+						<input class="texts" type="text" id="address" maxlength="40" name="Address" placeholder="max is 40 characters" required>
 				</p>
 				<p>
 						<label for="suburb">Suburb/Town</label><br>
-						<input type="text" id="suburb" maxlength="40" name="Suburb/Town" placeholder="max is 40 characters" required>
+						<input class="texts" type="text" id="suburb" maxlength="40" name="Suburb/Town" placeholder="max is 40 characters" required>
 				</p>
 				<p>
 					<label for="state">State:</label>
@@ -282,7 +301,7 @@ transform: scale(1.05);
 				</p>
 				<p>
 					<label for="postcode">Postcode:</label><br>
-						<input type="tel" id="postcode" maxlength="4" name="Postcode" placeholder="Only put 4 digits" required pattern="[0-9\s]{4}">
+						<input class="texts" type="tel" id="postcode" maxlength="4" name="Postcode" placeholder="Only put 4 digits" required pattern="[0-9\s]{4}">
 				</p>
 			</fieldset>
 			<fieldset class="job_info">
@@ -297,7 +316,7 @@ transform: scale(1.05);
 				</p>
 				<p>
 					<label for="jobnumber">Job reference number:</label>
-						<input type="text" id="jobnumber" maxlength="5" name="Job number" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
+						<input class="texts" type="text" id="jobnumber" maxlength="5" name="Job number" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 				</p><hr>
 				<p> Which programming languague you have most experience with (required): </p>
 				<p>
