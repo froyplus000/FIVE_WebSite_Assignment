@@ -44,15 +44,20 @@ color: var(--seccond_light_color);
 margin-block-start: 0;
 margin-block-end: 0;
 padding-bottom: 1.5rem;
-
 }
-
-
+p.word{
+	font-size:13px ;
+}
 label{
 font-family: var(--font_heading);
 }
 p{
 letter-spacing: 2px;
+}
+body.apply .required::after{
+	content: "*";
+    color: red;
+
 }
 body.apply fieldset p input.texts{
 	width: 80%;
@@ -247,29 +252,28 @@ transform: scale(1.05);
 		<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
 			<fieldset class="personal_info">
 				<legend><strong> Personal information </strong></legend>
-				<p><label for="first name">First Name:</label><br>
+				<p><label class="required" for="first name">First Name:</label><br>
 						<input class="texts" type="text" name="Firstname" id="firstname" maxlength="20" size="20" placeholder="max is 20 alpha characters" pattern="[A-Z\s]+" required>
 				</p>
 				<p>		
-					<label for="last name">Last Name:</label><br>
+					<label class="required" for="last name">Last Name:</label><br>
 
 						<input class="texts" type="text" name="Lastname" id="lastname" maxlength="20" size="20"  placeholder="max is 20 alpha characters"  pattern="[A-Z]]+" required>
 				</p>		
 				<p>
-					<label for="dob">Date of birth:</label><br>
+					<label class="required" for="dob">Date of birth:</label><br>
 						<input class="texts" type="date" name="Dob" id="dob" required>
-					<p> Gender:
+					<p class="required"> Gender:</p>
 						<label for="male">Male</label>
 							<input type="radio" name="Gender" value="Male" required>
 						<label for="female">Female</label>
 								<input type="radio" name="Gender" Value="Female" required>
-					</p>
 				</p>
 				<p>
-					<label for="email">Email:</label><br>
+					<label class="required" for="email">Email:</label><br>
 						<input class="texts" type="email" id="email" name="Email" placeholder="username@gmail.com" required>
 				</p>
-				<p> <label for="phone">Phone number:</label><br>
+				<p> <label class="required" for="phone">Phone number:</label><br>
 						<input class="texts" type="text" id="phone" maxlength="12" name="Phone" placeholder="only 8-12 digits" pattern=[0-9]+ required>
 				</p>
 			</fieldset>
@@ -278,15 +282,15 @@ transform: scale(1.05);
 				<legend><strong>Housing information</strong></legend>
 
 				<p>
-					<label for="address">Street Address:</label><br>
+					<label class="required" for="address">Street Address:</label><br>
 						<input class="texts" type="text" id="address" maxlength="40" name="Address" placeholder="max is 40 characters" required>
 				</p>
 				<p>
-						<label for="suburb">Suburb/Town</label><br>
+						<label class="required" for="suburb">Suburb/Town:</label><br>
 						<input class="texts" type="text" id="suburb" maxlength="40" name="Suburb/Town" placeholder="max is 40 characters" required>
 				</p>
 				<p>
-					<label for="state">State:</label>
+					<label class="required" for="state">State:</label><br>
 					<select name="State" id="state" required>
 						<option value="">Please select</option>
 						<option value="vic">VIC</option>
@@ -300,25 +304,27 @@ transform: scale(1.05);
 					</select>
 				</p>
 				<p>
-					<label for="postcode">Postcode:</label><br>
+					<label class="required" for="postcode">Postcode:</label><br>
 						<input class="texts" type="tel" id="postcode" maxlength="4" name="Postcode" placeholder="Only put 4 digits" required pattern="[0-9\s]{4}">
 				</p>
 			</fieldset>
 			<fieldset class="job_info">
 				<legend><strong>Position information</strong></legend>
-				<p>
-					<p> Are you currently undertaking study/training (yes/no):
-						<label for="yes">Yes</label>
-							<input type="radio" value="Yes" name="Study" required>
-						<label for="no">No</label>
-							<input type="radio" value="No" name="Study" required>
-					</p><hr>
+				<label class="required" for="pick_job">Which job prefer to choose in our company:</label><br>
+				<select name="pick" id="state" required>
+					<option value="">Please select</option>
+					<option value="software">Software Developer</option>
+					<option value="support">IT Support Associate</option>
+				</select>
+				<p class="word">
+					Click here if you want to read again about the 
+					<a href="jobs.html">Job Description</a>
 				</p>
 				<p>
-					<label for="jobnumber">Job reference number:</label>
+					<label class="required" for="jobnumber">Job reference number:</label>
 						<input class="texts" type="text" id="jobnumber" maxlength="5" name="Job number" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 				</p><hr>
-				<p> Which programming languague you have most experience with (required): </p>
+				<p class="required"> Which programming languague you have most experience with (required): </p>
 				<p>
 					<label for="python">Python</label>
 						<input type="checkbox" name="Programming Language[]" value="Python" id="python" >
@@ -332,10 +338,10 @@ transform: scale(1.05);
 						<input type="checkbox" id="c" name="Programming Language[]" value="C/C+">
 				</p>
 				<p>
-					<label for="other">Other programming languague:</label>
-						<input type="text" id="other" size="20"> 
+					<label for="other">Other programming languagues:</label><br>
+					<textarea id="others" name="Skills[]" rows="4" cols="50" placeholder="Please write other programming languagues that you good at in here..."></textarea>
 				</p><hr>
-				<p>Skill List (required):</p>
+				<p class="required">Skill List (required):</p>
 				<p>
 					<label for="maths">Math and numerical reasoning skills</label>
 						<input type="checkbox" id="maths" name="Skills[]" value="Math and numerical reasoning skills">
@@ -368,12 +374,9 @@ transform: scale(1.05);
 					</div>
 			</fieldset>
 			<hr>
-			
 			<div class="tacbox">
 				<input id="check" type="checkbox" required/>
-
-				<label for="check"><strong>Please tick the box after read the terms and conditions below</strong></label>
-
+					<label for="check"><strong>Please tick the box after read the terms and conditions below</strong></label>
 			</div>
 			<ul class="accordion">
 				<li>
