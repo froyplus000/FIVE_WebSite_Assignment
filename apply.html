@@ -100,100 +100,6 @@ background:#7cfc00;
 }
 /*Change the border so it will look fit and add box-shadow*/
 
-
-/*Use the type="radio" to make a list of terms and conditions that can close and open*/
-.accordion{
-margin:60px auto;
-width:70vw;
-}
-.accordion li{
-list-style:none;
-margin:20px;
-padding:10px;
-border-radius:8px;
-background:#e3edf7;
-box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-            -6px 6px 10px -1px rgba(255,255,255,0.7)
-}
-.accordion li label{
-display:flex;
-align-items:right;
-padding:10px;
-font-size:18px;
-font-weight:500;
-cursor:pointer;
-}
-#one::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px; 
-font-weight:600;
-} 
-
-.accordion input[type="radio"]{
-display:none;
-}
-
-.accordion .content{
-color:#555;
-padding: 0 10px;
-line-height: 26px;
-max-height:0;
-overflow: hidden;
-transition: max-height 0.5s, padding 0.5s;
-}
-.accordion input[type="radio"]:checked + label + .content{
-max-height: 400px;
-padding: 10px 10px 20px;
-}
-.accordion input[type="radio"]:checked + #one::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #two::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #three::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #four::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #five::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #six::before{
-content:'-'
-}
-#two::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#three::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#four::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#five::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#six::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
 /*Apply and reset button*/
 .submit{
 background-color: #474143;
@@ -378,55 +284,11 @@ transform: scale(1.05);
 				<input id="check" type="checkbox" required/>
 					<label for="check"><strong>Please tick the box after read the terms and conditions below</strong></label>
 			</div>
-			<ul class="accordion">
-				<li>
-					<input type="radio" name="accordion" id="first">
-					<label for="first" id="one">1.Before starting work</label>
-					<div class="content">
-					<p>After you accept an offer of employment, your employer should ask you to complete a Tax File Number Declaration and provide some personal/contact details for your employment records.</p>
-					</div>
-				</li>
-				<li>
-					<input type="radio" name="accordion" id="second">
-					<label for="second" id="two">2.Salary and benefits</label>
-					<div class="content">
-					<p>There will be a private online meeting (arranged by the company and will be announced later) to discuss salary. Every holiday or corporate event, every employee gets a small reward.</p>
-					</div>
-				</li>
-				<li>
-					<input type="radio" name="accordion" id="three">
-					<label for="three" id="three">3.Paid public holidays</label>
-					<div class="content">
-					<p>Employees get a paid day off on gazetted public holidays if the holiday falls on a day they would normally go to work. Employees don’t have to work on a public holiday. Employees can ask their manager to work on a public holiday, if the request is reasonable.</p>
-					</div>
-				</li>
-				<li>
-					<input type="radio" name="accordion" id="four">
-					<label for="four" id="four">4.Work schedule</label>
-					<div class="content">
-					<p>This will also be discussed online and will depend on whether the work is remote, internship or full-time. But usually in interviews, we will always prioritize working full time. If you want to take a day off, you must report it to your manager and, of course, have a good reason.</p>
-					</div>
-				</li>
-				<li>
-					<input type="radio" name="accordion" id="five">
-					<label for="five" id="five">5.Notice of termination and redundancy pay</label>
-					<div class="content">
-					<p>To terminate an employee's employment, a manager must notify them. There is a minimum amount of notice period depending on how long the employee has worked in their job. There are minimum amounts of notice periods depending on how long an employee has worked in their job.</p>
-					</div>
-				</li>
-				<li>
-					<input type="radio" name="accordion" id="six">
-					<label for="six" id="six">6.Code of conduct and behavior</label>
-					<div class="content">
-					<p>At this company, there will be a specific uniform policy on weekdays, it is not necessary to wear a uniform, but it is also not allowed to dress inappropriately, making the company's image bad. In addition, at company events, employees are required to wear uniforms such as vests. In addition, the attitude of employees is something that the company expects, for example, when working in groups, no one should be left behind, but should help each other or meet people with higher positions should show respect.</p>
-					</div>
-				</li>
-			</ul>
+			
 			<button class="submit">Apply</button>
 			<button type="reset" class="redo">Reset form</button>
 		</form>
 	</div>
-
 	<!-- Footer -->
 	<footer>
 		<div class="footer_made">
