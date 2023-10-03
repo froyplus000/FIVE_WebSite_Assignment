@@ -6,36 +6,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description"	content="Apply Page"/>
         <meta name="keywords"		content="HTML, Form, tags"/>
-        <meta name="author"			content="FIVE"/>
+        <meta name="author"			content="Ngoc Huy Duong"/>
         <link rel="stylesheet" href="./styles/style.css">
         <script src="https://kit.fontawesome.com/3ef3559250.js" crossorigin="anonymous"></script>
     </head>
     <!--------------CSS------------->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-
-:root {
-  --bg-clr: #394168;
-  --white: #fff;
-  --title-clr: #394168;
-  --pry-text-clr: #b3b3b3;
-  --scn-text-clr: #838384;
-  --btn-hvr-clr: #5363b0;
-}
-
+:root{
+ --backgroud_light_color: #e6dcce;
+ --main_dark_color: #474143;
+ --main_shadow_color: #6B798C;
+ --seccond_light_color: #384D68;
+ --font_heading: 'IBM Plex Mono', monospace;
+ --font_content: 'IBM Plex Mono', monospace;
+ --font_higlight: 'Qwitcher Grypen', cursive;
+ --white:#fff;
+      }
+/*The form*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: 'Roboto', sans-serif;
+  font-family:var(--font_content) ;
 }
 
 body{
-  background: var(--bg-clr);
+  background: var(--backgroud_light_color);
   font-size: 12px;
   line-height: 20px;
-  color: var(--primary-text-clr);
   padding: 0 20px;
 }
 
@@ -55,7 +55,7 @@ body{
 }
 
 .tc_main .title{
-  color: var(--title-clr);
+  color: var(--seccond_light_color);
   margin-bottom: 5px;
   font-size: 24px;
   line-height: 32px;
@@ -72,13 +72,6 @@ body{
   width: 100%;
   margin: 35px 0;
   height: calc(550px - 150px);
-}
-
-.tc_main .tc_btns{
-  width: 100%;
-  height: 80px;
-  padding: 21px 0;
-  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
 }
 
 .tc_main .tc_content .tc_top{
@@ -99,29 +92,39 @@ body{
 }
 
 .tc_main .tc_content .tc_top .info{
-  color: var(--scn-text-clr);
+  color: var(--main_dark_color);
 }
 
 .tc_main .tc_content .tc_bottom .info p{
   margin-bottom: 10px;
 }
-
-.tc_main .tc_btns button{
-  width: 125px;
-  padding: 10px;
-  margin: 0 10px;
-  border: 0;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all 0.5s ease;
+/*Go back button*/
+.tc_main .tc_btns{
+  width: 100%;
+  height: 80px;
+  padding: 21px 0;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
 }
 
-.tc_main .tc_btns button.accept{
-  background: var(--title-clr);
-  color: var(--white);
+.tc_main .tc_btns button.back{
+background: var(--title-clr);
+color: var(--white);
+background-color: #474143;
+color: #eedfc7;
+border: 3px solid #eedfc7;
+margin: 4px 2px;
+padding: 12px 24px;
+border-radius: 8px;
+text-align: center;
+display: inline-block;
+font-family: var(--font_content);
+font-size: 15px;
+cursor: pointer;
 }
-.tc_main .tc_btns button.accept:hover{
-  background: var(--btn-hvr-clr);
+.tc_main .tc_btns button.back:hover{
+background-color: #7c7a7a;
+text-shadow: #7c5802;
+transform: scale(1.05);
 }
     </style>
     <!--------------HTML---------------->
@@ -134,30 +137,30 @@ body{
                     <i class="fa-regular fa-clipboard" style="color: #384d68;"></i>
                   </div>
                   <div class="title">
-                    <p>Terms of serivce</p>
+                    <p>Terms and conditions</p>
                   </div>
                   <div class="info">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi sint veritatis recusandae alias. Numquam voluptates inventore eligendi totam tempore quia et enim accusantium labore at autem unde quibusdam molestiae doloremque corrupti architecto blanditiis corporis ex quisquam quo, deleniti pariatur? Illo, cum. Dignissimos provident quod ducimus aperiam sunt expedita odit laboriosam!
+                    This is our company's terms and conditions and will include rules that employees must follow in dress as well as basic information such as salary and benefits that come with joining the company.
                   </div>
                 </div>
                 <div class="tc_bottom">
                   <div class="title">
-                    <p>please go through the terms before Accepting it.</p>
+                    <p>please go through the form and go back to the form to tick it.</p>
                   </div>
                   <div class="info">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+                    <p>1.After you accept an offer of employment, your employer should ask you to complete a Tax File Number Declaration and provide some personal/contact details for your employment records.</p>
+                    <p>2.There will be a private online meeting (arranged by the company and will be announced later) to discuss salary. Every holiday or corporate event, every employee gets a small reward.</p>
+                    <p>3.Employees get a paid day off on gazetted public holidays if the holiday falls on a day they would normally go to work. Employees do not have to work on a public holiday. Employees can ask their manager to work on a public holiday, if the request is reasonable.</p>
+                    <p>4.This will also be discussed online and will depend on whether the work is remote, internship or full-time. But usually in interviews, we will always prioritize working full time. If you want to take a day off, you must report it to your manager and, of course, have a good reason.</p>
+                    <p>5.To terminate an employee's employment, a manager must notify them. There is a minimum amount of notice period depending on how long the employee has worked in their job. There are minimum amounts of notice periods depending on how long an employee has worked in their job.</p>
+                    <p>6.At this company, there will be a specific uniform policy on weekdays, it is not necessary to wear a uniform, but it is also not allowed to dress inappropriately, making the company's image bad. In addition, at company events, employees are required to wear uniforms such as vests. In addition, the attitude of employees is something that the company expects, for example, when working in groups, no one should be left behind, but should help each other or meet people with higher positions should show respect.</p>
                   </div>
                 </div>
               </div>
               <div class="tc_btns">
-                <button class="accept">
+                <a href="apply.html"><button class="back">
                   Go Back
-                </button>
+                </button></a>
               </div>
             </div>
           </section>
