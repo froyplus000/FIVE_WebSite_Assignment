@@ -164,6 +164,24 @@
 		text-shadow: #7c5802;
 		transform: scale(1.05);
 	}
+	.go{
+		background-color: #474143;
+		color: #eedfc7;
+		border: 3px solid #eedfc7;
+		margin: 4px 2px;
+		padding: 12px 24px;
+		border-radius: 8px;
+		text-align: center;
+		display: inline-block;
+		font-family: var(--font_content);
+		font-size: 15px;
+		cursor: pointer;
+	}
+	.go:hover{
+		background-color: #7c7a7a;
+		text-shadow: #7c5802;
+		transform: scale(1.05);
+	}
 </style>
 
 <body class="apply">
@@ -328,9 +346,11 @@
 			</div>
 
 			<button class="submit">Apply</button>
-			<button type="reset" class="redo">Reset form</button>
+			<button type="reset" class="redo">Reset form
+				
+			</button>
 		</form>
-			<a href="#"><button>Go back to top</button></a>
+			<a href="#"><button class="go">Go back to top</button></a>
 	</div>
 	<!-- Footer -->
 	<footer>
