@@ -1126,34 +1126,66 @@ ________________________________________________________________________________
 
 
 /*Apply.html*/
-/*This one change the font of the form*/
+/*change basic things in the form*/
+h1.apply_title{
+	text-align: center;
+}
 
-
+fieldset{
+	box-sizing: border-box;
+    border-radius: 3px;
+    margin: 3%;
+    padding: 2%;
+}
 #check{
     color:var(--main_shadow_color);
     font-family: var(--font_heading);
 }
 
 legend{
-font-family: var(--font_content);
+font-family: var(--font_heading);
 color: var(--seccond_light_color);
 margin-block-start: 0;
 margin-block-end: 0;
 padding-bottom: 1.5rem;
-
 }
-
+p.word{
+	font-size:13px ;
+}
 label{
 font-family: var(--font_heading);
 }
 p{
 letter-spacing: 2px;
 }
+body.apply .required::after{
+	content: "*";
+    color: red;
+
+}
+body.apply fieldset p input.texts{
+	width: 80%;
+  padding: 10px 20px;
+  margin: px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#state{
+	width: 80%;
+  padding: 10px 20px;
+  margin: px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 /*Upload file*/
 .upload-box{
 font-size:16px;
 background:#FFFFFF;
-border-radius:30px;
+border-radius:20px;
 box-shadow:5px 5px 10px #000000;
 width:350px;
 outline:none;
@@ -1169,193 +1201,6 @@ cursor: pointer;
 }
 .file-upload-button{
 background:#7cfc00;
-}
-/*Change the border so it will look fit and add box-shadow*/
-#firstname{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#lastname{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#dob{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#email{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#phone{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#address{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#suburb{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#state{
-border: 1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#postcode{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#jobnumber{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#other{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-#others{
-border:1px solid;
-box-shadow: 5px 5px 10px #000000;
-}
-select{
-cursor:pointer;
-}
-#check{
-cursor: pointer;
-}
-#male{
-cursor: pointer;
-}
-#female{
-cursor: pointer;
-}
-#yes{
-cursor: pointer;
-}
-#no{
-cursor: pointer;
-}
-#python{
-cursor: pointer;
-}
-#html{
-cursor: pointer;
-}
-#java{
-cursor: pointer;
-}
-#c{
-cursor: pointer;
-}
-#maths{
-cursor: pointer;
-}
-#tech{
-cursor: pointer;
-}
-#prob{
-cursor: pointer;
-}
-#detail{
-cursor: pointer;
-}
-#organise{
-cursor: pointer;
-}
-/*Use the type="radio" to make a list of terms and conditions that can close and open*/
-.accordion{
-margin:60px auto;
-width:70vw;
-}
-.accordion li{
-list-style:none;
-margin:20px;
-padding:10px;
-border-radius:8px;
-background:#e3edf7;
-box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-            -6px 6px 10px -1px rgba(255,255,255,0.7)
-}
-.accordion li label{
-display:flex;
-align-items:right;
-padding:10px;
-font-size:18px;
-font-weight:500;
-cursor:pointer;
-}
-#one::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px; 
-font-weight:600;
-} 
-
-.accordion input[type="radio"]{
-display:none;
-}
-
-.accordion .content{
-color:#555;
-padding: 0 10px;
-line-height: 26px;
-max-height:0;
-overflow: hidden;
-transition: max-height 0.5s, padding 0.5s;
-}
-.accordion input[type="radio"]:checked + label + .content{
-max-height: 400px;
-padding: 10px 10px 20px;
-}
-.accordion input[type="radio"]:checked + #one::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #two::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #three::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #four::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #five::before{
-content:'-'
-}
-.accordion input[type="radio"]:checked + #six::before{
-content:'-'
-}
-#two::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#three::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#four::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#five::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
-}
-#six::before{
-content:'+';	
-margin-right: 10px;
-font-size:24px;
-font-weight:600;
 }
 /*Apply and reset button*/
 .submit{
@@ -1394,13 +1239,6 @@ background-color: #7c7a7a;
 text-shadow: #7c5802;
 transform: scale(1.05);
 }
-
-
-
-
-
-
-
 /* Enhancement.html responsive */
 
 #enhancement {
