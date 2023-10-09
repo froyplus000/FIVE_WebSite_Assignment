@@ -241,15 +241,15 @@ footer p {
 /* Welcome section */
 
 #welcome {
-    min-height: 100vh;
+    min-height: 70vh;
 }
 #welcome div{
     margin-left: 3.5vw;
 }
 #welcome .container div #welcome_text{    
     margin: 0 auto;
-    margin-top: 7rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    /* margin-bottom: 2rem; */
     color: var(--main_shadow_color);
     font-size: 6rem;
     /* font-size: clamp(5vw, 6vw, 8vw); */
@@ -276,7 +276,7 @@ footer p {
 
     position: absolute;
     left: 62%;
-    top: 14%;
+    top: 1%;
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
 } 
@@ -285,7 +285,7 @@ footer p {
 #about_home {
     display: flex;
     gap: 4rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
     padding-bottom: 1rem;
 }
 #about_home #about_home_img {
@@ -372,11 +372,13 @@ footer p {
 
 @media (max-width: 1199px){
     #welcome {
-        min-height: 75vh;
+        min-height: 65vh;
+        margin-top: 0;
     }
     #welcome .container div #welcome_text{
         font-size: 5rem;
-        margin-top: 4rem;
+        margin-top: 2rem;
+
     }
     #welcome .container #five_icon{
         text-align: center;
@@ -387,7 +389,7 @@ footer p {
     
         position: absolute;
         left: 60%;
-        top: 20%;
+        top: 6%;
         text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
         font-family: var(--font_heading);
     }
