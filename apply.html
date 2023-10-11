@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="customUploadStyle.css">
 	<link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	<title>Apply Form</title>
 </head>
 <style>
@@ -124,7 +125,7 @@
 		cursor: pointer;
 	}
 
-	/*Apply, reset button, go back to top button*/
+	/*Apply, reset button*/
 	.submit {
 		background-color: #474143;
 		color: #eedfc7;
@@ -164,24 +165,37 @@
 		text-shadow: #7c5802;
 		transform: scale(1.05);
 	}
-	.go{
-		background-color: #474143;
-		color: #eedfc7;
-		border: 3px solid #eedfc7;
-		margin: 4px 2px;
-		padding: 12px 24px;
-		border-radius: 8px;
-		text-align: center;
-		display: inline-block;
-		font-family: var(--font_content);
-		font-size: 15px;
-		cursor: pointer;
-	}
-	.go:hover{
-		background-color: #7c7a7a;
-		text-shadow: #7c5802;
-		transform: scale(1.05);
-	}
+/*Back to the top button*/
+html {
+	scroll-behavior: smooth;
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 1rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #474143;
+	border-radius: 0.5rem;
+	padding: 0.2rem;
+	text-decoration: none;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+	color: #fff;
+	font-size: 3rem;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+	background-color: #7c7a7a;
+}
+.back-to-top:hover span {
+	transform: translateY(-4px);
+}
 </style>
 
 <body class="apply">
@@ -348,7 +362,9 @@
 			<button class="submit">Apply</button>
 			<button type="reset" class="redo">Reset form</button>
 		</form>
-			<a href="#"><button class="go">Go back to top</button></a>
+		<a href="#" class="back-to-top">
+			<span class="material-icons">arrow_upward</span>
+		</a>
 	</div>
 	<!-- Footer -->
 	<footer>
