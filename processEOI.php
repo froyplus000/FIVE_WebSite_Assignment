@@ -11,11 +11,11 @@ $State = $_POST['State'];
 $Postcode = $_POST['Postcode'];
 $Job_prefer = $_POST['Job_prefer'];
 $Job_reference_number = $_POST['Job_reference_number'];
-$Programming = $_POST['Programming_Language[]'];
-$Skills = $_POST['Skills[]'];
+$Programming = $_POST['Programming_Language'];
+$Skills = $_POST['Skills'];
 
 // Database connection
-$conn = new mysqli('localhost', 'root', '2882005', 's104471956_db');
+$conn = mysqli_connect('localhost', 'root', '2882005', 's104471956_db');
 
 if ($conn->connect_error) {
     die('Connection Failed: ' . $conn->connect_error);
