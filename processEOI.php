@@ -15,16 +15,15 @@ $Programming = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
 
 // Database connection
-$conn = mysqli_connect('localhost', 'root', '2882005', 's104471956_db');
+$host = "ictstu-db1.cc.swin.edu.au";
+$dbname = "s104471956_db";
+$username = "root";
+$password = "";
 
-if ($conn->connect_error) {
-    die('Connection Failed: ' . $conn->connect_error);
-} else {
-    $stmt = $conn->prepare("INSERT INTO ApplyForm_Assign2 (Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming, Skills) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming, $Skills);
-    $stmt->execute();
-    echo "Registration Successful.";
-    $stmt->close();
-    $conn->close();
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
+if (mysqli_connect_errno()){
+    die("Connection error: ". mysqli_connect_error());
 }
+echo "Connection successful.";
 ?>
