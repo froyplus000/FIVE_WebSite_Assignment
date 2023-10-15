@@ -215,7 +215,7 @@ html {
 	<div class="container">
 
 		<h1 class="apply_title">Job Application</h1>
-		<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+		<form method="post" action="processEOI.php">
 			<fieldset class="personal_info">
 				<legend><strong> Personal information </strong></legend>
 				<p><label class="required" for="first name">First Name:</label><br>
@@ -258,7 +258,7 @@ html {
 				</p>
 				<p>
 					<label class="required" for="suburb">Suburb/Town:</label><br>
-					<input class="texts" type="text" id="suburb" maxlength="40" name="Suburb/Town"
+					<input class="texts" type="text" id="suburb" maxlength="40" name="Suburb"
 						placeholder="max is 40 characters" required>
 				</p>
 				<p>
@@ -284,10 +284,10 @@ html {
 			<fieldset class="job_info">
 				<legend><strong>Position information</strong></legend>
 				<label class="required" for="pick_job">Which job prefer to choose in our company:</label><br>
-				<select name="pick" id="state" required>
+				<select name="Job prefer" id="state" required>
 					<option value="">Please select</option>
-					<option value="software">Software Developer</option>
-					<option value="support">IT Support Associate</option>
+					<option value="Softwar Developer">Software Developer</option>
+					<option value="IT Support Associate">IT Support Associate</option>
 				</select>
 				<p class="word">
 					Click here if you want to read again about the
@@ -295,7 +295,7 @@ html {
 				</p>
 				<p>
 					<label class="required" for="jobnumber">Job reference number:</label>
-					<input class="texts" type="text" id="jobnumber" maxlength="5" name="Job number"
+					<input class="texts" type="text" id="jobnumber" maxlength="5" name="Job reference number"
 						placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 				</p>
 				<hr>
@@ -314,7 +314,7 @@ html {
 				</p>
 				<p>
 					<label for="other">Other programming languagues:</label><br>
-					<textarea id="others" name="Skills[]" rows="4" cols="50"
+					<textarea id="others" name="Skills" rows="4" cols="50"
 						placeholder="Please write other programming languagues that you good at in here..."></textarea>
 				</p>
 				<hr>
