@@ -1,3 +1,10 @@
+<?php
+
+require_once('settings.php');
+$query = "select * from ApplyForm_Assign2";
+$result = mysqli_query($con,$query);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,18 +74,22 @@
         <div class="table-cell last-cell">
             <p>Dob</p>
         </div>
+        <div class="table-cell">
+            <p>Gender</p>
+        </div>
     </div>
 
     <div class="table-row">
+        <?php
+            while($row = mysqli_fetch_assoc($result))
+            {
+        ?>
         <div class="table-cell">
-            <p>Firstname</p>
-        </div>
-        <div class="table-cell">
-            <p>Lastname</p>
-        </div>
-        <div class="table-cell last-cell">
-            <p>Dob</p>
-        </div>
+            <p><?php echo $row['Firstname']?></p>
+        </div>      
+        <?php
+            }
+        ?>
     </div>
 </body>
 </html>
