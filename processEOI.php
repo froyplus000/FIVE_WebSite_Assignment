@@ -15,13 +15,7 @@
     background-color:#e6dcce;
 }
 .table-box{
-    margin: 20px 0;
-  width: 500px;
-  max-width: 100%;
-  height: 550px;
-  background: #fff;
-  display:center;
-  align-items: center;
+    margin: 50px auto;
 }
 .table-header{
     text-align:center;
