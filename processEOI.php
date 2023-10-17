@@ -66,15 +66,18 @@ $result = mysqli_query($con,$query);
     </div>
     <div class="table-row table-head">
         <div class="table-cell">
+            <p>ID</p>
+        </div>
+        <div class="table-cell">
             <p>Firstname</p>
         </div>
         <div class="table-cell">
             <p>Lastname</p>
         </div>
-        <div class="table-cell last-cell">
+        <div class="table-cell">
             <p>Dob</p>
         </div>
-        <div class="table-cell">
+        <div class="table-cell last-cell">
             <p>Gender</p>
         </div>
     </div>
