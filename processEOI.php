@@ -1,10 +1,11 @@
-<?php
+<!--for the manage.php-->
+<!-- ?php
 
 require_once('settings.php');
 $query = "SELECT * FROM ApplyForm_Assign2 ORDER BY id DESC LIMIT 1";
 $result = mysqli_query($con,$query);
 
-?>
+?><
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,15 +84,16 @@ $result = mysqli_query($con,$query);
     </div>
 
     <div class="table-row">
-        <?php
+        <!?php
             $row = mysqli_fetch_assoc($result);
         ?>
         <div class="table-cell">
-            <p><?php echo $row['Firstname']?></p>
+            <p><!?php echo $row['Firstname']?></p>
         </div>      
-        <?php
+        <!?php
             
         ?>
     </div>
 </body>
-</html>
+</html>  -->
+

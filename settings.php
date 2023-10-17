@@ -32,5 +32,6 @@ if (!mysqli_stmt_prepare($stmt,$sql)){
     die(mysqli_error($con));
 }   
 mysqli_stmt_bind_param($stmt, "ssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills);
+
 mysqli_stmt_execute($stmt);
 ?>
