@@ -96,7 +96,7 @@ $result = mysqli_query($con,$query);
     </div>
 </body>
 </html>  -->
-<style>
+<!-- <style>
     .mycss{
     color: green;
     border:1px solid #000;
@@ -106,13 +106,19 @@ $result = mysqli_query($con,$query);
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    margin: 20px 0;
+    width: 500px;
+    max-width: 30%;
+    height: 1000px;
+    background:#fff;
+    text-align: center;
     }
     *{
     margin: 0;
     padding: 0;
     background-color:#e6dcce;
 }
-</style>
+</style> -->
 <?php
 require_once('settings.php');
 //Insert name//
@@ -130,17 +136,17 @@ $Job_prefer = $_POST['Job_prefer'];
 $Job_reference_number = $_POST['Job_reference_number'];
 
 // Convert arrays to strings
-// if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
-//     $Programming_language = implode(",", $_POST['Programming_Language']);
-// } else {
-//     $Programming_language = ""; 
-// }
+    if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
+   $Programming_language = implode(",", $_POST['Programming_Language']);
+    } else {
+     $Programming_language = ""; 
+ }
 
-// if (is_array($_POST['Skills']) && !empty($_POST['Skills'])) {
-//     $Skills = implode(",", $_POST['Skills']);
-// } else {
-//     $Skills = "";  
-// }
+    if (is_array($_POST['Skills']) && !empty($_POST['Skills'])) {
+     $Skills = implode(",", $_POST['Skills']);
+     } else {
+     $Skills = "";  
+ }
 //connection//
 $con = mysqli_connect($host, $user, $pwd, $sql_db);
 
@@ -148,12 +154,47 @@ if(mysqli_connect_errno()){
     echo "$con->connect_error";
     die("Connection Failed : ". mysqli_connect_error());
 } 
-    $sql="insert into ApplyForm_Assign2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql="insert into ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $result= mysqli_connect($con,$sql);
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){
         die(mysqli_error($con));
     }   
     mysqli_stmt_bind_param($stmt, "ssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills);
     mysqli_stmt_execute($stmt);
+    if ($result) {
+        // Assuming $con is a valid MySQLi database connection
+        $last_id = mysqli_insert_id($con); // Get the last inserted ID
+    
+        if ($last_id) {
+            $code = rand(1, 99999);
+            $User_ID = "FIVE_" . $code . "_" . $last_id;
+    
+            // Use prepared statements to update the record
+            $query = "UPDATE ApplyForm_Assignment2 SET User_ID = ? WHERE id = ?";
+            $stmt = mysqli_prepare($con, $query);
+            
+            if ($stmt) {
+                // Bind parameters and execute the query
+                mysqli_stmt_bind_param($stmt, "si", $User_ID, $last_id);
+                $res = mysqli_stmt_execute($stmt);
+                
+                if ($res) {
+                    echo "Update successful, User_ID is: " . $User_ID;
+                } else {
+                    echo "Error updating record: " . mysqli_error($con);
+                }
+    
+                mysqli_stmt_close($stmt);
+            } else {
+                echo "Error preparing statement: " . mysqli_error($con);
+            }
+        } else {
+            echo "No last ID found";
+        }
+    } else {
+        echo "Error in the initial query: " . mysqli_error($con);
+    }
+    
 echo "<p class='mycss'> Sending successfully.</p>";
 ?>
