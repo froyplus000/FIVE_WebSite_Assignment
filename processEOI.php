@@ -157,7 +157,7 @@ if(mysqli_connect_errno()){
     die("Connection Failed : ". mysqli_connect_error());
 } 
     $sql="insert into ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $result= mysqli_connect($con,$sql);
+    $result = mysqli_query($con, $sql);
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){
         die(mysqli_error($con));
