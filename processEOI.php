@@ -134,6 +134,8 @@ $State = $_POST['State'];
 $Postcode = $_POST['Postcode'];
 $Job_prefer = $_POST['Job_prefer'];
 $Job_reference_number = $_POST['Job_reference_number'];
+$Programming_language = $_POST['Programming_language'];
+$Skills = $_POST['Skills'];
 
 // Convert arrays to strings
     if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
