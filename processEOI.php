@@ -120,7 +120,7 @@ $result = mysqli_query($con,$query);
 }
 </style> -->
 <?php
-require_once('settings.php');
+include('settings.php');
 //Insert name//
 $Firstname = $_POST['Firstname'];
 $Lastname = $_POST['Lastname'];
@@ -136,7 +136,6 @@ $Job_prefer = $_POST['Job_prefer'];
 $Job_reference_number = $_POST['Job_reference_number'];
 $Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
-$Submit = $_POST['submit'];
 
 // Convert arrays to strings
     if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
@@ -144,15 +143,6 @@ $Submit = $_POST['submit'];
     } else {
      $Programming_language = ""; 
  }
-
-    if(isset($_POST['submit']))
-    {
-        $Programming_language = $_POST['$Programming_Language'];
-        foreach($Programming_language as $item)
-        {
-            $query= "INSERT INTO ApplyForm_Assignment2 () "
-        }
-    }
     if (is_array($_POST['Skills']) && !empty($_POST['Skills'])) {
      $Skills = implode(",", $_POST['Skills']);
      } else {
