@@ -134,8 +134,9 @@ $State = $_POST['State'];
 $Postcode = $_POST['Postcode'];
 $Job_prefer = $_POST['Job_prefer'];
 $Job_reference_number = $_POST['Job_reference_number'];
-$Programming_language = $_POST['Programming_language'];
+$Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
+$Submit = $_POST['submit'];
 
 // Convert arrays to strings
     if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
@@ -144,6 +145,14 @@ $Skills = $_POST['Skills'];
      $Programming_language = ""; 
  }
 
+    if(isset($_POST['submit']))
+    {
+        $Programming_language = $_POST['$Programming_Language'];
+        foreach($Programming_language as $item)
+        {
+            $query= "INSERT INTO ApplyForm_Assignment2 () "
+        }
+    }
     if (is_array($_POST['Skills']) && !empty($_POST['Skills'])) {
      $Skills = implode(",", $_POST['Skills']);
      } else {
@@ -151,7 +160,6 @@ $Skills = $_POST['Skills'];
  }
 //connection//
 $con = mysqli_connect($host, $user, $pwd, $sql_db);
-
 if(mysqli_connect_errno()){
     echo "$con->connect_error";
     die("Connection Failed : ". mysqli_connect_error());
@@ -190,7 +198,7 @@ if(mysqli_connect_errno()){
                 mysqli_stmt_close($stmt);
             } else {
                 echo "Error preparing statement: " . mysqli_error($con);
-            }
+            }   
         } else {
             echo "No last ID found";
         }
