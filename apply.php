@@ -25,7 +25,7 @@
 	<title>Apply Form</title>
 </head>
 <?php
-include('processEOI.php');
+require_once('processEOI.php');
 if (isset($_REQUEST['submit'])){
 	$Programming_language = implode(", ",$_REQUEST['Programming_Language']);
 	$insert_query = mysqli_query($con,"insert into ApplyForm_Assignment2 set Programming_Language=$Programming_language");

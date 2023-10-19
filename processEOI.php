@@ -137,7 +137,8 @@ $Job_reference_number = $_POST['Job_reference_number'];
 $Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
 
-// Convert arrays to strings
+
+// Convert arrays to strings//
     if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
    $Programming_language = implode(",", $_POST['Programming_Language']);
     } else {
@@ -150,6 +151,12 @@ $Skills = $_POST['Skills'];
  }
 //connection//
 $con = mysqli_connect($host, $user, $pwd, $sql_db);
+if (isset($_REQUEST['submit'])){
+	$Programming_language = implode(", ",$_REQUEST['Programming_Language']);
+	$insert_query = mysqli_query($con,"insert into ApplyForm_Assignment2 set Programming_Language=$Programming_language");
+}
+
+
 if(mysqli_connect_errno()){
     echo "$con->connect_error";
     die("Connection Failed : ". mysqli_connect_error());
@@ -162,39 +169,31 @@ if(mysqli_connect_errno()){
     }   
     mysqli_stmt_bind_param($stmt, "ssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills);
     mysqli_stmt_execute($stmt);
-    if ($result) {
-        // Assuming $con is a valid MySQLi database connection
-        $last_id = mysqli_insert_id($con); // Get the last inserted ID
-    
-        if ($last_id) {
-            $code = rand(1, 99999);
-            $User_ID = "FIVE_" . $code . "_" . $last_id;
-    
-            // Use prepared statements to update the record
-            $query = "UPDATE ApplyForm_Assignment2 SET User_ID = ? WHERE id = ?";
-            $stmt = mysqli_prepare($con, $query);
-            
-            if ($stmt) {
-                // Bind parameters and execute the query
-                mysqli_stmt_bind_param($stmt, "si", $User_ID, $last_id);
-                $res = mysqli_stmt_execute($stmt);
-                
-                if ($res) {
-                    echo "Update successful, User_ID is: " . $User_ID;
-                } else {
-                    echo "Error updating record: " . mysqli_error($con);
-                }
-    
-                mysqli_stmt_close($stmt);
-            } else {
-                echo "Error preparing statement: " . mysqli_error($con);
-            }   
-        } else {
-            echo "No last ID found";
-        }
-    } else {
-        echo "Error in the initial query: " . mysqli_error($con);
+if(!$con){
+    die('Connection Error'. mysqli_error($con));
+}
+else{
+    if(isset($_POST['submit'])){
+        $checkid = "SELECT * FROM 'ApplyForm_Assignment2' ORDER BY id DESC LIMIT 1 ";
+        $checkresult = mysqli_query($con,$checkid);
     }
+    if($row = mysqli_fetch_assoc($checkresult)){
+        $uid = $row['User_ID'];
+        $get_numbers = str_replace("FIVE","",$uid);
+        $id_increase = $get_numbers+1;
+        $get_string = str_pad($id_increase, 5,0, STR_PAD_LEFT);
+        $id = "FIVE".$get_string;
+
+        $insert_quy = "INSERT INTO 'ApplyForm_Assignment2'('User_ID') VALUES ('id')";
+        $result = mysqli_query($con,$insert_quy);
+        if($result){
+            echo "Entry Added in Database".'<br>'."registration number: ".$id;
+        }
+        else{
+            echo "error";
+        }
+    }
+}   
     
-echo "<p class='mycss'> Sending successfully.</p>";
+// echo "<p class='mycss'> Sending successfully.</p>";
 ?>
