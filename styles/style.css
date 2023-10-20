@@ -5,7 +5,16 @@
         -> to use -> var( variable_name )
         -> Example -> background-color: var(--backgroud_light_color);
 */
+
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
 :root{
+    /* --main_light_color: #644304; */
+    /* --seccond_dark_color:#06063D; */
+
+    /* Colors & Fonts */
     --backgroud_light_color: #e6dcce;
     --main_dark_color: #474143;
     --main_shadow_color: #6B798C;
@@ -14,11 +23,16 @@
     --font_content: 'IBM Plex Mono', monospace;
     --font_higlight: 'Qwitcher Grypen', cursive;
     
-    /* --main_light_color: #644304; */
-    /* --seccond_dark_color:#06063D; */
-    /* animation variables */
+    /* Animation variables */
     --ease_in_out: all 1s ease-in-out;
+    --animation-timing: 300ms ease-in-out;
 
+    /* Hamburger Menu Variables */
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --hamburger-margin: 8px;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
 
@@ -106,18 +120,51 @@ img{
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
 }
 
-
-#main-nav ul {
-    list-style: none;
+.hamburger_menu{
+    display: none;
 }
 
 
 
+
+
+/* New Nav menu for hamburger menu */
+/* #main-nav div {
+    display: flex;
+    margin-top: 1rem
+}
+#main-nav div a {
+    color: var(--main_dark_color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: var(--font_content);
+    transition-duration: 300ms;
+}
+#main-nav div a:hover {
+    color: var(--seccond_light_color);
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
+    font-weight: bold;
+    border: .1rem solid var(--main_shadow_color);
+    border-radius: 10%;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+#main-nav div a.active {
+    border-bottom: .1rem solid var(--main_shadow_color);
+    border-radius: 10%;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+} */
+/* Old Nav Menu */
+#main-nav ul {
+    list-style: none;
+}
 #main-nav li {
     display: inline-block;
     margin-top: 1rem
 }
-
 #main-nav li a {
     color: var(--main_dark_color);
     text-decoration: none;
@@ -127,8 +174,6 @@ img{
     font-family: var(--font_content);
     transition-duration: 300ms;
 }
-
-
 #main-nav li a:hover {
     color: var(--seccond_light_color);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
@@ -138,9 +183,7 @@ img{
     padding-top: .25rem;
     padding-bottom: .25rem;
 }
-
 #main-nav li a.active {
-    
     border-bottom: .1rem solid var(--main_shadow_color);
     border-radius: 10%;
     padding-top: .25rem;
@@ -190,7 +233,75 @@ img{
         font-size: 1.05rem;
         line-height: 2.75rem;
     }
+
+    /* Hamburger Menu */
+
+.hamburger_menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    display: flex; 
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+
+    position: absolute;
+    left: 80vw;
+    top: 5vw;
+    z-index: 2;
+    cursor: pointer;
 }
+
+.hamburger_menu::after, 
+.hamburger_menu::before, 
+.hamburger_menu input{
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--main_dark_color);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), translate var(--animation-timing), rotate var(--animation-timing);
+}
+.hamburger_menu input{
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    pointer-events: none;
+}
+.hamburger_menu:has(input:checked)::before{
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+.hamburger_menu:has(input:checked)::after{
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+.hamburger_menu input:checked{
+    opacity: 0;
+    width: 0;
+}
+.sidebar,
+.sidebar ul,
+.sidebar ul li,
+.sidebar ul li a {
+    /* transition: translate var(--animation-timing); */
+    transition: translate 1s ease-in-out;
+    translate: -200%;
+    display: none;
+}
+
+.hamburger_menu:has(input:checked) + .sidebar, 
+.hamburger_menu:has(input:checked) + .sidebar ul,
+.hamburger_menu:has(input:checked) + .sidebar ul li,
+.hamburger_menu:has(input:checked) + .sidebar ul li a
+ {
+    translate: 0%;
+    display: contents;
+}
+
 
 
 /* Footer */
