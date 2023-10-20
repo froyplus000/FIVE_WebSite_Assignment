@@ -161,7 +161,7 @@ if(mysqli_connect_errno()){
     echo "$con->connect_error";
     die("Connection Failed : ". mysqli_connect_error());
 } 
-    $sql="insert into ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql="INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $result = mysqli_query($con, $sql);
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){
@@ -169,31 +169,15 @@ if(mysqli_connect_errno()){
     }   
     mysqli_stmt_bind_param($stmt, "ssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills);
     mysqli_stmt_execute($stmt);
-if(!$con){
-    die('Connection Error'. mysqli_error($con));
-}
-else{
-    if(isset($_POST['submit'])){
-        $checkid = "SELECT * FROM 'ApplyForm_Assignment2' ORDER BY id DESC LIMIT 1 ";
-        $checkresult = mysqli_query($con,$checkid);
-    }
-    if($row = mysqli_fetch_assoc($checkresult)){
-        $uid = $row['User_ID'];
-        $get_numbers = str_replace("FIVE","",$uid);
-        $id_increase = $get_numbers+1;
-        $get_string = str_pad($id_increase, 5,0, STR_PAD_LEFT);
-        $id = "FIVE".$get_string;
+// Generate a unique ID
+$unique_id = uniqid('Five_', true);
 
-        $insert_quy = "INSERT INTO 'ApplyForm_Assignment2'('User_ID') VALUES ('id')";
-        $result = mysqli_query($con,$insert_quy);
-        if($result){
-            echo "Entry Added in Database".'<br>'."registration number: ".$id;
-        }
-        else{
-            echo "error";
-        }
-    }
-}   
-    
-// echo "<p class='mycss'> Sending successfully.</p>";
+// Insert the unique ID into the database
+$sql = "INSERT INTO ApplyForm_Assignment2 (User_ID) VALUES (?)";
+if (mysqli_stmt_prepare($stmt, $sql)) {
+    mysqli_stmt_bind_param($stmt, "s", $unique_id);
+}
+
+mysqli_close($con);
+echo "<p class='mycss'>Sending successfully.</p>" .$unique_id;
 ?>
