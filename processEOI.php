@@ -96,29 +96,26 @@ $result = mysqli_query($con,$query);
     </div>
 </body>
 </html>  -->
-<!-- <style>
-    .mycss{
-    color: green;
-    border:1px solid #000;
-    padding: 10px;
+
+ <style>
+    .mycss1{
+     color: green;
+    border:10px solid #000;
+    padding: 25px;
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    margin: 20px 0;
-    width: 500px;
-    max-width: 30%;
-    height: 1000px;
-    background:#fff;
-    text-align: center;
+    width: 500px; height:200px;
+    margin: 50px auto;
     }
     *{
     margin: 0;
     padding: 0;
     background-color:#e6dcce;
 }
-</style> -->
+</style> 
 <?php
 include('settings.php');
 //Insert name//
@@ -177,7 +174,6 @@ $sql = "INSERT INTO ApplyForm_Assignment2 (User_ID) VALUES (?)";
 if (mysqli_stmt_prepare($stmt, $sql)) {
     mysqli_stmt_bind_param($stmt, "s", $unique_id);
 }
-
 mysqli_close($con);
-echo "<p class='mycss'>Sending successfully.</p>" .$unique_id;
+echo "<p class='mycss1'>Sending successfully <br> Your Application ID is: .$unique_id</br></p>";
 ?>
