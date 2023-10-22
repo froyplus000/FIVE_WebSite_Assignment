@@ -102,11 +102,10 @@
 				echo "<tr>\n";
 				echo "<td>", $row["ID"], "</td>";
 
-				// echo "<td>", $row["Status"], "</td>";
-				if (!$row["Status"]) {
-					echo "<td>Pending</td>";
-				} else {
+				if ($row["Status"]) {
 					echo "<td>", $row["Status"], "</td>";
+				} else {
+					echo "<td>Pending</td>";
 				}
 
 				echo "<td>", $row["Job_prefer"], "</td>";
@@ -123,9 +122,9 @@
 				echo "<td>", $row["Suburb"], "</td>";
 				echo "<td>", $row["State"], "</td>";
 				echo "<td>", $row["Postcode"], "</td>";
-				echo "<td><input type='radio' name='Status", $row["ID"], "' value='Accept'</td>";
-				echo "<td><input type='radio' name='Status", $row["ID"], "' value='Decline'></td>";
-				echo "<td><input type='submit' name='submit' value='submit'></td>";
+				echo "<td><input type='radio' name=", $row["ID"], " value='Accept'</td>";
+				echo "<td><input type='radio' name=", $row["ID"], " value='Decline'></td>";
+				echo "<td><input class='btn' type='submit' name='submit' value='Submit'></td>";
 				echo "<tr>\n";
 			}
 			echo "</table>\n";
