@@ -9,7 +9,7 @@
 
 
 
-	<!-- Navbar -->
+	<!-- Navbar with HAM - OLD-->
 	<nav id="main-nav" class="container">
 
 
@@ -20,12 +20,6 @@
 		</label>
 		<aside class="sidebar">
 
-			<!-- <div><a href="index.html" class="active">Home</a></div>
-			<div><a href="about.html">About Us</a></div>
-			<div><a href="jobs.html">Jobs Description</a></div>
-			<div><a href="apply.html">Apply Now</a></div>
-			<div><a href="enhancement.html">Our Website Enhancement</a></div> -->
-
 			<ul>
 				<li><a href="index.php" class="active">Home</a></li>
 				<li><a href="about.html">About Us</a></li>
@@ -35,9 +29,37 @@
 				<li><a href="enhancement.html">Our Website Enhancement</a></li>
 			</ul>
 		</aside>
-
-
 	</nav>
+
+	<!-- New navbar with HAM -->
+	<!-- <nav id="main-nav" class="container">
+
+		<ul class="nav-bar">
+			<li>
+				<h1 id="logo">Five-5</h1>
+			</li>
+			<li>
+				<label class="hamburger_menu">
+					<input type="checkbox">
+				</label>
+			</li>
+			<li>
+				<aside class="sidebar">
+					<ul>
+						<li><a href="index.php" class="active">Home</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="jobs.html">Jobs Description</a></li>
+						<li><a href="apply.html">Apply Now</a></li>
+						<li><a href="manage.php">Management</a></li>
+						<li><a href="enhancement.html">Our Website Enhancement</a></li>
+					</ul>
+				</aside>
+			</li>
+		</ul> 
+
+
+
+	</nav> -->
 
 
 

@@ -72,9 +72,13 @@
 		if (!$result) {
 			echo "<p>Something is wrong with" . $query . "</p>";
 		} else {
-			echo "<table>\n";
+			echo "<form class=\"outter-wrapper\" action=\"status_update.php\" method=\"post\">";
+			echo "<div class=\"outter-wrapper\">";
+			echo "<div class=\"table-wrapper\">";
+			echo "<table id=\"m_table\">\n";
 			echo "<tr>\n"
 				. "<th scope=\"col\">Application ID</th>\n"
+				. "<th scope=\"col\">Status</th>\n"
 				. "<th scope=\"col\">Job Position</th>\n"
 				. "<th scope=\"col\">Job Reference No.</th>\n"
 				. "<th scope=\"col\">Firstname</th>\n"
@@ -89,12 +93,22 @@
 				. "<th scope=\"col\">Suburb</th>\n"
 				. "<th scope=\"col\">State</th>\n"
 				. "<th scope=\"col\">Postcode</th>\n"
-				. "<th scope=\"col\">Status</th>\n"
+				. "<th scope=\"col\">Accept</th>\n"
+				. "<th scope=\"col\">Decline</th>\n"
+				. "<th scope=\"col\">Submit</th>\n"
 				. "<tr>\n";
 
 			while ($row = mysqli_fetch_assoc($result)) {
 				echo "<tr>\n";
 				echo "<td>", $row["ID"], "</td>";
+
+				// echo "<td>", $row["Status"], "</td>";
+				if (!$row["Status"]) {
+					echo "<td>Pending</td>";
+				} else {
+					echo "<td>", $row["Status"], "</td>";
+				}
+
 				echo "<td>", $row["Job_prefer"], "</td>";
 				echo "<td>", $row["Job_reference_number"], "</td>";
 				echo "<td>", $row["Firstname"], "</td>";
@@ -109,14 +123,15 @@
 				echo "<td>", $row["Suburb"], "</td>";
 				echo "<td>", $row["State"], "</td>";
 				echo "<td>", $row["Postcode"], "</td>";
-				if (!$row["Status"]) {
-					echo "<td>Waiting</td>";
-				} else {
-					echo "<td>", $row["Postcode"], "</td>";
-				}
+				echo "<td><input type='radio' name='Status", $row["ID"], "' value='Accept'</td>";
+				echo "<td><input type='radio' name='Status", $row["ID"], "' value='Decline'></td>";
+				echo "<td><input type='submit' name='submit' value='submit'></td>";
 				echo "<tr>\n";
 			}
 			echo "</table>\n";
+			echo "</div>\n";
+			echo "</div>\n";
+			echo "</div>\n";
 			mysqli_free_result($result);
 		}
 		mysqli_close($conn);

@@ -5,6 +5,10 @@
         -> to use -> var( variable_name )
         -> Example -> background-color: var(--backgroud_light_color);
 */
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
 :root{
     --backgroud_light_color: #e6dcce;
     --main_dark_color: #474143;
@@ -16,10 +20,19 @@
     
     /* --main_light_color: #644304; */
     /* --seccond_dark_color:#06063D; */
+
     /* animation variables */
     --ease_in_out: all 1s ease-in-out;
+    --animation-timing: 300ms ease-in-out;
 
+     /* Hamburger Menu Variables */
+     --bar-width: 60px;
+     --bar-height: 8px;
+     --hamburger-gap: 6px;
+     --hamburger-margin: 8px;
+     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
+
 
 
 
@@ -106,6 +119,10 @@ img{
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
 }
 
+.hamburger_menu{
+    display: none;
+}
+
 
 #main-nav ul {
     list-style: none;
@@ -113,12 +130,12 @@ img{
 
 
 
-#main-nav li {
+#main-nav .sidebar ul li {
     display: inline-block;
     margin-top: 1rem
 }
 
-#main-nav li a {
+#main-nav .sidebar ul li a {
     color: var(--main_dark_color);
     text-decoration: none;
     font-size: 1rem;
@@ -129,7 +146,7 @@ img{
 }
 
 
-#main-nav li a:hover {
+#main-nav .sidebar ul li a:hover {
     color: var(--seccond_light_color);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     font-weight: bold;
@@ -139,7 +156,7 @@ img{
     padding-bottom: .25rem;
 }
 
-#main-nav li a.active {
+#main-nav .sidebar ul li a.active {
     
     border-bottom: .1rem solid var(--main_shadow_color);
     border-radius: 10%;
@@ -149,7 +166,7 @@ img{
 
 /* responsive for navbar */
 @media (max-width: 1199px) {
-    #main-nav li a { 
+    #main-nav .sidebar ul li a { 
         padding: 0 .65rem;
     }
 }
@@ -166,16 +183,16 @@ img{
         font-size: 5rem;
         margin-bottom: 2rem;
     }
-    #main-nav ul {
+    #main-nav .sidebar ul {
         padding-inline-start: 0;
         margin-block-start: 0;
         margin-block-end: 0;
     }
-    #main-nav li {
+    #main-nav .sidebar ul li {
         display: block;
         margin-top: 1rem 0;
     }
-    #main-nav li a {
+    #main-nav .sidebar ul li a {
         font-size: 1.6rem;
         line-height: 3.25rem;
     }
@@ -183,12 +200,88 @@ img{
 }
 @media (max-width: 767px){
     #main-nav #logo{
-        font-size: rem;
+        font-size: 4.25rem;
         margin-bottom: 1rem;
+        margin-top: 1.25rem;
     }
-    #main-nav li a {
+    #main-nav .sidebar ul li {
+        text-align: end;
+        
+    }
+    #main-nav .sidebar ul li a {
         font-size: 1.05rem;
         line-height: 2.75rem;
+    }
+    /* Hamburger Menu */
+
+    .hamburger_menu {
+        --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+        display: flex; 
+        flex-direction: column;
+        gap: var(--hamburger-gap);
+        width: max-content;
+
+        position: absolute;
+        left: 80vw;
+        top: 5vw;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hamburger_menu::after, 
+    .hamburger_menu::before, 
+    .hamburger_menu input{
+        content: "";
+        width: var(--bar-width);
+        height: var(--bar-height);
+        background-color: var(--main_dark_color);
+        border-radius: 9999px;
+        transform-origin: left center;
+        transition: opacity var(--animation-timing), width var(--animation-timing), translate var(--animation-timing), rotate var(--animation-timing);
+    }
+    .hamburger_menu input{
+        appearance: none;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        pointer-events: none;
+    }
+    .hamburger_menu:has(input:checked)::before{
+        rotate: 45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--bar-height) / -2);
+    }
+    .hamburger_menu:has(input:checked)::after{
+        rotate: -45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--bar-height) / 2);
+    }
+    .hamburger_menu input:checked{
+        opacity: 0;
+        width: 0;
+    }
+    .sidebar,
+    .sidebar ul,
+    .sidebar ul li,
+    .sidebar ul li a {
+        /* transition: translate var(--animation-timing); */
+        transition: translate 300ms ease-in-out;
+        translate: -200%;
+        display: none;
+        /* visibility: collapse; */
+        text-align: end;
+    }
+
+    .hamburger_menu:has(input:checked) + .sidebar, 
+    .hamburger_menu:has(input:checked) + .sidebar ul,
+    .hamburger_menu:has(input:checked) + .sidebar ul li,
+    .hamburger_menu:has(input:checked) + .sidebar ul li a
+    {
+        translate: 0%;
+        display: contents;
+        /* visibility: visible; */
+
     }
 }
 
@@ -503,7 +596,7 @@ footer p {
     
     #welcome .container div #welcome_text{
         /* font-size: 6.2rem; */
-        margin-top: 5rem;
+        margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         /* line-height: 2.75rem; */
         font-size: 2.5rem;
@@ -1350,3 +1443,45 @@ transform: translateY(-4px);
         font-size: .8rem;
     }
 }
+
+
+
+
+
+/* Manage.php */
+
+.outer-wrapper {
+    border: .15rem solid var(--main_dark_color);
+}
+.table-wrapper {
+    margin: 2rem;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 500px;
+    border: .15rem solid var(--main_dark_color);
+}
+#m_table {
+    
+    border: .15rem solid var(--main_dark_color);
+    min-width: 80vw;
+    border-spacing: 0px;    
+    border-collapse: collapse;
+    text-align: center;
+    font-family: var(--font_content);
+}
+#m_table tr th, #m_table tr td {
+    border: .15rem solid var(--main_dark_color);
+    padding: 15px;
+}
+#m_table tr th {
+    position: sticky;
+    top: 0px;
+    background-color: var(--main_shadow_color);
+    color: var(--backgroud_light_color);
+    font-size: 1.15rem;
+}
+#m_table tr td {
+    padding: .25rem;
+    border: .15rem solid var(--main_dark_color);
+    font-size: .85rem;
+} 
