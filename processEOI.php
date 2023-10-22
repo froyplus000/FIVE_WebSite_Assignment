@@ -94,7 +94,7 @@ if(mysqli_connect_errno()){
 if(!$con){
     echo "<p>Information from the application form<\p>";
 }else{
-    $query = "SELECT * FROM ApplyForm_Assignment2 WHERE ID ASC";
+    $query = "SELECT * FROM ApplyForm_Assignment2 ORDER BY ID ASC";
     $result = mysqli_query($con,$query);
     
     if(!$result){
@@ -158,6 +158,6 @@ if(!$con){
 			echo "</div>\n";
 			mysqli_free_result($result);
     }
-    mysqli_close($conn);
+    mysqli_close($con);
 }
 ?>
