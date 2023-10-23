@@ -1018,13 +1018,11 @@ footer p {
 
 /* splits the first paragraph (intro) into its own div and shares it with the aside. */
 
-
-.job_container {
-    display:flex;
-    justify-content: space-between;
+.jobs_modifier .container {
     margin: 0 auto;
-    max-width: 90rem;
+    max-width: 70rem;
 }
+
 
 .intro_container {
     flex: 1;
@@ -1034,9 +1032,10 @@ footer p {
 
 .aside_container {
     display:flex;
+    float:right;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 25%;
+    max-width: 20rem;
     flex-basis: 25%;
     
 }
@@ -1047,13 +1046,11 @@ footer p {
     width: auto;
     float: right; 
     position: fixed;
-
     top: 10rem;
     z-index: 100;
     padding: 1rem;
     border: .15rem solid var(--main_shadow_color);
     box-shadow: 0 .15rem .15rem var(--main_shadow_color), 0 -.15rem .15rem var(--main_shadow_color);
-    /* left: calc(75% - 25%); */
 }
 
 #job_aside h2{
