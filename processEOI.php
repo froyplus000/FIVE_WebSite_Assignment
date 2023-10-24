@@ -84,13 +84,13 @@ $Job_reference_number = $_POST['Job_reference_number'];
 $Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
 
-
+// 
 
 if ($Job_reference_number == '55434') {
 	$Job_Description = "Design and maintain software applications.
 	Develop activity reports and engage with the QA team to deliver quality software.
 	Service database updates and maintain database integrity
-	Debug issues within FIVE’s developed software.
+	Debug issues within FIVE's developed software.
 	Keep current with industry best practice standards.";
 } else if ($Job_reference_number == "11231") {
 	$Job_Description = "General IT enquires
@@ -142,17 +142,10 @@ if (!$result) {
 	// Initialize $id before the while loop
 	$id = null;
 
-
 	// Fetch the data
 	while ($row = mysqli_fetch_assoc($result)) {
 		$id = $row["ID"];
 	}
-
-	     // Close the database connection
-	     //Print out the message
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr>\n";
-				echo "<td>", $row["ID"], "</td>";
 
 	// Close the database connection
 	// mysqli_close($con);
@@ -213,7 +206,7 @@ if (!$result) {
 	echo "</div>\n";
 	echo "</div>\n";
 	mysqli_free_result($result);
-	 }
+	// }
 	mysqli_close($con);
 }
 ?>
