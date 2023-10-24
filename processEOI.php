@@ -118,10 +118,9 @@ if(mysqli_connect_errno()){
 	     }
 
 	     // Close the database connection
-	     mysqli_close($con);
 	     //Print out the message
 	     if ($id !== null) {
-	         echo "<p class='mycss1'>Sending successfully <br> Your Application ID is: $id</br>After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not. </p>";
+	        //echo "<p class='mycss1'>Sending successfully <br> Your Application ID is: $id</br>After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not. </p>";
 			echo "<form class=\"outter-wrapper\" action=\"status_update.php\" method=\"post\">";
 			echo "<div class=\"outter-wrapper\">";
 			echo "<div class=\"table-wrapper\">";
