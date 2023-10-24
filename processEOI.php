@@ -142,43 +142,10 @@ if (!$result) {
 	// Initialize $id before the while loop
 	$id = null;
 
-<<<<<<< HEAD
 	// Fetch the data
 	while ($row = mysqli_fetch_assoc($result)) {
 		$id = $row["ID"];
 	}
-=======
-	     // Close the database connection
-	     //Print out the message
-	     if ($id !== null) {
-	        //echo "<p class='mycss1'>Sending successfully <br> Your Application ID is: $id</br>After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not. </p>";
-			echo "<form class=\"outter-wrapper\" action=\"status_update.php\" method=\"post\">";
-			echo "<div class=\"outter-wrapper\">";
-			echo "<div class=\"table-wrapper\">";
-			echo "<table id=\"m_table\">\n";
-			echo "<tr>\n"
-				. "<th scope=\"col\">Application ID</th>\n"
-				. "<th scope=\"col\">Status</th>\n"
-				. "<th scope=\"col\">Job Position</th>\n"
-				. "<th scope=\"col\">Job Reference No.</th>\n"
-				. "<th scope=\"col\">Firstname</th>\n"
-				. "<th scope=\"col\">Lastname</th>\n"
-				. "<th scope=\"col\">Gender</th>\n"
-				. "<th scope=\"col\">DOB</th>\n"
-				. "<th scope=\"col\">Programming Language</th>\n"
-				. "<th scope=\"col\">Skills</th>\n"
-				. "<th scope=\"col\">Email</th>\n"
-				. "<th scope=\"col\">Phone</th>\n"
-				. "<th scope=\"col\">Address</th>\n"
-				. "<th scope=\"col\">Suburb</th>\n"
-				. "<th scope=\"col\">State</th>\n"
-				. "<th scope=\"col\">Postcode</th>\n"
-				. "<tr>\n";
-            
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr>\n";
-				echo "<td>", $row["ID"], "</td>";
->>>>>>> 3933621535d0d66b1297aa62da2c9fb42b23e77f
 
 	// Close the database connection
 	// mysqli_close($con);
