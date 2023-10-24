@@ -1,10 +1,10 @@
 <!--
 	Group Name		: FIVE
 	Group Number	: 5
-    
-    Author			: Pattarapol Tantechasa		Student ID:	103883220
-    Author			: Sam Anderson 				Student ID:	104465030
-    Author			: Ngoc Huy Duong 			Student ID:	104471956
+	
+	Author			: Pattarapol Tantechasa		Student ID:	103883220
+	Author			: Sam Anderson 				Student ID:	104465030
+	Author			: Ngoc Huy Duong 			Student ID:	104471956
 
 
 -->
@@ -21,17 +21,18 @@
 	<link rel="stylesheet" href="customUploadStyle.css">
 	<link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>Apply Form</title>
 </head>
 <?php
-require_once('processEOI.php');
-if (isset($_REQUEST['submit'])){
-	$Programming_language = implode(", ",$_REQUEST['Programming_Language']);
-	$insert_query = mysqli_query($con,"insert into ApplyForm_Assignment2 set Programming_Language=$Programming_language");
-}
+// require_once('processEOI.php');
+// if (isset($_REQUEST['submit'])) {
+// 	$Programming_language = implode(", ", $_REQUEST['Programming_Language']);
+// 	$insert_query = mysqli_query($con, "insert into ApplyForm_Assignment2 set Programming_Language=$Programming_language");
+// }
 
 ?>
+
 <body class="apply">
 
 	<!-- Navbar -->
@@ -129,8 +130,8 @@ if (isset($_REQUEST['submit'])){
 				</p>
 				<p>
 					<label class="required" for="jobnumber">Job reference number:</label>
-					<input class="texts" type="text" id="jobnumber" maxlength="5" name="Job_reference_number"
-						placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
+					<input class="texts" type="text" id="jobnumber" maxlength="5" name="Job_reference_number" value="<?php $Job_reference_number = $_GET['Job_reference_number'];
+					echo "$Job_reference_number"; ?>" placeholder="Only put 5 characters" required pattern="[a-zA-Z0-9\s]+">
 				</p>
 				<hr>
 				<p class="required"> Which programming languague you have most experience with (required): </p>
