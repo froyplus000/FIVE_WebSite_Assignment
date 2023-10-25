@@ -57,9 +57,36 @@
 
 
 	.mycss1 {
-		margin-top: 20rem;
+		margin-top: 10rem;
+		text-align: center;
+		font-family: var(--font_content);
+		font-size: 25px;
+		color: #474143;
 	}
-
+	.mycss2{
+		font-family: var(--font_content);
+		font-size: 25px;
+		color:#FF0000;
+	}
+	.goback-button{
+	background-color: #474143;
+    color: #eedfc7;
+    border: 3px solid #eedfc7;
+    margin: 4px 2px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    font-family: var(--font_content);
+    font-size: 15px;
+    cursor: pointer;
+	}
+	.goback-button:hover{
+	background-color: #7c7a7a;
+    text-shadow: #7c5802;
+    transform: scale(1.05);
+	}
+		
 	* {
 		margin: 0;
 		padding: 0;
@@ -151,7 +178,7 @@ if (!$result) {
 	// mysqli_close($con);
 	//Print out the message
 	if ($id !== null) {
-		echo "<p class='mycss1'>Sending successfully <br> Your Application ID is: $id</br>After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not. </p>";
+		echo "<p class='mycss1'>Sending successfully<br>Your Application ID is: $id</p>";
 		echo "<form class=\"outter-wrapper\" action=\"status_update.php\" method=\"post\">";
 		echo "<div class=\"outter-wrapper\">";
 		echo "<div class=\"table-wrapper\">";
@@ -206,7 +233,10 @@ if (!$result) {
 	echo "</div>\n";
 	echo "</div>\n";
 	mysqli_free_result($result);
-	// }
+	//go back to the apply form
 	mysqli_close($con);
+	$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+	echo "<a href='$url' class='goback-button'>Go Back</a>";
+	echo "<p class='mycss2'>Notice: After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not</p>";
 }
 ?>
