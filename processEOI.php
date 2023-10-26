@@ -57,7 +57,37 @@
 
 
 	.mycss1 {
-		margin-top: 20rem;
+		margin-top: 10rem;
+		text-align: center;
+		font-family: var(--font_content);
+		font-size: 25px;
+		color: #474143;
+	}
+
+	.mycss2 {
+		font-family: var(--font_content);
+		font-size: 25px;
+		color: #FF0000;
+	}
+
+	.goback-button {
+		background-color: #474143;
+		color: #eedfc7;
+		border: 3px solid #eedfc7;
+		margin: 4px 2px;
+		padding: 12px 24px;
+		border-radius: 8px;
+		text-align: center;
+		display: inline-block;
+		font-family: var(--font_content);
+		font-size: 15px;
+		cursor: pointer;
+	}
+
+	.goback-button:hover {
+		background-color: #7c7a7a;
+		text-shadow: #7c5802;
+		transform: scale(1.05);
 	}
 
 	* {
@@ -181,41 +211,93 @@ if (!isset($_POST['submit'])) {
 				. "<th scope=\"col\">State</th>\n"
 				. "<th scope=\"col\">Postcode</th>\n"
 				. "<tr>\n";
+			// Close the database connection
+			// mysqli_close($con);
+			//Print out the message
+			if ($id !== null) {
+				echo "<p class='mycss1'>Sending successfully<br>Your Application ID is: $id</p>";
+				echo "<form class=\"outter-wrapper\" action=\"status_update.php\" method=\"post\">";
+				echo "<div class=\"outter-wrapper\">";
+				echo "<div class=\"table-wrapper\">";
+				echo "<table id=\"m_table\">\n";
+				echo "<tr>\n"
+					. "<th scope=\"col\">Application ID</th>\n"
+					. "<th scope=\"col\">Status</th>\n"
+					. "<th scope=\"col\">Job Position</th>\n"
+					. "<th scope=\"col\">Job Reference No.</th>\n"
+					. "<th scope=\"col\">Firstname</th>\n"
+					. "<th scope=\"col\">Lastname</th>\n"
+					. "<th scope=\"col\">Gender</th>\n"
+					. "<th scope=\"col\">DOB</th>\n"
+					. "<th scope=\"col\">Programming Language</th>\n"
+					. "<th scope=\"col\">Skills</th>\n"
+					. "<th scope=\"col\">Email</th>\n"
+					. "<th scope=\"col\">Phone</th>\n"
+					. "<th scope=\"col\">Address</th>\n"
+					. "<th scope=\"col\">Suburb</th>\n"
+					. "<th scope=\"col\">State</th>\n"
+					. "<th scope=\"col\">Postcode</th>\n"
+					. "<tr>\n";
 
-			// while ($row = mysqli_fetch_assoc($result)) {
-			echo "<tr>\n";
-			echo "<td>", $id, "</td>";
+				// while ($row = mysqli_fetch_assoc($result)) {
+				echo "<tr>\n";
+				echo "<td>", $id, "</td>";
 
-			// echo "<td>", $row["Status"], "</td>";
-			echo "<td>Pending</td>";
-			// if (!$row["Status"]) {
-			// } else {
-			// 	echo "<td>", $row["Status"], "</td>";
+				// echo "<td>", $row["Status"], "</td>";
+				echo "<td>Pending</td>";
+				// if (!$row["Status"]) {
+				// } else {
+				// 	echo "<td>", $row["Status"], "</td>";
+				// }
+
+				echo "<td>", $Job_prefer, "</td>";
+				echo "<td>", $Job_reference_number, "</td>";
+				echo "<td>", $Firstname, "</td>";
+				echo "<td>", $Lastname, "</td>";
+				echo "<td>", $Gender, "</td>";
+				echo "<td>", $Dob, "</td>";
+				echo "<td>", $Programming_language, "</td>";
+				echo "<td>", $Skills, "</td>";
+				echo "<td>", $Email, "</td>";
+				echo "<td>", $Phone, "</td>";
+				echo "<td>", $Address, "</td>";
+				echo "<td>", $Suburb, "</td>";
+				echo "<td>", $State, "</td>";
+				echo "<td>", $Postcode, "</td>";
+			}
+			echo "</table>\n";
+			echo "</div>\n";
+			echo "</div>\n";
+			echo "</div>\n";
+			mysqli_free_result($result);
 			// }
+			mysqli_close($con);
 
-			echo "<td>", $Job_prefer, "</td>";
-			echo "<td>", $Job_reference_number, "</td>";
-			echo "<td>", $Firstname, "</td>";
-			echo "<td>", $Lastname, "</td>";
-			echo "<td>", $Gender, "</td>";
-			echo "<td>", $Dob, "</td>";
-			echo "<td>", $Programming_language, "</td>";
-			echo "<td>", $Skills, "</td>";
-			echo "<td>", $Email, "</td>";
-			echo "<td>", $Phone, "</td>";
-			echo "<td>", $Address, "</td>";
-			echo "<td>", $Suburb, "</td>";
-			echo "<td>", $State, "</td>";
-			echo "<td>", $Postcode, "</td>";
 		}
-		echo "</table>\n";
-		echo "</div>\n";
-		echo "</div>\n";
-		echo "</div>\n";
-		mysqli_free_result($result);
-		// }
-		mysqli_close($con);
-
+		echo "<td>", $Job_prefer, "</td>";
+		echo "<td>", $Job_reference_number, "</td>";
+		echo "<td>", $Firstname, "</td>";
+		echo "<td>", $Lastname, "</td>";
+		echo "<td>", $Gender, "</td>";
+		echo "<td>", $Dob, "</td>";
+		echo "<td>", $Programming_language, "</td>";
+		echo "<td>", $Skills, "</td>";
+		echo "<td>", $Email, "</td>";
+		echo "<td>", $Phone, "</td>";
+		echo "<td>", $Address, "</td>";
+		echo "<td>", $Suburb, "</td>";
+		echo "<td>", $State, "</td>";
+		echo "<td>", $Postcode, "</td>";
 	}
+	echo "</table>\n";
+	echo "</div>\n";
+	echo "</div>\n";
+	echo "</div>\n";
+	mysqli_free_result($result);
+	//go back to the apply form
+	mysqli_close($con);
+	$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+	echo "<a href='$url' class='goback-button'>Go Back</a>";
+	echo "<p class='mycss2'>Notice: After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not</p>";
 }
 ?>
