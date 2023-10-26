@@ -140,7 +140,7 @@ if (is_array($_POST['Skills']) && !empty($_POST['Skills'])) {
 } else {
 	$Skills = "";
 }
-//connection//
+//connection
 $con = mysqli_connect($host, $user, $pwd, $sql_db);
 if (isset($_REQUEST['submit'])) {
 	$Programming_language = implode(", ", $_REQUEST['Programming_Language']);
@@ -175,8 +175,7 @@ if (!$result) {
 	}
 
 	// Close the database connection
-	// mysqli_close($con);
-	//Print out the message
+	//table
 	if ($id !== null) {
 		echo "<p class='mycss1'>Sending successfully<br>Your Application ID is: $id</p>";
 		echo "<form class=\"outter-wrapper\" action=\"status_update.php\" method=\"post\">";

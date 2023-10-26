@@ -101,8 +101,8 @@
 				$sort_field = $_POST['sort_field'];
 				
 				// These are the allowed fields. 
-				//HuyNgocDuong Can we please check the Database has these ecxact fields listed?
-				$allowed_fields = ['Firstname', 'Lastname,', 'Job_reference_number,', 'Application_id,', 'Suburb,', 'Job_position,']; 
+				//HuyNgocDuong Can we please check the Database has these ecxact fields listed? 
+				$allowed_fields = ['Firstname', 'Lastname,', 'Job_reference_number,', 'ID,', 'Suburb,', 'Job_prefer,']; 
 			
 
 				//Here if the allowed fields are selected, it will sort the information in teh data base as results and return them to the screen. the below code runs the query.
