@@ -84,18 +84,16 @@
 		if (!$conn) {
 			echo "<p>Database connection failure</p>";
 		} else {
-
 			$sql_table = "ApplyForm_Assignment2";
 			$query = "SELECT * FROM $sql_table ORDER BY ID DESC";
 			$result = mysqli_query($conn, $query);
 
+		}
+
+			
 			if (!$result) {
 				echo "<p>Something is wrong with" . $query . "</p>";
 			} else {
-
-
-
-<<<<<<< HEAD
 			//This is the SQL sort function. It will sort the results based on the field selected by the manager.
 			if (isset($_POST['submit_sort']) && isset($_POST['sort_field'])) {
 				$sort_field = $_POST['sort_field'];
@@ -104,9 +102,6 @@
 				//HuyNgocDuong Can we please check the Database has these ecxact fields listed? 
 				$allowed_fields = ['Firstname', 'Lastname,', 'Job_reference_number,', 'ID,', 'Suburb,', 'Job_prefer,']; 
 			
-=======
->>>>>>> 2e27ce0aa7c6d1efcebc6fab3288f7c64197c2ad
-
 				//This is the SQL sort function. It will sort the results based on the field selected by the manager.
 				if (isset($_POST['submit_sort']) && isset($_POST['sort_field'])) {
 					$sort_field = $_POST['sort_field'];
