@@ -17,6 +17,8 @@ if (isset($_POST['submit'])) {
 
             if (!$result) {
                 echo "Error updating status for application with ID $key";
+            } else {
+                header("Location: manage.php");
             }
         }
     }

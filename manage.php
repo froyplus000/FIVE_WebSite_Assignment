@@ -28,7 +28,7 @@
 				<li><a href="index.php">Home</a></li>
 				<li><a href="about.html">About Us</a></li>
 				<li><a href="jobs.html">Jobs Description</a></li>
-				<li><a href="apply.html">Apply Now</a></li>
+				<li><a href="apply.php">Apply Now</a></li>
 				<li><a href="manage.php" class="active">Management</a></li>
 				<li><a href="enhancement.html">Our Website Enhancement</a></li>
 			</ul>
@@ -87,21 +87,20 @@
 			$sql_table = "ApplyForm_Assignment2";
 			$query = "SELECT * FROM $sql_table ORDER BY ID DESC";
 			$result = mysqli_query($conn, $query);
-
 		}
 
-			
-			if (!$result) {
-				echo "<p>Something is wrong with" . $query . "</p>";
-			} else {
+
+		if (!$result) {
+			echo "<p>Something is wrong with" . $query . "</p>";
+		} else {
 			//This is the SQL sort function. It will sort the results based on the field selected by the manager.
 			if (isset($_POST['submit_sort']) && isset($_POST['sort_field'])) {
 				$sort_field = $_POST['sort_field'];
-				
+
 				// These are the allowed fields. 
 				//HuyNgocDuong Can we please check the Database has these ecxact fields listed? 
-				$allowed_fields = ['Firstname', 'Lastname,', 'Job_reference_number,', 'ID,', 'Suburb,', 'Job_prefer,']; 
-			
+				$allowed_fields = ['Firstname', 'Lastname,', 'Job_reference_number,', 'ID,', 'Suburb,', 'Job_prefer,'];
+
 				//This is the SQL sort function. It will sort the results based on the field selected by the manager.
 				if (isset($_POST['submit_sort']) && isset($_POST['sort_field'])) {
 					$sort_field = $_POST['sort_field'];
