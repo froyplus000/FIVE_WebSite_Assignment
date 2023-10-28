@@ -26,7 +26,7 @@
 
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="about.html">About Us</a></li>
+				<li><a href="about.php">About Us</a></li>
 				<li><a href="jobs.html">Jobs Description</a></li>
 				<li><a href="apply.php">Apply Now</a></li>
 				<li><a href="manage.php" class="active">Management</a></li>
@@ -293,13 +293,11 @@
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo "<tr>\n";
 					echo "<td>", $row["ID"], "</td>";
-
-					if ($row["Status"]) {
-						echo "<td>", $row["Status"], "</td>";
-					} else {
-						echo "<td>Pending</td>";
-					}
-
+					echo "<td>", $row["Status"], "</td>";
+					// if ($row["Status"]) {
+					// } else {
+					// 	echo "<td>Pending</td>";
+					// }
 					echo "<td>", $row["Job_prefer"], "</td>";
 					echo "<td>", $row["Job_reference_number"], "</td>";
 					echo "<td>", $row["Firstname"], "</td>";

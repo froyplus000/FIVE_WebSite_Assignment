@@ -17,7 +17,7 @@
         margin: 2rem;
         overflow-y: auto;
         overflow-x: auto;
-        height:max-content;
+        height: max-content;
         border: .15rem solid var(--main_dark_color);
     }
 
@@ -54,36 +54,41 @@
     #m_table tr td .btn {
         background-color: var(--main_shadow_color);
     }
+
     .mycss1 {
-		margin-top: 10rem;
-		text-align: center;
-		font-family: var(--font_content);
-		font-size: 25px;
-		color: #474143;
-	}
-	.mycss2{
-		font-family: var(--font_content);
-		font-size: 25px;
-		color:#FF0000;
-	}
-	.goback-button{
-	background-color: #474143;
-    color: #eedfc7;
-    border: 3px solid #eedfc7;
-    margin: 4px 2px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-align: center;
-    display: inline-block;
-    font-family: var(--font_content);
-    font-size: 15px;
-    cursor: pointer;
-	}
-	.goback-button:hover{
-	background-color: #7c7a7a;
-    text-shadow: #7c5802;
-    transform: scale(1.05);
-	}
+        margin-top: 10rem;
+        text-align: center;
+        font-family: var(--font_content);
+        font-size: 25px;
+        color: #474143;
+    }
+
+    .mycss2 {
+        font-family: var(--font_content);
+        font-size: 25px;
+        color: #FF0000;
+    }
+
+    .goback-button {
+        background-color: #474143;
+        color: #eedfc7;
+        border: 3px solid #eedfc7;
+        margin: 4px 2px;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-align: center;
+        display: inline-block;
+        font-family: var(--font_content);
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .goback-button:hover {
+        background-color: #7c7a7a;
+        text-shadow: #7c5802;
+        transform: scale(1.05);
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -107,24 +112,11 @@ $Job_prefer = $_POST['Job_prefer'];
 $Job_reference_number = $_POST['Job_reference_number'];
 $Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
+$Status = "Pending";
 
 //
 // 
 
-if ($Job_reference_number == '55434') {
-	$Job_Description = "Design and maintain software applications.
-	Develop activity reports and engage with the QA team to deliver quality software.
-	Service database updates and maintain database integrity
-	Debug issues within FIVE's developed software.
-	Keep current with industry best practice standards.";
-} else if ($Job_reference_number == "11231") {
-	$Job_Description = "General IT enquires
-	Administration settings for FIVE products and services
-	Networking enquires
-	booking onsite techinician schedules
-	Troubleshoot issues within the FIVE software suite
-	Handling calls regading FIVE custom software, creating case ID's and";
-}
 
 // Convert arrays to strings//
 if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
@@ -149,13 +141,13 @@ if (mysqli_connect_errno()) {
     echo "$con->connect_error";
     die("Connection Failed : " . mysqli_connect_error());
 }
-$sql = "INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills, Status) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $result = mysqli_query($con, $sql);
 $stmt = mysqli_stmt_init($con);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
     die(mysqli_error($con));
 }
-mysqli_stmt_bind_param($stmt, "ssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills);
+mysqli_stmt_bind_param($stmt, "sssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills, $Status);
 mysqli_stmt_execute($stmt);
 // Generate a ID
 $query = "SELECT * FROM ApplyForm_Assignment2 ORDER BY ID ASC";
@@ -199,39 +191,39 @@ if (!$result) {
             . "<tr>\n";
 
         // while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>\n";
-            echo "<td>", $id, "</td>";
+        echo "<tr>\n";
+        echo "<td>", $id, "</td>";
 
-            // echo "<td>", $row["Status"], "</td>";
-            // if (!$row["Status"]) {
-                echo "<td>Pending</td>";
-            // } else {
-            //     echo "<td>", $row["Status"], "</td>";
-            // }
+        // echo "<td>", $row["Status"], "</td>";
+        // if (!$row["Status"]) {
+        echo "<td>Pending</td>";
+        // } else {
+        //     echo "<td>", $row["Status"], "</td>";
+        // }
 
-         echo "<td>", $Job_prefer, "</td>";
-		echo "<td>", $Job_reference_number, "</td>";
-		echo "<td>", $Firstname, "</td>";
-		echo "<td>", $Lastname, "</td>";
-		echo "<td>", $Gender, "</td>";
-		echo "<td>", $Dob, "</td>";
-		echo "<td>", $Programming_language, "</td>";
-		echo "<td>", $Skills, "</td>";
-		echo "<td>", $Email, "</td>";
-		echo "<td>", $Phone, "</td>";
-		echo "<td>", $Address, "</td>";
-		echo "<td>", $Suburb, "</td>";
-		echo "<td>", $State, "</td>";
-		echo "<td>", $Postcode, "</td>";
-        }
-        echo "</table>\n";
-        echo "</div>\n";
-        echo "</div>\n";
-        echo "</div>\n";
-        mysqli_free_result($result);
+        echo "<td>", $Job_prefer, "</td>";
+        echo "<td>", $Job_reference_number, "</td>";
+        echo "<td>", $Firstname, "</td>";
+        echo "<td>", $Lastname, "</td>";
+        echo "<td>", $Gender, "</td>";
+        echo "<td>", $Dob, "</td>";
+        echo "<td>", $Programming_language, "</td>";
+        echo "<td>", $Skills, "</td>";
+        echo "<td>", $Email, "</td>";
+        echo "<td>", $Phone, "</td>";
+        echo "<td>", $Address, "</td>";
+        echo "<td>", $Suburb, "</td>";
+        echo "<td>", $State, "</td>";
+        echo "<td>", $Postcode, "</td>";
     }
-    mysqli_close($con);
-    $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-	echo "<a href='$url' class='goback-button'>Go Back</a>";
-	echo "<p class='mycss2'>Notice: After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not</p>";
+    echo "</table>\n";
+    echo "</div>\n";
+    echo "</div>\n";
+    echo "</div>\n";
+    mysqli_free_result($result);
+}
+mysqli_close($con);
+$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+echo "<a href='$url' class='goback-button'>Go Back</a>";
+echo "<p class='mycss2'>Notice: After receive the Application ID, please wait until there is a email send to you to let you know you are hire or not</p>";
 ?>
