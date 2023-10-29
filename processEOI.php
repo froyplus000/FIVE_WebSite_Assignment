@@ -99,30 +99,23 @@
 
 
 include('settings.php');
-
-if (!isset($_POST['submit'])) {
-    header('Location: ./apply.php');
-} else {
-    //Insert name//
-    $Firstname = $_POST['Firstname'];
-    $Lastname = $_POST['Lastname'];
-    $Dob = $_POST['Dob'];
-    $Gender = $_POST['Gender'];
-    $Email = $_POST['Email'];
-    $Phone = $_POST['Phone'];
-    $Address = $_POST['Address'];
-    $Suburb = $_POST['Suburb'];
-    $State = $_POST['State'];
-    $Postcode = $_POST['Postcode'];
-    $Job_prefer = $_POST['Job_prefer'];
-    $Job_reference_number = $_POST['Job_reference_number'];
-    $Programming_language = $_POST['Programming_Language'];
-    $Skills = $_POST['Skills'];
-    $Status = "Pending";
-
-    //
-    // 
-
+include('clean.php');
+//Insert name//
+$Firstname = clean($_POST['Firstname']);
+$Lastname = clean($_POST['Lastname']);
+$Dob = clean($_POST['Dob']);
+$Gender = clean($_POST['Gender']);
+$Email = clean($_POST['Email']);
+$Phone = clean($_POST['Phone']);
+$Address = clean($_POST['Address']);
+$Suburb = clean($_POST['Suburb']);
+$State = $_POST['State'];
+$Postcode = clean($_POST['Postcode']);
+$Job_prefer = clean($_POST['Job_prefer']);
+$Job_reference_number = clean($_POST['Job_reference_number']);
+$Programming_language = clean($_POST['Programming_Language']);
+$Skills = clean($_POST['Skills']);
+$Status = "Pending";
 
     // Convert arrays to strings//
     if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
@@ -141,28 +134,31 @@ if (!isset($_POST['submit'])) {
         $Programming_language = implode(", ", $_REQUEST['Programming_Language']);
         $insert_query = mysqli_query($con, "insert into ApplyForm_Assignment2 set Programming_Language=$Programming_language");
     }
+if (isset($_REQUEST['submit'])) {
+    $Skills = implode(", ", $_REQUEST['Skills']);
+    $insert_query = mysqli_query($con, "insert into ApplyForm_Assignment2 set Skills=$Skills");
+}
 
-
-    if (mysqli_connect_errno()) {
-        echo "$con->connect_error";
-        die("Connection Failed : " . mysqli_connect_error());
-    }
-    $sql = "INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills, Status) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $result = mysqli_query($con, $sql);
-    $stmt = mysqli_stmt_init($con);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        die(mysqli_error($con));
-    }
-    mysqli_stmt_bind_param($stmt, "sssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills, $Status);
-    mysqli_stmt_execute($stmt);
-    // Generate a ID
-    $query = "SELECT * FROM ApplyForm_Assignment2 ORDER BY ID ASC";
-    $result = mysqli_query($con, $query);
-    if (!$result) {
-        echo "Query failed: " . mysqli_error($con);
-    } else {
-        // Initialize $id before the while loop
-        $id = null;
+if (mysqli_connect_errno()) {
+    echo "$con->connect_error";
+    die("Connection Failed : " . mysqli_connect_error());
+}
+$sql = "INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills, Status) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+$result = mysqli_query($con, $sql);
+$stmt = mysqli_stmt_init($con);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    die(mysqli_error($con));
+}
+mysqli_stmt_bind_param($stmt, "sssssssssssssss", $Firstname, $Lastname, $Dob, $Gender, $Email, $Phone, $Address, $Suburb, $State, $Postcode, $Job_prefer, $Job_reference_number, $Programming_language, $Skills, $Status);
+mysqli_stmt_execute($stmt);
+// Generate a ID
+$query = "SELECT * FROM ApplyForm_Assignment2 ORDER BY ID ASC";
+$result = mysqli_query($con, $query);
+if (!$result) {
+    echo "Query failed: " . mysqli_error($con);
+} else {
+    // Initialize $id before the while loop
+    $id = null;
 
         // Fetch the data
         while ($row = mysqli_fetch_assoc($result)) {
