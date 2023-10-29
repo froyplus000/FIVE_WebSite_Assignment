@@ -98,18 +98,18 @@
 <?php
 include('settings.php');
 //Insert name//
-$Firstname = $_POST['Firstname'];
-$Lastname = $_POST['Lastname'];
-$Dob = $_POST['Dob'];
-$Gender = $_POST['Gender'];
-$Email = $_POST['Email'];
-$Phone = $_POST['Phone'];
-$Address = $_POST['Address'];
-$Suburb = $_POST['Suburb'];
+$Firstname = htmlspecialchars($_POST['Firstname']);
+$Lastname = htmlspecialchars($_POST['Lastname']);
+$Dob = htmlspecialchars($_POST['Dob']);
+$Gender = htmlspecialchars($_POST['Gender']);
+$Email = htmlspecialchars($_POST['Email']);
+$Phone = htmlspecialchars($_POST['Phone']);
+$Address = htmlspecialchars($_POST['Address']);
+$Suburb = htmlspecialchars($_POST['Suburb']);
 $State = $_POST['State'];
-$Postcode = $_POST['Postcode'];
+$Postcode = htmlspecialchars($_POST['Postcode']);
 $Job_prefer = $_POST['Job_prefer'];
-$Job_reference_number = $_POST['Job_reference_number'];
+$Job_reference_number = htmlspecialchars($_POST['Job_reference_number']);
 $Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
 $Status = "Pending";
