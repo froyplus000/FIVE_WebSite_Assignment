@@ -114,10 +114,6 @@ $Programming_language = $_POST['Programming_Language'];
 $Skills = $_POST['Skills'];
 $Status = "Pending";
 
-//
-// 
-
-
 // Convert arrays to strings//
 if (is_array($_POST['Programming_Language']) && !empty($_POST['Programming_Language'])) {
     $Programming_language = implode(",", $_POST['Programming_Language']);
@@ -135,13 +131,16 @@ if (isset($_REQUEST['submit'])) {
     $Programming_language = implode(", ", $_REQUEST['Programming_Language']);
     $insert_query = mysqli_query($con, "insert into ApplyForm_Assignment2 set Programming_Language=$Programming_language");
 }
-
+if (isset($_REQUEST['submit'])) {
+    $Skills = implode(", ", $_REQUEST['Skills']);
+    $insert_query = mysqli_query($con, "insert into ApplyForm_Assignment2 set Skills=$Skills");
+}
 
 if (mysqli_connect_errno()) {
     echo "$con->connect_error";
     die("Connection Failed : " . mysqli_connect_error());
 }
-$sql = "INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills, Status) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO ApplyForm_Assignment2(Firstname, Lastname, Dob, Gender, Email, Phone, Address, Suburb, State, Postcode, Job_prefer, Job_reference_number, Programming_Language, Skills, Status) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 $result = mysqli_query($con, $sql);
 $stmt = mysqli_stmt_init($con);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
