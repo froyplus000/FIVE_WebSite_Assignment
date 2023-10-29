@@ -5,7 +5,7 @@
         header('Location:apply.php');
         exit;
     }
-    function cleanInput($input){
+    function clean($input){
         $input = trim($input);
         $input = stripslashes($input);
         $input = htmlspecialchars($input);

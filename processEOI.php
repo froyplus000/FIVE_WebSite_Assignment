@@ -99,20 +99,20 @@
 include('settings.php');
 include('clean.php');
 //Insert name//
-$Firstname = cleanInput($_POST['Firstname']);
-$Lastname = cleanInput($_POST['Lastname']);
-$Dob = cleanInput($_POST['Dob']);
-$Gender = cleanInput($_POST['Gender']);
-$Email = cleanInput($_POST['Email']);
-$Phone = cleanInput($_POST['Phone']);
-$Address = cleanInput($_POST['Address']);
-$Suburb = cleanInput($_POST['Suburb']);
+$Firstname = clean($_POST['Firstname']);
+$Lastname = clean($_POST['Lastname']);
+$Dob = clean($_POST['Dob']);
+$Gender = clean($_POST['Gender']);
+$Email = clean($_POST['Email']);
+$Phone = clean($_POST['Phone']);
+$Address = clean($_POST['Address']);
+$Suburb = clean($_POST['Suburb']);
 $State = $_POST['State'];
-$Postcode = cleanInput($_POST['Postcode']);
-$Job_prefer = cleanInput($_POST['Job_prefer']);
-$Job_reference_number = cleanInput($_POST['Job_reference_number']);
-$Programming_language = cleanInput($_POST['Programming_Language']);
-$Skills = $_POST['Skills'];
+$Postcode = clean($_POST['Postcode']);
+$Job_prefer = clean($_POST['Job_prefer']);
+$Job_reference_number = clean($_POST['Job_reference_number']);
+$Programming_language = clean($_POST['Programming_Language']);
+$Skills = clean($_POST['Skills']);
 $Status = "Pending";
 
 // Convert arrays to strings//
