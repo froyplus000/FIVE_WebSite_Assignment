@@ -97,20 +97,21 @@
 </style>
 <?php
 include('settings.php');
+include('clean.php');
 //Insert name//
-$Firstname = htmlspecialchars($_POST['Firstname']);
-$Lastname = htmlspecialchars($_POST['Lastname']);
-$Dob = htmlspecialchars($_POST['Dob']);
-$Gender = htmlspecialchars($_POST['Gender']);
-$Email = htmlspecialchars($_POST['Email']);
-$Phone = htmlspecialchars($_POST['Phone']);
-$Address = htmlspecialchars($_POST['Address']);
-$Suburb = htmlspecialchars($_POST['Suburb']);
+$Firstname = cleanInput($_POST['Firstname']);
+$Lastname = cleanInput($_POST['Lastname']);
+$Dob = cleanInput($_POST['Dob']);
+$Gender = cleanInput($_POST['Gender']);
+$Email = cleanInput($_POST['Email']);
+$Phone = cleanInput($_POST['Phone']);
+$Address = cleanInput($_POST['Address']);
+$Suburb = cleanInput($_POST['Suburb']);
 $State = $_POST['State'];
-$Postcode = htmlspecialchars($_POST['Postcode']);
-$Job_prefer = $_POST['Job_prefer'];
-$Job_reference_number = htmlspecialchars($_POST['Job_reference_number']);
-$Programming_language = $_POST['Programming_Language'];
+$Postcode = cleanInput($_POST['Postcode']);
+$Job_prefer = cleanInput($_POST['Job_prefer']);
+$Job_reference_number = cleanInput($_POST['Job_reference_number']);
+$Programming_language = cleanInput($_POST['Programming_Language']);
 $Skills = $_POST['Skills'];
 $Status = "Pending";
 
