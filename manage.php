@@ -27,10 +27,10 @@
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="about.php">About Us</a></li>
-				<li><a href="jobs.html">Jobs Description</a></li>
+				<li><a href="jobs.php">Jobs Description</a></li>
 				<li><a href="apply.php">Apply Now</a></li>
 				<li><a href="manage.php" class="active">Management</a></li>
-				<li><a href="enhancement.html">Our Website Enhancement</a></li>
+				<li><a href="enhancement.php">Our Website Enhancement</a></li>
 			</ul>
 		</aside>
 

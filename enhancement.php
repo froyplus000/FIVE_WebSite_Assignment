@@ -28,7 +28,7 @@
 				<li><a href="jobs.php">Jobs Description</a></li>
 				<li><a href="apply.php">Apply Now</a></li>
 				<li><a href="manage.php">Management</a></li>
-				<li><a href="enhancement.html" class="active">Our Website Enhancement</a></li>
+				<li><a href="enhancement.php" class="active">Our Website Enhancement</a></li>
 			</ul>
 		</aside>
 
