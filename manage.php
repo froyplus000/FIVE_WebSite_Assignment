@@ -143,3 +143,166 @@
 
 	include("./footer.php");
 	?>
+
+
+<!-- //This is the SQL sort function. It will sort the results based on the field selected by the manager.
+				if (isset($_POST['submit_sort']) && isset($_POST['sort_field'])) {
+					$sort_field = $_POST['sort_field'];
+
+					// These are the allowed fields. 
+					//HuyNgocDuong Can we please check the Database has these ecxact fields listed?
+					$allowed_fields = ['Firstname', 'Lastname,', 'Job_reference_number,', 'Application_id,', 'Suburb,', 'Job_position,'];
+
+
+					//Here if the allowed fields are selected, it will sort the information in teh data base as results and return them to the screen. the below code runs the query.
+					if (in_array($sort_field, $allowed_fields, true)) {
+						$query = "SELECT * FROM ApplyForm_Assignment2 ORDER BY $sort_field ASC";
+						$result = $mysqli->query($query);
+
+						if ($result) {
+							while ($row = $result->fetch_assoc()) {
+
+								echo $row['your_field_name'];
+							}
+						} else {
+							echo "Error: " . $mysqli->error;
+						}
+					} else {
+						echo "Error: " . $mysqli->error;
+						echo "Invalid sorting field selected.";
+					}
+				} else {
+					echo "Invalid sorting field selected.";
+				}
+			}
+
+			//Displays based on the sort field selected in Ascending order.
+
+			if ($result) {
+				while ($row = $result->fetch_assoc()) {
+					switch($sortField) {
+
+						case 'last_name':
+							echo $row['last_name'] . " | " . 
+							$row['first_name'] . " | " . 
+							$row['Job_reference_number'] . " | " . 
+							$row['Application_id'] . " | " . 
+							$row['Email'] . " | " . 
+							$row['Suburb'] . " | " . 
+							$row['Job_position'] . " | " . 
+							$row['Dob'] . " | " .
+							$row['Gender'] . " | " .
+							$row['Phone'] . " | " .
+							$row['Address'] . " | " .
+							$row['State'] . " | " .
+							$row['Postcode'] . " | " .
+							$row['Job_prefer'] . " | " .
+							$row['Programming_language'] . " | " .
+							$row['skills'] . " | " .							
+							"<br>";
+							break;
+
+						case 'Job_reference_number':
+							echo $row['Job_reference_number'] . " | " . 
+							$row['first_name'] . " | " . 
+							$row['last_name'] . " | " . 
+							$row['Application_id'] . " | " . 
+							$row['Email'] . " | " . 
+							$row['Suburb'] . " | " . 
+							$row['Job_position'] . " | " . 
+							$row['Dob'] . " | " .
+							$row['Gender'] . " | " .
+							$row['Phone'] . " | " .
+							$row['Address'] . " | " .
+							$row['State'] . " | " .
+							$row['Postcode'] . " | " .
+							$row['Job_prefer'] . " | " .
+							$row['Programming_language'] . " | " .
+							$row['skills'] . " | " .							
+							"<br>";
+							break;
+
+						case 'Application_id':
+							echo $row['Application_id'] . " | " . 
+							$row['first_name'] . " | " . 
+							$row['last_name'] . " | " . 
+							$row['Job_reference_number'] . " | " . 
+							$row['Email'] . " | " . 
+							$row['Suburb'] . " | " . 
+							$row['Job_position'] . " | " . 
+							$row['Dob'] . " | " .
+							$row['Gender'] . " | " .
+							$row['Phone'] . " | " .
+							$row['Address'] . " | " .
+							$row['State'] . " | " .
+							$row['Postcode'] . " | " .
+							$row['Job_prefer'] . " | " .
+							$row['Programming_language'] . " | " .
+							$row['skills'] . " | " .							
+							"<br>";
+							break;
+
+						case 'Suburb':
+							echo $row['Suburb'] . " | " . 
+							$row['first_name'] . " | " . 
+							$row['last_name'] . " | " . 
+							$row['Job_reference_number'] . " | " . 
+							$row['Application_id'] . " | " . 
+							$row['Email'] . " | " . 
+							$row['Job_position'] . " | " . 
+							$row['Dob'] . " | " .
+							$row['Gender'] . " | " .
+							$row['Phone'] . " | " .
+							$row['Address'] . " | " .
+							$row['State'] . " | " .
+							$row['Postcode'] . " | " .
+							$row['Job_prefer'] . " | " .
+							$row['Programming_language'] . " | " .
+							$row['skills'] . " | " .							
+							"<br>";
+							break;
+
+						case 'Job_position':
+							echo $row['Job_position'] . " | " .  
+							$row['first_name'] . " | " . 
+							$row['last_name'] . " | " . 
+							$row['Job_reference_number'] . " | " . 
+							$row['Application_id'] . " | " . 
+							$row['Email'] . " | " . 
+							$row['Suburb'] . " | " . 
+							$row['Dob'] . " | " .
+							$row['Gender'] . " | " .
+							$row['Phone'] . " | " .
+							$row['Address'] . " | " .
+							$row['State'] . " | " .
+							$row['Postcode'] . " | " .
+							$row['Job_prefer'] . " | " .
+							$row['Programming_language'] . " | " .
+							$row['skills'] . " | " .							
+							"<br>";
+							break;
+
+						default:
+							echo $row['first_name'] . " | " . 
+							$row['last_name'] . " | " . 
+							$row['Job_reference_number'] . " | " . 
+							$row['Application_id'] . " | " . 
+							$row['Email'] . " | " . 
+							$row['Suburb'] . " | " . 
+							$row['Dob'] . " | " .
+							$row['Gender'] . " | " .
+							$row['Phone'] . " | " .
+							$row['Address'] . " | " .
+							$row['State'] . " | " .
+							$row['Postcode'] . " | " .
+							$row['Job_prefer'] . " | " .
+							$row['Programming_language'] . " | " .
+							$row['skills'] . " | " .							
+							"<br>";
+							break;
+						
+					}
+				}
+			} else {
+				echo "Error: " . $mysqli->error;
+			} -->
