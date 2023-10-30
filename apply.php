@@ -18,7 +18,7 @@
 	<meta name="keywords" content="HTML, Form, tags" />
 	<meta name="author" content="FIVE" />
 	<link rel="stylesheet" href="./styles/style_1.css">
-	<link rel="stylesheet" href="customUploadStyle.css">
+	<!-- <link rel="stylesheet" href="customUploadStyle.css"> -->
 	<link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -37,16 +37,33 @@
 
 	<!-- Navbar -->
 	<nav id="main-nav" class="container">
-		<h1 id="logo">Five-5</h1>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About Us</a></li>
-			<li><a href="jobs.html">Jobs Description</a></li>
-			<li><a href="apply.html" class="active">Apply Now</a></li>
-			<li><a href="enhancement.html">Our Website Enhancement</a></li>
-		</ul>
-	</nav>
 
+
+		<h1 id="logo">Five-5</h1>
+		<!-- Hamburger Menu -->
+		<label class="hamburger_menu">
+			<input type="checkbox">
+		</label>
+		<aside class="sidebar">
+
+			<!-- <div><a href="index.html" class="active">Home</a></div>
+			<div><a href="about.html">About Us</a></div>
+			<div><a href="jobs.html">Jobs Description</a></div>
+			<div><a href="apply.html">Apply Now</a></div>
+			<div><a href="enhancement.html">Our Website Enhancement</a></div> -->
+
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="about.php">About Us</a></li>
+				<li><a href="jobs.php">Jobs Description</a></li>
+				<li><a href="apply.php" class="active">Apply Now</a></li>
+				<li><a href="manage.php">Management</a></li>
+				<li><a href="enhancement.html">Our Website Enhancement</a></li>
+			</ul>
+		</aside>
+
+
+	</nav>
 	<div class="container">
 
 		<h1 class="apply_title">Job Application</h1>

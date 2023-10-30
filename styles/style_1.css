@@ -143,6 +143,8 @@ img{
     padding-right: 1rem;
     font-family: var(--font_content);
     transition-duration: 300ms;
+    z-index: 2;
+
 }
 
 
@@ -289,7 +291,7 @@ img{
 /* Footer */
 
 footer{
-    height: 8vh;
+    height: max-content;
     background-color: var(--main_dark_color);
 }
 
@@ -305,7 +307,7 @@ footer p {
 
 @media (max-width: 991px) {
     footer{
-        height: 9rem;
+        /* height: 9rem; */
         text-align: center;
     }
     footer div{
@@ -319,7 +321,7 @@ footer p {
 }
 @media (max-width: 767px){
     footer{
-        height: 9.5rem;
+        /* height: 9.5rem; */
     }
     footer p {
         font-size: .9rem;
@@ -341,7 +343,7 @@ footer p {
 }
 #welcome .container div #welcome_text{    
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
     /* margin-bottom: 2rem; */
     color: var(--main_shadow_color);
     font-size: 6rem;
@@ -364,12 +366,12 @@ footer p {
     text-align: center;
     margin: 0;
     color: var(--seccond_light_color);
-
-    font-size: 40rem;
-
+    cursor: default;
+    font-size: 25rem;
+    user-select: none;
     position: absolute;
-    left: 62%;
-    top: 1%;
+    left: 67%;
+    top: 17%;
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
 } 
@@ -478,11 +480,11 @@ footer p {
         margin: 0;
         color: var(--seccond_light_color);
     
-        font-size: 30rem;
+
     
         position: absolute;
         left: 60%;
-        top: 6%;
+        /* top: 6%; */
         text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
         font-family: var(--font_heading);
     }
@@ -680,7 +682,7 @@ footer p {
     font-size: 3rem;
     margin-block-start: 0;
     margin-block-end: 0;
-    margin: 6rem 0 2rem 0;
+    margin: 0rem 0 1rem 0;
 }
 #about_us #group_picture {
     border-radius: 10%;
@@ -1452,6 +1454,7 @@ transform: translateY(-4px);
 }
 .table-wrapper {
     margin: 2rem;
+    margin-top: 0;
     overflow-y: auto;
     overflow-x: auto;
     height: 500px;
