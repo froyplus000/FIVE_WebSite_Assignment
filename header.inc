@@ -10,11 +10,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A basic form in HTML" />
-    <meta name="keywords" content="HTML, Form, tags" />
+    <meta name="description" content="Five Technology Website" />
+    <meta name="keywords" content="Jobs Vacancies" />
     <meta name="author" content="FIVE" />
-    <link rel="stylesheet" href="./styles/style_1.css">
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+</html>

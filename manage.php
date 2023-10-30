@@ -1,4 +1,4 @@
-<?php include("./header.php"); ?>
+<?php include("./header.inc"); ?>
 
 <title>Management</title>
 </head>
@@ -318,5 +318,5 @@
 		mysqli_close($conn);
 
 
-		include("./footer.php");
+		include("./footer.inc");
 		?>

@@ -1,28 +1,10 @@
-<!--
-	Group Name		: FIVE
-	Group Number	: 5
-	
-	Author			: Pattarapol Tantechasa		Student ID:	103883220
-	Author			: Sam Anderson 				Student ID:	104465030
-	Author			: Ngoc Huy Duong 			Student ID:	104471956
+<?php include("./header.inc"); ?>
 
-
--->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Apply Page" />
-	<meta name="keywords" content="HTML, Form, tags" />
-	<meta name="author" content="FIVE" />
-	<link rel="stylesheet" href="./styles/style_1.css">
-	<!-- <link rel="stylesheet" href="customUploadStyle.css"> -->
-	<link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<title>Apply Form</title>
+<!-- <link rel="stylesheet" href="customUploadStyle.css"> -->
+<link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Apply Form</title>
 </head>
 <?php
 // require_once('processEOI.php');
@@ -218,13 +200,7 @@
 			<span class="material-icons">arrow_upward</span>
 		</a>
 	</div>
-	<!-- Footer -->
-	<footer>
-		<div class="footer_made">
-			<p>Copyright &copy; 2023 Five-5. All rights reserved</p>
-			<p>Australia</p>
-		</div>
-	</footer>
-</body>
+	<?php include("./footer.inc"); ?>
 
-</html>
+
+	</html>

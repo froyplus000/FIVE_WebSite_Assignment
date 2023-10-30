@@ -1,26 +1,9 @@
-<!--
-	Group Name		: FIVE
-	Group Number	: 5
-    
-    Author			: Pattarapol Tantechasa		Student ID:	103883220
-    Author			: Sam Anderson 				Student ID:	104465030
-    Author			: Ngoc Huy Duong			Student ID:	104471956
-
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description"	content="A basic form in HTML"/>
-	<meta name="keywords"		content="HTML, Form, tags"/>
-	<meta name="author"			content="FIVE"/>
-	<link rel="stylesheet" href="./styles/style.css">
-	<title>Home</title>
+<?php include("./header.inc"); ?>
+<title>Home</title>
 </head>
+
 <body>
-	
+
 
 	<!-- Navbar -->
 	<nav id="main-nav" class="container">
@@ -43,7 +26,7 @@
 				<li><a href="index.php">Home</a></li>
 				<li><a href="about.php">About Us</a></li>
 				<li><a href="jobs.php">Jobs Description</a></li>
-				<li><a href="apply.php" >Apply Now</a></li>
+				<li><a href="apply.php">Apply Now</a></li>
 				<li><a href="manage.php">Management</a></li>
 				<li><a href="enhancement.html" class="active">Our Website Enhancement</a></li>
 			</ul>
@@ -51,12 +34,12 @@
 
 
 	</nav>
-	
+
 	<div id="enhancement" class="container">
 		<div>
 			<h1>Animation</h1>
 			<p>
-				Small animation and transition had been added to the website <br> 
+				Small animation and transition had been added to the website <br>
 				This helps enhance user experience and web nacigation from the initial brief
 			</p>
 			<br>
@@ -76,11 +59,4 @@
 
 
 
-	<footer>
-		<div class="container">
-			<p>Copyright &copy; 2023 Five-5. All rights reserved</p>
-			<p>Australia</p>
-		</div>
-	</footer>
-
-</body>
+	<?php include("./footer.inc"); ?>

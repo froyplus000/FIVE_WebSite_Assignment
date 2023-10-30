@@ -1,25 +1,6 @@
-<!--
-	Group Name		: FIVE
-	Group Number	: 5
-	
-	Author			: Pattarapol Tantechasa		Student ID:	103883220
-	Author			: Sam Anderson 				Student ID:	104465030
-	Author			: Ngoc Huy Duong			Student ID:	104471956
+<?php include("./header.inc"); ?>
 
-
--->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="About Us Page" />
-	<meta name="keywords" content="HTML, Form, tags" />
-	<meta name="author" content="FIVE" />
-	<link rel="stylesheet" href="./styles/style_1.css">
-	<title>About Us</title>
+<title>About Us</title>
 </head>
 
 <body>
@@ -362,13 +343,4 @@
 	</section>
 
 
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<p>Copyright &copy; 2023 Five-5. All rights reserved</p>
-			<p>Australia</p>
-		</div>
-	</footer>
-
-
-</body>
+	<?php include("./footer.inc"); ?>

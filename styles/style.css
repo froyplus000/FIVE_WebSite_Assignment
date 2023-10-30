@@ -5,16 +5,11 @@
         -> to use -> var( variable_name )
         -> Example -> background-color: var(--backgroud_light_color);
 */
-
 *,*::after,*::before {
     box-sizing: border-box;
 }
 
 :root{
-    /* --main_light_color: #644304; */
-    /* --seccond_dark_color:#06063D; */
-
-    /* Colors & Fonts */
     --backgroud_light_color: #e6dcce;
     --main_dark_color: #474143;
     --main_shadow_color: #6B798C;
@@ -23,17 +18,21 @@
     --font_content: 'IBM Plex Mono', monospace;
     --font_higlight: 'Qwitcher Grypen', cursive;
     
-    /* Animation variables */
+    /* --main_light_color: #644304; */
+    /* --seccond_dark_color:#06063D; */
+
+    /* animation variables */
     --ease_in_out: all 1s ease-in-out;
     --animation-timing: 300ms ease-in-out;
 
-    /* Hamburger Menu Variables */
-    --bar-width: 60px;
-    --bar-height: 8px;
-    --hamburger-gap: 6px;
-    --hamburger-margin: 8px;
-    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+     /* Hamburger Menu Variables */
+     --bar-width: 60px;
+     --bar-height: 8px;
+     --hamburger-gap: 6px;
+     --hamburger-margin: 8px;
+     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
+
 
 
 
@@ -125,57 +124,31 @@ img{
 }
 
 
-
-
-
-/* New Nav menu for hamburger menu */
-/* #main-nav div {
-    display: flex;
-    margin-top: 1rem
-}
-#main-nav div a {
-    color: var(--main_dark_color);
-    text-decoration: none;
-    font-size: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-family: var(--font_content);
-    transition-duration: 300ms;
-}
-#main-nav div a:hover {
-    color: var(--seccond_light_color);
-    text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
-    font-weight: bold;
-    border: .1rem solid var(--main_shadow_color);
-    border-radius: 10%;
-    padding-top: .25rem;
-    padding-bottom: .25rem;
-}
-#main-nav div a.active {
-    border-bottom: .1rem solid var(--main_shadow_color);
-    border-radius: 10%;
-    padding-top: .25rem;
-    padding-bottom: .25rem;
-} */
-
-/* Old Nav Menu */
 #main-nav ul {
     list-style: none;
 }
-#main-nav li {
+
+
+
+#main-nav .sidebar ul li {
     display: inline-block;
     margin-top: 1rem
 }
-#main-nav li a {
+
+#main-nav .sidebar ul li a {
     color: var(--main_dark_color);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: .8rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-family: var(--font_content);
     transition-duration: 300ms;
+    z-index: 2;
+
 }
-#main-nav li a:hover {
+
+
+#main-nav .sidebar ul li a:hover {
     color: var(--seccond_light_color);
     text-shadow: 0.1rem 0.1rem 0.1rem var(--main_shadow_color);
     font-weight: bold;
@@ -184,7 +157,9 @@ img{
     padding-top: .25rem;
     padding-bottom: .25rem;
 }
-#main-nav li a.active {
+
+#main-nav .sidebar ul li a.active {
+    
     border-bottom: .1rem solid var(--main_shadow_color);
     border-radius: 10%;
     padding-top: .25rem;
@@ -193,7 +168,7 @@ img{
 
 /* responsive for navbar */
 @media (max-width: 1199px) {
-    #main-nav li a { 
+    #main-nav .sidebar ul li a { 
         padding: 0 .65rem;
     }
 }
@@ -210,31 +185,35 @@ img{
         font-size: 5rem;
         margin-bottom: 2rem;
     }
-    #main-nav ul {
+    #main-nav .sidebar ul {
         padding-inline-start: 0;
         margin-block-start: 0;
         margin-block-end: 0;
     }
-    #main-nav li {
+    #main-nav .sidebar ul li {
         display: block;
         margin-top: 1rem 0;
     }
-    #main-nav li a {
-        font-size: 1.6rem;
+    #main-nav .sidebar ul li a {
+        font-size: 1.2rem;
         line-height: 3.25rem;
     }
-}
 
+}
 @media (max-width: 767px){
     #main-nav #logo{
-        font-size: rem;
+        font-size: 4.25rem;
         margin-bottom: 1rem;
+        margin-top: 1.25rem;
     }
-    #main-nav li a {
+    #main-nav .sidebar ul li {
+        text-align: end;
+        
+    }
+    #main-nav .sidebar ul li a {
         font-size: 1.05rem;
         line-height: 2.75rem;
     }
-
     /* Hamburger Menu */
 
     .hamburger_menu {
@@ -289,9 +268,11 @@ img{
     .sidebar ul li,
     .sidebar ul li a {
         /* transition: translate var(--animation-timing); */
-        transition: translate 1s ease-in-out;
+        transition: translate 300ms ease-in-out;
         translate: -200%;
         display: none;
+        /* visibility: collapse; */
+        text-align: end;
     }
 
     .hamburger_menu:has(input:checked) + .sidebar, 
@@ -301,18 +282,16 @@ img{
     {
         translate: 0%;
         display: contents;
+        /* visibility: visible; */
+
     }
-
-
-
-
 }
 
 
 /* Footer */
 
 footer{
-    height: 8vh;
+    height: max-content;
     background-color: var(--main_dark_color);
 }
 
@@ -328,7 +307,7 @@ footer p {
 
 @media (max-width: 991px) {
     footer{
-        height: 9rem;
+        /* height: 9rem; */
         text-align: center;
     }
     footer div{
@@ -342,7 +321,7 @@ footer p {
 }
 @media (max-width: 767px){
     footer{
-        height: 9.5rem;
+        /* height: 9.5rem; */
     }
     footer p {
         font-size: .9rem;
@@ -359,12 +338,12 @@ footer p {
 #welcome {
     min-height: 70vh;
 }
-#welcome .container {
+#welcome div{
     margin-left: 3.5vw;
 }
 #welcome .container div #welcome_text{    
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
     /* margin-bottom: 2rem; */
     color: var(--main_shadow_color);
     font-size: 6rem;
@@ -387,12 +366,12 @@ footer p {
     text-align: center;
     margin: 0;
     color: var(--seccond_light_color);
-
-    font-size: 40rem;
-
+    cursor: default;
+    font-size: 25rem;
+    user-select: none;
     position: absolute;
-    left: 62%;
-    top: 1%;
+    left: 67%;
+    top: 17%;
     text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
     font-family: var(--font_heading);
 } 
@@ -484,7 +463,7 @@ footer p {
     text-align: left;
 }
 
-/* Responsive Design for Index.html */
+/* Resonsive Design for Index.html */
 
 @media (max-width: 1199px){
     #welcome {
@@ -501,11 +480,11 @@ footer p {
         margin: 0;
         color: var(--seccond_light_color);
     
-        font-size: 30rem;
+
     
         position: absolute;
         left: 60%;
-        top: 6%;
+        /* top: 6%; */
         text-shadow: 1rem 1rem var(--main_shadow_color), 1.2rem 1.2rem  var(--backgroud_light_color), 2rem 2rem  var(--main_dark_color);
         font-family: var(--font_heading);
     }
@@ -619,7 +598,7 @@ footer p {
     
     #welcome .container div #welcome_text{
         /* font-size: 6.2rem; */
-        margin-top: 5rem;
+        margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         /* line-height: 2.75rem; */
         font-size: 2.5rem;
@@ -703,7 +682,7 @@ footer p {
     font-size: 3rem;
     margin-block-start: 0;
     margin-block-end: 0;
-    margin: 6rem 0 2rem 0;
+    margin: 0rem 0 1rem 0;
 }
 #about_us #group_picture {
     border-radius: 10%;
@@ -1041,13 +1020,11 @@ footer p {
 
 /* splits the first paragraph (intro) into its own div and shares it with the aside. */
 
-
-.job_container {
-    display:flex;
-    justify-content: space-between;
+.jobs_modifier .container {
     margin: 0 auto;
-    max-width: 90rem;
+    max-width: 70rem;
 }
+
 
 .intro_container {
     flex: 1;
@@ -1057,9 +1034,10 @@ footer p {
 
 .aside_container {
     display:flex;
+    float:right;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 25%;
+    max-width: 20rem;
     flex-basis: 25%;
     
 }
@@ -1070,13 +1048,11 @@ footer p {
     width: auto;
     float: right; 
     position: fixed;
-
     top: 10rem;
     z-index: 100;
     padding: 1rem;
     border: .15rem solid var(--main_shadow_color);
     box-shadow: 0 .15rem .15rem var(--main_shadow_color), 0 -.15rem .15rem var(--main_shadow_color);
-    /* left: calc(75% - 25%); */
 }
 
 #job_aside h2{
@@ -1468,3 +1444,48 @@ transform: translateY(-4px);
 }
 
 
+
+
+
+/* Manage.php */
+
+.outer-wrapper {
+    border: .15rem solid var(--main_dark_color);
+}
+.table-wrapper {
+    margin: 2rem;
+    margin-top: 0;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 500px;
+    border: .15rem solid var(--main_dark_color);
+}
+#m_table {
+    
+    border: .15rem solid var(--main_dark_color);
+    min-width: 80vw;
+    border-spacing: 0px;    
+    border-collapse: collapse;
+    text-align: center;
+    font-family: var(--font_content);
+}
+#m_table tr th, #m_table tr td {
+    border: .15rem solid var(--main_dark_color);
+    padding: 15px;
+}
+#m_table tr th {
+    position: sticky;
+    top: 0px;
+    background-color: var(--main_shadow_color);
+    color: var(--backgroud_light_color);
+    font-size: 1.15rem;
+}
+#m_table tr td {
+    padding: .25rem;
+    border: .15rem solid var(--main_dark_color);
+    font-size: .85rem;
+} 
+#m_table tr td .btn{
+    background-color: var(--main_shadow_color);
+    color: var(--backgroud_light_color);
+}
