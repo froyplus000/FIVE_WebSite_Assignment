@@ -1,4 +1,4 @@
-<?php include("./header.php"); ?>
+<?php include("./header.inc"); ?>
 
 <title>Management</title>
 </head>
@@ -141,5 +141,5 @@
 
 
 
-	include("./footer.php");
+	include("./footer.inc");
 	?>
